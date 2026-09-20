@@ -50,7 +50,12 @@ h1 {
     align-items: center;
     justify-content: center;
     color: #777;
-    font-size: 18px;
+    font-size: 18px;overflow: hidden;
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* اطلاعات */
@@ -135,14 +140,9 @@ h1 {
 </head>
 
 <body>
-
-<div class="container">
-
-    <h1>کیان پیرفلک</h1>
-
-    <div class="photo-box">
-        جای عکس کیان پیرفلک
-    </div>
+<div class="photo-box">
+    <img src="کیان.jpg" alt="کیان پیرفلک">
+</div>
 
     <div class="info">
 
