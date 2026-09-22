@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام عباس دلجویی</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 30px 15px;
+        background: #111;
+        color: #e8e8e8;
+        font-family: Tahoma, Arial, sans-serif;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #ffffff;
+    }
+
+    .photo-box {
+        width: 100%;
+        max-width: 430px;
+        height: 520px;
+        margin: 0 auto 30px;
+        background: #181818;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-size: 18px;
+    }
+
+    .city {
+        font-size: 22px;
+        margin-bottom: 25px;
+        color: #cccccc;
+    }
+
+    .timer {
+        margin: 25px 0 35px;
+        padding: 20px 10px;
+        background: #181818;
+        border-radius: 8px;
+        color: #d62828;
+        font-size: 28px;
+        font-weight: bold;
+        direction: rtl;
+    }
+
+    .description {
+        margin-top: 38px;
+        padding: 28px 24px;
+        background: #181818;
+        border-right: 3px solid #d62828;
+        border-radius: 8px;
+        line-height: 2.25;
+        font-size: 18px;
+        text-align: right;
+        color: #e8e8e8;
+    }
+
+    .footer {
+        margin-top: 35px;
+        padding-bottom: 20px;
+        font-size: 18px;
+        color: #999;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام عباس دلجویی</h1>
+
+    <div class="photo-box">
+        تصویر عباس دلجویی
+    </div>
+
+    <div class="city">
+        رامسر
+    </div>
+
+    <div class="timer" id="timer">
+        در حال محاسبه...
+    </div>
+
+    <div class="description">
+
+        <strong>عباس دلجویی</strong>، جوانی ۲۱ ساله، متولد
+        ۱۵ مرداد ۱۳۸۳ و اهل میانه بود؛ دانشجوی دکترای حرفه‌ای
+        دامپزشکی دانشگاه شهید چمران اهواز، با آینده‌ای که هنوز
+        فرصت نیافته بود آن را زندگی کند.
+
+        <br><br>
+
+        عباس در جریان اعتراضات اهواز، در ۱۸ دی‌ماه ۱۴۰۴ بازداشت
+        و به زندان شیبان اهواز منتقل شد. پس از روزهایی که در
+        بازداشت سپری کرد، در ۱۴ بهمن‌ماه از زندان آزاد شد؛
+        اما آزادی برای او پایان رنج نبود.
+
+        <br><br>
+
+        تنها دوازده روز بعد، در ۲۶ بهمن‌ماه ۱۴۰۴، عباس در رامسر
+        جان باخت. علت اعلام‌شده، ایست قلبی بود؛ اما مرگ او، آن هم
+        تنها چند روز پس از آزادی از زندان، پرسش‌ها و ابهام‌هایی
+        درباره آنچه بر او گذشته بود بر جای گذاشت.
+
+        <br><br>
+
+        عباس فقط ۲۱ سال داشت.
+
+        <br><br>
+
+        ۲۱ سال؛ سنی که باید آغاز ساختن آینده باشد، نه پایان زندگی.
+
+        <br><br>
+
+        او دانشجویی بود با رؤیاها، آرزوها و سال‌های بسیاری که
+        می‌توانست پیش رو داشته باشد؛ اما زندگی‌اش ناتمام ماند.
+
+        <br><br>
+
+        یاد و نام عباس دلجویی را زنده نگه می‌داریم.
+
+    </div>
+
+    <div class="footer">
+        یاد و نام عباس دلجویی
+    </div>
+
+</div>
+
+<script>
+
+    // تاریخ مبنای شمارنده:
+    // ۲۶ بهمن ۱۴۰۴ برابر با ۱۵ فوریه ۲۰۲۶
+
+    const startDate = new Date("2026-02-15T00:00:00");
+
+    function updateTimer() {
+
+        const now = new Date();
+
+        let difference = now - startDate;
+
+        if (difference < 0) {
+            difference = 0;
+        }
+
+        const totalSeconds = Math.floor(difference / 1000);
+
+        const days = Math.floor(totalSeconds / 86400);
+
+        const hours = Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
+
+        const minutes = Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+        const seconds = totalSeconds % 60;
+
+        document.getElementById("timer").innerHTML =
+            days + " روز " +
+            hours + " ساعت " +
+            minutes + " دقیقه " +
+            seconds + " ثانیه";
+    }
+
+    updateTimer();
+
+    setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
