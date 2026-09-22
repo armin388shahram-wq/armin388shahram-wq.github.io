@@ -28,18 +28,19 @@
     }
 
     .photo-box {
-        width: 100%;
-        max-width: 430px;
-        height: 520px;
-        margin: 0 auto 30px;
-        background: #181818;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #666;
-        font-size: 18px;
-    }
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto 30px;
+    background: #181818;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.photo-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
     .city {
         font-size: 22px;
@@ -85,9 +86,9 @@
 
     <h1>یاد و نام عباس دلجویی</h1>
 
-    <div class="photo-box">
-        تصویر عباس دلجویی
-    </div>
+ <div class="photo-box">
+    <img src="abbas.jpg" alt="عباس دلجویی">
+</div>
 
     <div class="city">
         رامسر
