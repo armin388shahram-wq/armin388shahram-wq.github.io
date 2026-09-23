@@ -66,15 +66,12 @@
         .description {
             margin-top: 20px;
             padding: 28px 24px;
-
             background: #181818;
             border-right: 3px solid #d62828;
             border-radius: 8px;
-
             line-height: 2.25;
             font-size: 18px;
             text-align: right;
-
             color: #e8e8e8;
         }
 
@@ -86,7 +83,6 @@
             margin-top: 35px;
             padding-top: 20px;
             border-top: 1px solid #333;
-
             font-size: 17px;
             color: #aaa;
         }
@@ -99,16 +95,32 @@
 
             h1 {
                 font-size: 30px;
+                margin-bottom: 25px;
+            }
+
+            .photo-box {
+                max-width: 100%;
+            }
+
+            .city {
+                font-size: 19px;
+                margin-bottom: 20px;
             }
 
             .timer {
                 font-size: 21px;
+                line-height: 2.1;
+                margin: 15px 0 25px;
             }
 
             .description {
                 font-size: 17px;
                 line-height: 2.15;
                 padding: 22px 18px;
+            }
+
+            footer {
+                font-size: 16px;
             }
         }
     </style>
@@ -121,9 +133,8 @@
     <h1>یاد و نام عماد حیدری</h1>
 
     <div class="photo-box">
-    <img src="emad.jpg" alt="عماد حیدری">
-</div>
-</div>
+        <img src="emad.jpg" alt="عماد حیدری">
+    </div>
 
     <div class="city">
         اهواز
@@ -195,11 +206,8 @@
 
 </div>
 
-
 <script>
 
-    // تاریخ شهادت / مرگ:
-    // ۱۴ مهر ۱۴۰۱ = ۶ اکتبر ۲۰۲۲
     const deathDate = new Date("2022-10-06T00:00:00");
 
     function persianNumber(number) {
@@ -239,7 +247,6 @@
             persianNumber(hours) + " ساعت " +
             persianNumber(minutes) + " دقیقه " +
             persianNumber(seconds) + " ثانیه";
-
     }
 
     updateTimer();
