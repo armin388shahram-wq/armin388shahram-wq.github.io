@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>یاد و نام پوریا کیانی</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background: #111;
+            color: #eee;
+            font-family: Tahoma, Arial, sans-serif;
+            direction: rtl;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 10px 0 30px;
+            font-size: 36px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .photo-box {
+            width: 100%;
+            max-width: 430px;
+            margin: 0 auto 25px;
+            background: #181818;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .city {
+            font-size: 21px;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .timer-title {
+            margin-top: 10px;
+            margin-bottom: 8px;
+            font-size: 18px;
+            color: #aaa;
+            line-height: 2;
+        }
+
+        .timer {
+            margin: 10px 0 35px;
+            font-size: 25px;
+            line-height: 2;
+            font-weight: bold;
+            color: #d62828;
+        }
+
+        .description {
+            margin-top: 20px;
+            padding: 28px 24px;
+
+            background: #181818;
+            border-right: 3px solid #d62828;
+            border-radius: 8px;
+
+            line-height: 2.25;
+            font-size: 18px;
+            text-align: right;
+
+            color: #e8e8e8;
+        }
+
+        .description strong {
+            color: #fff;
+        }
+
+        footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+
+            font-size: 17px;
+            color: #aaa;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+
+            .photo-box {
+                max-width: 100%;
+            }
+
+            .city {
+                font-size: 19px;
+                margin-bottom: 20px;
+            }
+
+            .timer-title {
+                font-size: 16px;
+                line-height: 2;
+            }
+
+            .timer {
+                font-size: 21px;
+                line-height: 2.1;
+                margin: 10px 0 25px;
+            }
+
+            .description {
+                font-size: 17px;
+                line-height: 2.15;
+                padding: 22px 18px;
+            }
+
+            footer {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام پوریا کیانی</h1>
+
+    <div class="photo-box">
+        <img src="pouria.jpg" alt="پوریا کیانی">
+    </div>
+
+    <div class="city">
+        شوشتر
+    </div>
+
+    <div class="timer-title">
+        روزها، ساعت‌ها، دقیقه‌ها و ثانیه‌هایی که بدون او سپری شد...
+    </div>
+
+    <div class="timer" id="timer">
+        در حال محاسبه...
+    </div>
+
+    <div class="description">
+
+        <p>
+            <strong>پوریا کیانی</strong>، جوانی اهل ایذه و ساکن شوشتر بود؛
+            جوانی که در روزهای نخست اعتراضات ۱۴۰۱، در میان معترضان شوشتر حضور داشت.
+        </p>
+
+        <p>
+            بر اساس روایت‌های منتشرشده، پوریا در جریان اعتراضات مهرماه ۱۴۰۱
+            هدف شلیک مستقیم نیروهای امنیتی قرار گرفت و جان باخت.
+        </p>
+
+        <p>
+            همچنین گزارش شده است که پس از مرگ او،
+            خانواده‌اش تحت فشار قرار گرفتند تا علت درگذشت او
+            «خودکشی» اعلام شود.
+        </p>
+
+        <p>
+            پوریا تنها یک نام در میان نام‌های جان‌باختگان نیست؛
+            او جوانی بود با زندگی، آرزو و آینده‌ای که ناتمام ماند.
+        </p>
+
+        <p>
+            <strong>
+                شجاعت، ساختن آینده‌ای است که شایسته جان‌های پاک باشد.
+            </strong>
+        </p>
+
+        <p>
+            یاد و نام پوریا کیانی گرامی باد.
+        </p>
+
+    </div>
+
+    <footer>
+        یاد و نام پوریا کیانی
+    </footer>
+
+</div>
+
+
+<script>
+
+    // ۲۲ مهر ۱۴۰۱ = ۱۴ اکتبر ۲۰۲۲
+    // ساعت ۲۲:۰۰
+
+    const deathDate = new Date("2022-10-14T22:00:00");
+
+    function persianNumber(number) {
+        return number.toString().replace(/\d/g, function(d) {
+            return "۰۱۲۳۴۵۶۷۸۹"[d];
+        });
+    }
+
+    function updateTimer() {
+
+        const now = new Date();
+
+        let difference = now - deathDate;
+
+        if (difference < 0) {
+            document.getElementById("timer").innerHTML =
+                "زمان هنوز آغاز نشده است";
+            return;
+        }
+
+        let totalSeconds = Math.floor(difference / 1000);
+
+        const days = Math.floor(totalSeconds / 86400);
+
+        totalSeconds %= 86400;
+
+        const hours = Math.floor(totalSeconds / 3600);
+
+        totalSeconds %= 3600;
+
+        const minutes = Math.floor(totalSeconds / 60);
+
+        const seconds = totalSeconds % 60;
+
+        document.getElementById("timer").innerHTML =
+            persianNumber(days) + " روز " +
+            persianNumber(hours) + " ساعت " +
+            persianNumber(minutes) + " دقیقه " +
+            persianNumber(seconds) + " ثانیه";
+    }
+
+    updateTimer();
+
+    setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
