@@ -1,1 +1,155 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>یاد و نام عباس منصوری</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background: #111;
+            color: #eee;
+            font-family: Tahoma, Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 10px 0 25px;
+            font-weight: bold;
+        }
+
+        .photo-box {
+            margin: 0 auto 30px;
+        }
+
+        .photo-box img {
+            width: 100%;
+            max-width: 430px;
+            height: auto;
+            display: block;
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        .city {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #ccc;
+        }
+
+        .timer {
+            margin: 30px 0;
+            font-size: 30px;
+            font-weight: bold;
+            color: #d62828;
+            direction: rtl;
+        }
+
+        .description {
+            margin-top: 38px;
+            padding: 28px 24px;
+            background: #181818;
+            border-right: 3px solid #d62828;
+            border-radius: 8px;
+            line-height: 2.25;
+            font-size: 18px;
+            text-align: right;
+            color: #e8e8e8;
+        }
+
+        .footer {
+            margin-top: 35px;
+            padding-bottom: 20px;
+            font-size: 18px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>عباس منصوری</h1>
+
+    <div class="photo-box">
+        <img src="mansori.jpg" alt="عباس منصوری">
+    </div>
+
+    <div class="city">
+        شوش، خوزستان
+    </div>
+
+    <div class="timer" id="timer">
+        در حال محاسبه...
+    </div>
+
+    <div class="description">
+        عباس منصوری، جوانی ۱۹ ساله اهل شوش در استان خوزستان بود که در جریان اعتراضات آبان ۱۴۰۱ در این شهر بازداشت شد.
+
+        <br><br>
+
+        بر اساس گزارش‌های منتشرشده، عباس پس از آزادی وضعیت جسمی و رفتاری نامناسبی داشت و به نزدیکان خود گفته بود که در دوران بازداشت به او قرص و آمپول داده‌اند.
+
+        <br><br>
+
+        عباس منصوری در ۲۰ آذر ۱۴۰۱ جان باخت. گزارش‌های حقوق‌بشری همچنین از وجود آثار جراحت بر بدن او و فشار بر خانواده برای برگزاری مراسمی بدون حضور عمومی خبر داده‌اند.
+    </div>
+
+    <div class="footer">
+        یاد و نام عباس منصوری
+    </div>
+
+</div>
+
+<script>
+    // تاریخ جان‌باختن عباس منصوری
+    // ۲۰ آذر ۱۴۰۱ برابر با ۱۱ دسامبر ۲۰۲۲
+    const deathDate = new Date("2022-12-11T00:00:00");
+
+    function updateTimer() {
+
+        const now = new Date();
+        let diff = now - deathDate;
+
+        if (diff < 0) {
+            document.getElementById("timer").innerHTML = "هنوز نرسیده";
+            return;
+        }
+
+        let totalSeconds = Math.floor(diff / 1000);
+
+        const days = Math.floor(totalSeconds / 86400);
+        totalSeconds %= 86400;
+
+        const hours = Math.floor(totalSeconds / 3600);
+        totalSeconds %= 3600;
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+        document.getElementById("timer").innerHTML =
+            days + " روز " +
+            hours + " ساعت " +
+            minutes + " دقیقه " +
+            seconds + " ثانیه";
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
+```
 
