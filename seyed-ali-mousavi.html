@@ -1,1 +1,468 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام سید علی موسوی</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #111;
+    color: #eee;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px 18px 40px;
+    text-align: center;
+}
+
+/* عنوان */
+
+h1 {
+    margin: 5px 0 25px;
+    font-size: 34px;
+    color: #fff;
+}
+
+/* عکس */
+
+.photo-box {
+    width: 100%;
+    margin: 0 auto 28px;
+}
+
+.photo-box img {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* مشخصات */
+
+.info {
+    background: #181818;
+    border-right: 3px solid #d62828;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 30px;
+    text-align: right;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.info strong {
+    color: #fff;
+}
+
+/* عنوان تایمر */
+
+.timer-title {
+    font-size: 18px;
+    color: #ddd;
+    margin: 25px 0 18px;
+    line-height: 1.8;
+}
+
+/* تایمر چهارخانه */
+
+.timer {
+    direction: ltr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto 35px;
+}
+
+/* خانه‌های تایمر */
+
+.time-box {
+    background: #181818;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 18px 8px 14px;
+    min-height: 105px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* عدد */
+
+.number {
+    direction: rtl;
+    font-size: 34px;
+    font-weight: bold;
+    color: #d62828;
+    line-height: 1.2;
+}
+
+/* عنوان زیر عدد */
+
+.label {
+    direction: rtl;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* سرگذشت */
+
+.description {
+    margin-top: 10px;
+    padding: 25px 22px;
+
+    background: #181818;
+    border-right: 3px solid #d62828;
+    border-radius: 8px;
+
+    line-height: 2.25;
+    font-size: 18px;
+    text-align: right;
+
+    color: #e8e8e8;
+}
+
+/* پایان */
+
+.footer {
+    margin-top: 35px;
+    padding-top: 20px;
+
+    border-top: 1px solid #333;
+
+    font-size: 18px;
+    color: #aaa;
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px 14px 35px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .timer {
+        gap: 7px;
+    }
+
+    .time-box {
+        min-height: 95px;
+        padding: 14px 5px 12px;
+    }
+
+    .number {
+        font-size: 26px;
+    }
+
+    .label {
+        font-size: 13px;
+    }
+
+    .info,
+    .description {
+        font-size: 17px;
+        line-height: 2.15;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- عنوان -->
+
+    <h1>یاد و نام سید علی موسوی</h1>
+
+
+    <!-- عکس -->
+
+    <div class="photo-box">
+
+        <img
+        src="seyed-ali-mousavi.jpg"
+        alt="سید علی موسوی"
+        >
+
+    </div>
+
+
+    <!-- مشخصات -->
+
+    <div class="info">
+
+        <div>
+            <strong>نام:</strong>
+            سید علی موسوی
+        </div>
+
+        <div>
+            <strong>سن:</strong>
+            ۱۲ سال
+        </div>
+
+        <div>
+            <strong>شهر:</strong>
+            رامهرمز، خوزستان
+        </div>
+
+        <div>
+            <strong>تاریخ:</strong>
+            ۲۵ آبان ۱۳۹۸
+        </div>
+
+        <div>
+            <strong>مناسبت:</strong>
+            اعتراضات آبان ۱۳۹۸
+        </div>
+
+    </div>
+
+
+    <!-- عنوان تایمر -->
+
+    <div class="timer-title">
+
+        ساعات، دقایق و ثانیه‌هایی که از نبودن سید علی موسوی گذشت
+
+    </div>
+
+
+    <!-- تایمر -->
+
+    <div class="timer">
+
+
+        <!-- روز -->
+
+        <div class="time-box">
+
+            <div class="number" id="days">
+                ۰
+            </div>
+
+            <div class="label">
+                روز
+            </div>
+
+        </div>
+
+
+        <!-- ساعت -->
+
+        <div class="time-box">
+
+            <div class="number" id="hours">
+                ۰
+            </div>
+
+            <div class="label">
+                ساعت
+            </div>
+
+        </div>
+
+
+        <!-- دقیقه -->
+
+        <div class="time-box">
+
+            <div class="number" id="minutes">
+                ۰
+            </div>
+
+            <div class="label">
+                دقیقه
+            </div>
+
+        </div>
+
+
+        <!-- ثانیه -->
+
+        <div class="time-box">
+
+            <div class="number" id="seconds">
+                ۰
+            </div>
+
+            <div class="label">
+                ثانیه
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- سرگذشت -->
+
+    <div class="description">
+
+        سید علی موسوی تنها ۱۲ سال داشت.
+
+        <br><br>
+
+        او در جریان اعتراضات آبان ۱۳۹۸ در رامهرمز، در استان خوزستان، در تاریخ ۲۵ آبان ۱۳۹۸ کشته شد.
+
+        <br><br>
+
+        نام او در فهرست جان‌باختگان اعتراضات آبان ۱۳۹۸ در رامهرمز ثبت شده است.
+
+        <br><br>
+
+        به بچه‌های‌مان شلیک کردند؛
+        روایتی تلخ از حضور کودکان در میان جان‌باختگان اعتراضات آبان ۱۳۹۸.
+
+        <br><br>
+
+        این صفحه برای ثبت یاد و نام سید علی موسوی و نگه‌داشتن روایت او در حافظه جمعی ساخته شده است.
+
+    </div>
+
+
+    <!-- عنوان پایانی -->
+
+    <div class="footer">
+
+        یاد و نام سید علی موسوی
+
+    </div>
+
+</div>
+
+
+<script>
+
+/*
+    تاریخ آغاز شمارنده:
+
+    ۲۵ آبان ۱۳۹۸
+    ساعت ۰۰:۰۰:۰۰
+
+    معادل میلادی:
+    ۱۶ نوامبر ۲۰۱۹
+*/
+
+const startDate = new Date("2019-11-16T00:00:00");
+
+
+/* تبدیل اعداد انگلیسی به فارسی */
+
+function persianNumber(number) {
+
+    return number
+        .toString()
+        .replace(/0/g, "۰")
+        .replace(/1/g, "۱")
+        .replace(/2/g, "۲")
+        .replace(/3/g, "۳")
+        .replace(/4/g, "۴")
+        .replace(/5/g, "۵")
+        .replace(/6/g, "۶")
+        .replace(/7/g, "۷")
+        .replace(/8/g, "۸")
+        .replace(/9/g, "۹");
+
+}
+
+
+/* بروزرسانی شمارنده */
+
+function updateTimer() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+
+    const totalSeconds =
+        Math.floor(difference / 1000);
+
+
+    const days =
+        Math.floor(totalSeconds / 86400);
+
+
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+
+    const seconds =
+        totalSeconds % 60;
+
+
+    document.getElementById("days").textContent =
+        persianNumber(days);
+
+
+    document.getElementById("hours").textContent =
+        persianNumber(hours);
+
+
+    document.getElementById("minutes").textContent =
+        persianNumber(minutes);
+
+
+    document.getElementById("seconds").textContent =
+        persianNumber(seconds);
+
+}
+
+
+/* اجرای اولیه */
+
+updateTimer();
+
+
+/* بروزرسانی هر ثانیه */
+
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
+```
+
