@@ -1,1 +1,298 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>یاد و نام محمد قائمی‌فر آسترکی</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background: #111;
+            color: #eee;
+            font-family: Tahoma, Arial, sans-serif;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 10px 0 28px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #f1f1f1;
+        }
+
+        .photo-box {
+            width: 100%;
+            margin: 0 auto 25px;
+        }
+
+        .photo-box img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            max-height: 520px;
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        .city {
+            margin-top: 15px;
+            font-size: 21px;
+            font-weight: bold;
+            color: #d62828;
+        }
+
+        .description {
+            margin-top: 35px;
+            padding: 25px 22px;
+
+            background: #181818;
+            border-right: 3px solid #d62828;
+            border-radius: 8px;
+
+            line-height: 2.2;
+            font-size: 18px;
+            text-align: right;
+
+            color: #e8e8e8;
+        }
+
+        /* شمارنده */
+
+        .counter-section {
+            margin-top: 42px;
+            padding: 28px 15px 30px;
+
+            background: #151515;
+            border-radius: 10px;
+            border: 1px solid #292929;
+        }
+
+        .counter-title {
+            margin-bottom: 24px;
+
+            font-size: 20px;
+            line-height: 1.8;
+            font-weight: bold;
+
+            color: #d62828;
+        }
+
+        .counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            direction: rtl;
+            flex-wrap: wrap;
+        }
+
+        .counter-item {
+            min-width: 115px;
+            padding: 14px 10px;
+
+            background: #1d1d1d;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .number {
+            display: block;
+
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.2;
+
+            color: #e63946;
+            direction: ltr;
+        }
+
+        .label {
+            display: block;
+            margin-top: 7px;
+
+            font-size: 15px;
+            color: #aaa;
+        }
+
+        .footer {
+            margin-top: 45px;
+            padding-top: 20px;
+
+            border-top: 1px solid #292929;
+
+            font-size: 16px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 30px;
+                margin-bottom: 22px;
+            }
+
+            .description {
+                font-size: 17px;
+                line-height: 2.1;
+                padding: 22px 18px;
+            }
+
+            .counter-section {
+                margin-top: 32px;
+                padding: 24px 10px;
+            }
+
+            .counter-title {
+                font-size: 18px;
+            }
+
+            .counter {
+                gap: 7px;
+            }
+
+            .counter-item {
+                min-width: 82px;
+                padding: 12px 7px;
+            }
+
+            .number {
+                font-size: 26px;
+            }
+
+            .label {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>محمد قائمی‌فر آسترکی</h1>
+
+        <div class="photo-box">
+            <img src="mohammad-ghaemi-far.jpg"
+                 alt="محمد قائمی‌فر آسترکی">
+        </div>
+
+        <div class="city">
+            دزفول
+        </div>
+
+        <div class="description">
+            محمد قائمی‌فر آسترکی، نوجوان ۱۷ ساله اهل دزفول بود.
+            او در ۳۰ مهر ۱۴۰۱ در جریان اعتراضات دزفول از ناحیه سر هدف گلوله قرار گرفت
+            و پس از ۱۵ روز کما، در ۱۵ آبان ۱۴۰۱ جان باخت.
+            پیکر او بامداد ۱۶ آبان، به‌صورت مخفیانه به خاک سپرده شد.
+        </div>
+
+        <div class="counter-section">
+
+            <div class="counter-title">
+                ساعات، دقایق و ثانیه‌هایی که از نبودن محمد گذشت
+            </div>
+
+            <div class="counter">
+
+                <div class="counter-item">
+                    <span class="number" id="days">0</span>
+                    <span class="label">روز</span>
+                </div>
+
+                <div class="counter-item">
+                    <span class="number" id="hours">0</span>
+                    <span class="label">ساعت</span>
+                </div>
+
+                <div class="counter-item">
+                    <span class="number" id="minutes">0</span>
+                    <span class="label">دقیقه</span>
+                </div>
+
+                <div class="counter-item">
+                    <span class="number" id="seconds">0</span>
+                    <span class="label">ثانیه</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            یاد و نام محمد قائمی‌فر آسترکی
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /*
+         * تاریخ آغاز شمارنده:
+         * ۱۵ آبان ۱۴۰۱
+         * برابر با ۶ نوامبر ۲۰۲۲
+         */
+
+        const startDate = new Date(2022, 10, 6, 0, 0, 0);
+
+        function updateCounter() {
+
+            const now = new Date();
+
+            let difference = now - startDate;
+
+            if (difference < 0) {
+                difference = 0;
+            }
+
+            const totalSeconds = Math.floor(difference / 1000);
+
+            const days = Math.floor(totalSeconds / 86400);
+
+            const hours = Math.floor(
+                (totalSeconds % 86400) / 3600
+            );
+
+            const minutes = Math.floor(
+                (totalSeconds % 3600) / 60
+            );
+
+            const seconds = totalSeconds % 60;
+
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        updateCounter();
+
+        setInterval(updateCounter, 1000);
+
+    </script>
+
+</body>
+</html>
+```
 
