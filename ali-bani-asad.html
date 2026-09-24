@@ -1,6 +1,7 @@
 ```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,227 +9,449 @@
 <title>یاد و نام علی بنی‌اسد</title>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #111;
-        color: #eee;
-        font-family: Tahoma, Arial, sans-serif;
-        text-align: center;
-    }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #111;
+    color: #eee;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px 18px 40px;
+    text-align: center;
+}
+
+/* عنوان */
+
+h1 {
+    margin: 5px 0 25px;
+    font-size: 34px;
+    color: #fff;
+}
+
+/* عکس */
+
+.photo-box {
+    width: 100%;
+    margin: 0 auto 28px;
+}
+
+.photo-box img {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* اطلاعات */
+
+.info {
+    background: #181818;
+    border-right: 3px solid #d62828;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 30px;
+    text-align: right;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.info strong {
+    color: #fff;
+}
+
+/* عنوان تایمر */
+
+.timer-title {
+    font-size: 18px;
+    color: #ddd;
+    margin: 25px 0 18px;
+    line-height: 1.8;
+}
+
+/* تایمر چهارخانه */
+
+.timer {
+    direction: ltr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto 35px;
+}
+
+/* هر خانه */
+
+.time-box {
+    background: #181818;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 18px 8px 14px;
+    min-height: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* عدد */
+
+.number {
+    direction: rtl;
+    font-size: 34px;
+    font-weight: bold;
+    color: #d62828;
+    line-height: 1.2;
+}
+
+/* عنوان زیر عدد */
+
+.label {
+    direction: rtl;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* توضیحات */
+
+.description {
+    margin-top: 10px;
+    padding: 25px 22px;
+    background: #181818;
+    border-right: 3px solid #d62828;
+    border-radius: 8px;
+
+    line-height: 2.25;
+    font-size: 18px;
+    text-align: right;
+
+    color: #e8e8e8;
+}
+
+/* عنوان پایانی */
+
+.footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+
+    font-size: 18px;
+    color: #aaa;
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
 
     .container {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 30px 20px;
+        padding: 20px 14px 35px;
     }
 
     h1 {
-        font-size: 34px;
-        margin-bottom: 35px;
-        color: #fff;
-    }
-
-    /* شمارنده */
-    .timer-title {
-        font-size: 18px;
-        color: #ccc;
-        margin-bottom: 18px;
+        font-size: 29px;
     }
 
     .timer {
-        direction: ltr;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 12px;
-        margin: 10px auto 35px;
+        gap: 7px;
     }
 
     .time-box {
-        min-width: 85px;
+        min-height: 95px;
+        padding: 14px 5px 12px;
     }
 
     .number {
-        font-size: 38px;
-        font-weight: bold;
-        color: #d62828;
-        line-height: 1.2;
+        font-size: 26px;
     }
 
     .label {
-        margin-top: 8px;
-        font-size: 17px;
-        color: #ddd;
+        font-size: 13px;
     }
 
-    .dash {
-        font-size: 34px;
-        color: #777;
-        line-height: 1.2;
-    }
-
+    .info,
     .description {
-        margin-top: 30px;
-        padding: 25px 22px;
-        background: #181818;
-        border-right: 3px solid #d62828;
-        border-radius: 8px;
-        line-height: 2.2;
-        font-size: 18px;
-        text-align: right;
-        color: #e8e8e8;
+        font-size: 17px;
+        line-height: 2.15;
     }
+}
 
-    .footer {
-        margin-top: 35px;
-        padding-bottom: 30px;
-        font-size: 18px;
-        color: #aaa;
-    }
-
-    @media (max-width: 600px) {
-        .container {
-            padding: 25px 15px;
-        }
-
-        h1 {
-            font-size: 29px;
-        }
-
-        .timer {
-            gap: 5px;
-        }
-
-        .time-box {
-            min-width: 65px;
-        }
-
-        .number {
-            font-size: 29px;
-        }
-
-        .label {
-            font-size: 14px;
-        }
-
-        .dash {
-            font-size: 27px;
-        }
-    }
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+    <!-- عنوان -->
+
     <h1>یاد و نام علی بنی‌اسد</h1>
 
-    <div class="timer-title">
-        ساعات، دقایق و ثانیه‌هایی که از نبودن علی بنی‌اسد گذشت
+
+    <!-- عکس -->
+
+    <div class="photo-box">
+
+        <img
+        src="ali-bani-asad.jpg"
+        alt="علی بنی‌اسد"
+        >
+
     </div>
+
+
+    <!-- مشخصات -->
+
+    <div class="info">
+
+        <div>
+            <strong>نام:</strong>
+            علی بنی‌اسد
+        </div>
+
+        <div>
+            <strong>سن:</strong>
+            ۲۰ سال
+        </div>
+
+        <div>
+            <strong>شهر:</strong>
+            اهواز
+        </div>
+
+        <div>
+            <strong>تاریخ:</strong>
+            مهر ۱۴۰۱
+        </div>
+
+        <div>
+            <strong>محل:</strong>
+            اهواز
+        </div>
+
+    </div>
+
+
+    <!-- عنوان شمارنده -->
+
+    <div class="timer-title">
+
+        ساعات، دقایق و ثانیه‌هایی که از نبودن علی بنی‌اسد گذشت
+
+    </div>
+
+
+    <!-- تایمر چهارخانه -->
 
     <div class="timer">
 
+
+        <!-- روز -->
+
         <div class="time-box">
-            <div class="number" id="days">۰</div>
-            <div class="label">روز</div>
+
+            <div class="number" id="days">
+                ۰
+            </div>
+
+            <div class="label">
+                روز
+            </div>
+
         </div>
 
-        <div class="dash">-</div>
+
+        <!-- ساعت -->
 
         <div class="time-box">
-            <div class="number" id="hours">۰</div>
-            <div class="label">ساعت</div>
+
+            <div class="number" id="hours">
+                ۰
+            </div>
+
+            <div class="label">
+                ساعت
+            </div>
+
         </div>
 
-        <div class="dash">-</div>
+
+        <!-- دقیقه -->
 
         <div class="time-box">
-            <div class="number" id="minutes">۰</div>
-            <div class="label">دقیقه</div>
+
+            <div class="number" id="minutes">
+                ۰
+            </div>
+
+            <div class="label">
+                دقیقه
+            </div>
+
         </div>
 
-        <div class="dash">-</div>
+
+        <!-- ثانیه -->
 
         <div class="time-box">
-            <div class="number" id="seconds">۰</div>
-            <div class="label">ثانیه</div>
+
+            <div class="number" id="seconds">
+                ۰
+            </div>
+
+            <div class="label">
+                ثانیه
+            </div>
+
         </div>
 
     </div>
+
+
+    <!-- سرگذشت -->
 
     <div class="description">
+
         علی بنی‌اسد، جوان ۲۰ ساله اهل اهواز بود.
+
         <br><br>
-        مهر ۱۴۰۱، پیکر او در اهواز کشف و تحویل خانواده شد.
+
+        در جریان اعتراضات سال ۱۴۰۱، نام علی بنی‌اسد در میان جان‌باختگان این اعتراضات ثبت شد.
+
+        <br><br>
+
+        در مهرماه ۱۴۰۱، پیکر او در اهواز کشف و به خانواده تحویل داده شد.
+
+        <br><br>
+
+        این صفحه برای زنده نگه داشتن یاد و نام علی بنی‌اسد و ثبت بخشی از سرگذشت او ساخته شده است.
+
+        <br><br>
+
+        زمان روی این صفحه به‌صورت زنده ادامه دارد؛
+        هر ثانیه، یادآور زمانی است که از نبودن او گذشته است.
+
     </div>
 
+
+    <!-- پایان -->
+
     <div class="footer">
+
         یاد و نام علی بنی‌اسد
+
     </div>
 
 </div>
 
+
 <script>
 
-    // تاریخ و ساعت مبنای شمارنده
-    //  مهر ۱۴۰۱ - در صورت داشتن ساعت دقیق، این قسمت را اصلاح می‌کنیم
-    const startDate = new Date("2022-10-01T00:00:00");
+/* تاریخ آغاز شمارنده
+   ۱ مهر ۱۴۰۱ - ساعت ۰۰:۰۰:۰۰
+*/
 
-    function persianNumber(number) {
-        return number
-            .toString()
-            .replace(/0/g, "۰")
-            .replace(/1/g, "۱")
-            .replace(/2/g, "۲")
-            .replace(/3/g, "۳")
-            .replace(/4/g, "۴")
-            .replace(/5/g, "۵")
-            .replace(/6/g, "۶")
-            .replace(/7/g, "۷")
-            .replace(/8/g, "۸")
-            .replace(/9/g, "۹");
+const startDate = new Date("2022-09-23T00:00:00");
+
+
+/* تبدیل اعداد انگلیسی به فارسی */
+
+function persianNumber(number) {
+
+    return number
+    .toString()
+    .replace(/0/g, "۰")
+    .replace(/1/g, "۱")
+    .replace(/2/g, "۲")
+    .replace(/3/g, "۳")
+    .replace(/4/g, "۴")
+    .replace(/5/g, "۵")
+    .replace(/6/g, "۶")
+    .replace(/7/g, "۷")
+    .replace(/8/g, "۸")
+    .replace(/9/g, "۹");
+
+}
+
+
+/* به‌روزرسانی تایمر */
+
+function updateTimer() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
     }
 
-    function updateTimer() {
 
-        const now = new Date();
+    const totalSeconds =
+        Math.floor(difference / 1000);
 
-        let difference = now - startDate;
 
-        if (difference < 0) {
-            difference = 0;
-        }
+    const days =
+        Math.floor(totalSeconds / 86400);
 
-        const totalSeconds = Math.floor(difference / 1000);
 
-        const days = Math.floor(totalSeconds / 86400);
-        const hours = Math.floor((totalSeconds % 86400) / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
 
-        document.getElementById("days").textContent =
-            persianNumber(days);
 
-        document.getElementById("hours").textContent =
-            persianNumber(hours);
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
 
-        document.getElementById("minutes").textContent =
-            persianNumber(minutes);
 
-        document.getElementById("seconds").textContent =
-            persianNumber(seconds);
-    }
+    const seconds =
+        totalSeconds % 60;
 
-    updateTimer();
 
-    setInterval(updateTimer, 1000);
+    document.getElementById("days").textContent =
+        persianNumber(days);
+
+
+    document.getElementById("hours").textContent =
+        persianNumber(hours);
+
+
+    document.getElementById("minutes").textContent =
+        persianNumber(minutes);
+
+
+    document.getElementById("seconds").textContent =
+        persianNumber(seconds);
+
+}
+
+
+/* اجرای اولیه */
+
+updateTimer();
+
+
+/* بروزرسانی هر ثانیه */
+
+setInterval(updateTimer, 1000);
 
 </script>
 
 </body>
 </html>
 ```
-
