@@ -1,1 +1,248 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام احد بشاره دورقی</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    background: #111;
+    color: #eee;
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 10px 0 28px;
+    color: #f1f1f1;
+}
+
+.photo {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px;
+    border-radius: 8px;
+}
+
+.city {
+    font-size: 21px;
+    color: #d62828;
+    margin-bottom: 30px;
+}
+
+.timer-title {
+    font-size: 20px;
+    line-height: 1.9;
+    margin: 25px 0 18px;
+    color: #ddd;
+}
+
+.timer {
+    direction: ltr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.time-box {
+    min-width: 85px;
+}
+
+.number {
+    font-size: 38px;
+    font-weight: bold;
+    color: #e63946;
+    direction: ltr;
+}
+
+.label {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #aaa;
+}
+
+.description {
+    margin-top: 38px;
+    padding: 28px 24px;
+
+    background: #181818;
+    border-right: 3px solid #d62828;
+    border-radius: 8px;
+
+    line-height: 2.25;
+    font-size: 18px;
+    text-align: right;
+
+    color: #e8e8e8;
+}
+
+.footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+
+    font-size: 20px;
+    color: #ddd;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .number {
+        font-size: 30px;
+    }
+
+    .time-box {
+        min-width: 70px;
+    }
+
+    .description {
+        font-size: 17px;
+        line-height: 2.15;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>احد بشاره دورقی</h1>
+
+    <img src="11.png" alt="احد بشاره دورقی" class="photo">
+
+    <div class="city">ماهشهر</div>
+
+    <div class="timer-title">
+        ساعات، دقایق و ثانیه‌هایی که از نبودن احد بشاره دورقی گذشت
+    </div>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <div class="number" id="days">0</div>
+            <div class="label">روز</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="hours">0</div>
+            <div class="label">ساعت</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="minutes">0</div>
+            <div class="label">دقیقه</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="seconds">0</div>
+            <div class="label">ثانیه</div>
+        </div>
+
+    </div>
+
+
+    <div class="description">
+
+        احد بشاره دورقی، متولد ۱۳۷۶ و کارگر یک کارگاه MDF در ماهشهر بود.
+        او روز یکشنبه ۲۶ آبان ۱۳۹۸، در جریان اعتراضات ماهشهر،
+        بر اثر اصابت گلوله جان باخت.
+
+        <br><br>
+
+        بر اساس گزارش‌های منتشرشده، گلوله به کمر او اصابت کرد.
+        همچنین در گزارشی به نقل از یک شاهد محلی آمده است که برای
+        تحویل پیکر او، مبلغ ۳۵ میلیون تومان از عمویش مطالبه شده بود.
+
+    </div>
+
+
+    <div class="footer">
+        یاد و نام احد بشاره دورقی
+    </div>
+
+</div>
+
+
+<script>
+
+const deathDate = new Date(2019, 10, 17, 0, 0, 0);
+// ۲۶ آبان ۱۳۹۸ = 17 November 2019
+
+function updateTimer() {
+
+    const now = new Date();
+
+    let difference = now - deathDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+
+    document.getElementById("days").textContent =
+        days.toLocaleString("fa-IR");
+
+    document.getElementById("hours").textContent =
+        hours.toLocaleString("fa-IR");
+
+    document.getElementById("minutes").textContent =
+        minutes.toLocaleString("fa-IR");
+
+    document.getElementById("seconds").textContent =
+        seconds.toLocaleString("fa-IR");
+}
+
+updateTimer();
+
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
