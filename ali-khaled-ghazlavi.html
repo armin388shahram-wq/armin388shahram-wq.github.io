@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام علی و خالد غزلاوی</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #111;
+    color: #eee;
+    font-family: Tahoma, Arial, sans-serif;
+    direction: rtl;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+    text-align: center;
+}
+
+h1 {
+    margin: 10px 0 25px;
+    font-size: 34px;
+    line-height: 1.8;
+    color: #f1f1f1;
+}
+
+.photo-box {
+    width: 100%;
+    margin: 0 auto 30px;
+}
+
+.photo-box img {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.names {
+    margin-top: 25px;
+    font-size: 25px;
+    line-height: 2;
+    color: #eee;
+}
+
+.names span {
+    display: block;
+}
+
+.age {
+    font-size: 19px;
+    color: #bbb;
+}
+
+.timer-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-right: 15px;
+    border-right: 3px solid #d62828;
+
+    text-align: right;
+    font-size: 19px;
+    line-height: 2;
+    color: #ddd;
+}
+
+.timer {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 35px;
+}
+
+.time-box {
+    min-width: 115px;
+    padding: 14px 8px;
+    background: #181818;
+    border-radius: 8px;
+    border: 1px solid #292929;
+}
+
+.number {
+    display: block;
+    font-size: 34px;
+    font-weight: bold;
+    color: #d62828;
+    direction: ltr;
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+.label {
+    display: block;
+    margin-top: 6px;
+    font-size: 15px;
+    color: #aaa;
+}
+
+.description {
+    margin-top: 35px;
+    padding: 25px 22px;
+
+    background: #181818;
+    border-right: 3px solid #d62828;
+    border-radius: 8px;
+
+    line-height: 2.3;
+    font-size: 18px;
+    text-align: right;
+    color: #e8e8e8;
+}
+
+.footer {
+    margin-top: 45px;
+    font-size: 18px;
+    color: #999;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام علی و خالد غزلاوی</h1>
+
+    <div class="photo-box">
+        <img src="ali-khaled-ghazlavi.jpg"
+             alt="یاد و نام علی و خالد غزلاوی">
+    </div>
+
+    <div class="names">
+        <span>علی — ۱۲ ساله</span>
+        <span>خالد غزلاوی — ۱۶ ساله</span>
+    </div>
+
+    <div class="timer-title">
+        زمان‌هایی که از نبودن علی و خالد گذشت
+    </div>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <span class="number" id="days">۰</span>
+            <span class="label">روز</span>
+        </div>
+
+        <div class="time-box">
+            <span class="number" id="hours">۰</span>
+            <span class="label">ساعت</span>
+        </div>
+
+        <div class="time-box">
+            <span class="number" id="minutes">۰</span>
+            <span class="label">دقیقه</span>
+        </div>
+
+        <div class="time-box">
+            <span class="number" id="seconds">۰</span>
+            <span class="label">ثانیه</span>
+        </div>
+
+    </div>
+
+
+    <div class="description">
+
+        علی، کودکی ۱۲ ساله بود که نامش در میان جان‌باختگان خیزش مردم خوزستان ثبت شد.
+
+        <br><br>
+
+        خالد غزلاوی نیز نوجوانی ۱۶ ساله بود که در جریان اعتراضات، جان خود را از دست داد.
+
+        <br><br>
+
+        یاد و نام این دو نوجوان، بخشی از حافظه مردم خوزستان است.
+
+    </div>
+
+
+    <div class="footer">
+        خون جاری خوزستان
+        <br>
+        یاد و نام جان‌باختگان خوزستان
+    </div>
+
+</div>
+
+
+<script>
+
+/* 
+   ۲۵ آبان ۱۴۰۱
+   برابر با ۱۶ نوامبر ۲۰۲۲
+   ساعت ۱۲:۰۰ ظهر
+*/
+
+const startDate = new Date("2022-11-16T12:00:00+03:30");
+
+
+function persianNumber(number) {
+
+    const digits = "۰۱۲۳۴۵۶۷۸۹";
+
+    return number
+        .toString()
+        .replace(/\d/g, function(digit) {
+            return digits[digit];
+        });
+}
+
+
+function updateTimer() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+
+    document.getElementById("days").textContent =
+        persianNumber(days);
+
+    document.getElementById("hours").textContent =
+        persianNumber(hours);
+
+    document.getElementById("minutes").textContent =
+        persianNumber(minutes);
+
+    document.getElementById("seconds").textContent =
+        persianNumber(seconds);
+}
+
+
+updateTimer();
+
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
