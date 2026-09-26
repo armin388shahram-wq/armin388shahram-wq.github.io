@@ -1,1 +1,270 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام احمد چراغیان</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    background: #111;
+    color: #eee;
+    font-family: Tahoma, Arial, sans-serif;
+    direction: rtl;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 10px 0 15px;
+    color: #f2f2f2;
+    font-weight: bold;
+}
+
+.location {
+    font-size: 20px;
+    color: #d0d0d0;
+    margin-bottom: 35px;
+}
+
+.timer-title {
+    font-size: 19px;
+    color: #ccc;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+.timer {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto 40px;
+    flex-wrap: nowrap;
+}
+
+.time-box {
+    min-width: 110px;
+    padding: 14px 8px;
+    background: #181818;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.number {
+    font-size: 34px;
+    font-weight: bold;
+    color: #d62828;
+    direction: ltr;
+    line-height: 1.2;
+}
+
+.label {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #aaa;
+}
+
+.description {
+    margin-top: 20px;
+    padding: 28px 24px;
+    background: #181818;
+    border-right: 3px solid #d62828;
+    border-radius: 8px;
+    line-height: 2.25;
+    font-size: 18px;
+    text-align: right;
+    color: #e8e8e8;
+}
+
+.footer {
+    margin-top: 38px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 17px;
+    color: #999;
+    line-height: 2;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 22px 12px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .location {
+        font-size: 18px;
+    }
+
+    .timer {
+        gap: 5px;
+    }
+
+    .time-box {
+        min-width: 76px;
+        padding: 11px 4px;
+    }
+
+    .number {
+        font-size: 25px;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .description {
+        font-size: 17px;
+        line-height: 2.15;
+        padding: 22px 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>احمد چراغیان</h1>
+
+    <div class="location">
+        شهرک چمران (جراحی) ـ ماهشهر
+    </div>
+
+    <div class="timer-title">
+        ساعات، دقایق و ثانیه‌هایی که از نبودن احمد چراغیان گذشت
+    </div>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <div class="number" id="days">۰</div>
+            <div class="label">روز</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="hours">۰</div>
+            <div class="label">ساعت</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="minutes">۰</div>
+            <div class="label">دقیقه</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="seconds">۰</div>
+            <div class="label">ثانیه</div>
+        </div>
+
+    </div>
+
+    <div class="description">
+
+        احمد چراغیان، متولد ۱۳۵۸ در جایزانِ امیدیه خوزستان، کارمند بخش بهره‌برداری پتروشیمی تندگویان ماهشهر بود.
+
+        <br><br>
+
+        او متأهل و پدر سه دختر بود.
+
+        <br><br>
+
+        در جریان اعتراضات آبان ۱۳۹۸، روز دوشنبه ۲۷ آبان، در شهرک چمران (جراحی) ماهشهر، نیروهای سپاه پاسداران با دوشکا به سوی معترضان شلیک کردند.
+
+        <br><br>
+
+        احمد چراغیان و سالم سنجری (سنجریان) و شمار دیگری از معترضان در این واقعه جان باختند.
+
+    </div>
+
+    <div class="footer">
+
+        یاد و نام احمد چراغیان
+
+        <br>
+
+        خون جاری خوزستان
+
+    </div>
+
+</div>
+
+<script>
+
+function updateTimer() {
+
+    // ۲۷ آبان ۱۳۹۸ = ۱۸ نوامبر ۲۰۱۹
+    const startDate = new Date("2019-11-18T00:00:00");
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("days").textContent =
+        days.toLocaleString("fa-IR");
+
+    document.getElementById("hours").textContent =
+        hours.toLocaleString("fa-IR");
+
+    document.getElementById("minutes").textContent =
+        minutes.toLocaleString("fa-IR");
+
+    document.getElementById("seconds").textContent =
+        seconds.toLocaleString("fa-IR");
+}
+
+updateTimer();
+
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+
+</html>
+```
+
