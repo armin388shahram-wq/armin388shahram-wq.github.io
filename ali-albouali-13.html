@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام علی آلبوعلی</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #111;
+    color: #eee;
+    font-family: Tahoma, Arial, sans-serif;
+    direction: rtl;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px 18px 35px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 5px 0 25px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.photo-box {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.photo-box img {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.city {
+    margin-top: 15px;
+    font-size: 21px;
+    color: #ddd;
+    font-weight: bold;
+}
+
+.age {
+    margin-top: 8px;
+    font-size: 18px;
+    color: #bbb;
+}
+
+.description {
+    margin-top: 25px;
+    padding: 18px 20px;
+    background: #191919;
+    border-right: 3px solid #b30000;
+    border-radius: 4px;
+    text-align: right;
+    line-height: 2.1;
+    font-size: 17px;
+    color: #ddd;
+}
+
+.timer-title {
+    margin-top: 32px;
+    margin-bottom: 15px;
+    font-size: 19px;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.timer {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+}
+
+.time-box {
+    min-width: 75px;
+    padding: 10px 5px;
+    background: #191919;
+    border-radius: 6px;
+}
+
+.time-number {
+    font-size: 27px;
+    font-weight: bold;
+    color: #d8a72c;
+    direction: ltr;
+}
+
+.time-label {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.date-info {
+    margin-top: 22px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.footer {
+    margin-top: 35px;
+    padding-top: 18px;
+    border-top: 1px solid #333;
+    font-size: 15px;
+    color: #888;
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 20px 12px 30px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    .timer {
+        gap: 4px;
+    }
+
+    .time-box {
+        min-width: 67px;
+        padding: 9px 3px;
+    }
+
+    .time-number {
+        font-size: 22px;
+    }
+
+    .time-label {
+        font-size: 11px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام علی آلبوعلی</h1>
+
+    <div class="photo-box">
+        <img src="13.jpg" alt="علی آلبوعلی">
+    </div>
+
+    <div class="city">
+        استان خوزستان، ایران
+    </div>
+
+    <div class="age">
+        ۱۵ ساله
+    </div>
+
+    <div class="description">
+        علی آلبوعلی، نوجوان ۱۵ ساله، در جریان اعتراض‌های فروردین ۱۳۸۴ در خوزستان جان باخت.
+        بنا بر اطلاعات گزارش‌شده به بنیاد عبدالرحمن برومند، علی در جریان این اعتراض‌ها
+        توسط نیروهای امنیتی و انتظامی کشته شد.
+        اطلاعات مربوط به او بر پایه گزارش‌های حقوق بشری و منابع گردآوری‌شده درباره
+        اعتراض‌های شهرهای عرب‌نشین خوزستان ثبت شده است.
+    </div>
+
+    <div class="timer-title">
+        ساعات، دقایق و ثانیه‌هایی که از نبودن علی آلبوعلی گذشت
+    </div>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <div class="time-number" id="days">۰</div>
+            <div class="time-label">روز</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="hours">۰</div>
+            <div class="time-label">ساعت</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="minutes">۰</div>
+            <div class="time-label">دقیقه</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="seconds">۰</div>
+            <div class="time-label">ثانیه</div>
+        </div>
+
+    </div>
+
+    <div class="date-info">
+        تاریخ مبنا: ۱۲ فروردین ۱۳۸۴
+    </div>
+
+    <div class="footer">
+        یاد و نام علی آلبوعلی
+    </div>
+
+</div>
+
+<script>
+
+/* 
+   ۱۲ فروردین ۱۳۸۴
+   برابر با ۱ آوریل ۲۰۰۵
+*/
+
+const startDate = new Date(2005, 3, 1, 0, 0, 0);
+
+function toPersianNumber(number) {
+    return String(number).replace(/\d/g, function(d) {
+        return "۰۱۲۳۴۵۶۷۸۹"[d];
+    });
+}
+
+function updateTimer() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const remainingAfterDays = totalSeconds % 86400;
+
+    const hours = Math.floor(remainingAfterDays / 3600);
+
+    const remainingAfterHours = remainingAfterDays % 3600;
+
+    const minutes = Math.floor(remainingAfterHours / 60);
+
+    const seconds = remainingAfterHours % 60;
+
+    document.getElementById("days").textContent =
+        toPersianNumber(days);
+
+    document.getElementById("hours").textContent =
+        toPersianNumber(hours);
+
+    document.getElementById("minutes").textContent =
+        toPersianNumber(minutes);
+
+    document.getElementById("seconds").textContent =
+        toPersianNumber(seconds);
+}
+
+updateTimer();
+
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
