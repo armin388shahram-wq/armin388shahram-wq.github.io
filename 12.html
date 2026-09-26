@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -31,12 +31,27 @@ body {
     text-align: center;
 }
 
+/* عنوان */
+
 h1 {
     font-size: 36px;
-    margin: 10px 0 15px;
+    margin: 10px 0 22px;
     color: #f2f2f2;
     font-weight: bold;
 }
+
+/* عکس */
+
+.photo {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    margin: 0 auto 28px;
+    border-radius: 8px;
+}
+
+/* محل */
 
 .location {
     font-size: 20px;
@@ -44,12 +59,16 @@ h1 {
     margin-bottom: 35px;
 }
 
+/* عنوان تایمر */
+
 .timer-title {
     font-size: 19px;
     color: #ccc;
     margin-bottom: 18px;
     line-height: 1.8;
 }
+
+/* تایمر */
 
 .timer {
     display: flex;
@@ -83,26 +102,44 @@ h1 {
     color: #aaa;
 }
 
+/* متن معرفی */
+
 .description {
     margin-top: 20px;
     padding: 28px 24px;
+
     background: #181818;
+
     border-right: 3px solid #d62828;
+
     border-radius: 8px;
+
     line-height: 2.25;
+
     font-size: 18px;
+
     text-align: right;
+
     color: #e8e8e8;
 }
+
+/* پایین صفحه */
 
 .footer {
     margin-top: 38px;
     padding-top: 20px;
+
     border-top: 1px solid #333;
+
     font-size: 17px;
+
     color: #999;
+
     line-height: 2;
 }
+
+
+/* نسخه موبایل */
 
 @media (max-width: 600px) {
 
@@ -147,43 +184,122 @@ h1 {
 
 </head>
 
+
 <body>
 
 <div class="container">
 
-    <h1>احمد چراغیان</h1>
+
+    <!-- نام -->
+
+    <h1>
+        احمد چراغیان
+    </h1>
+
+
+    <!-- عکس احمد چراغیان -->
+
+    <img
+        src="12.jpg"
+        alt="احمد چراغیان"
+        class="photo"
+    >
+
+
+    <!-- محل جان‌باختن -->
 
     <div class="location">
         شهرک چمران (جراحی) ـ ماهشهر
     </div>
 
+
+    <!-- عنوان تایمر -->
+
     <div class="timer-title">
         ساعات، دقایق و ثانیه‌هایی که از نبودن احمد چراغیان گذشت
     </div>
 
+
+    <!-- تایمر زنده -->
+
     <div class="timer">
 
-        <div class="time-box">
-            <div class="number" id="days">۰</div>
-            <div class="label">روز</div>
-        </div>
+
+        <!-- روز -->
 
         <div class="time-box">
-            <div class="number" id="hours">۰</div>
-            <div class="label">ساعت</div>
+
+            <div
+                class="number"
+                id="days"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                روز
+            </div>
+
         </div>
 
-        <div class="time-box">
-            <div class="number" id="minutes">۰</div>
-            <div class="label">دقیقه</div>
-        </div>
+
+        <!-- ساعت -->
 
         <div class="time-box">
-            <div class="number" id="seconds">۰</div>
-            <div class="label">ثانیه</div>
+
+            <div
+                class="number"
+                id="hours"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                ساعت
+            </div>
+
+        </div>
+
+
+        <!-- دقیقه -->
+
+        <div class="time-box">
+
+            <div
+                class="number"
+                id="minutes"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                دقیقه
+            </div>
+
+        </div>
+
+
+        <!-- ثانیه -->
+
+        <div class="time-box">
+
+            <div
+                class="number"
+                id="seconds"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                ثانیه
+            </div>
+
         </div>
 
     </div>
+
+
+    <!-- شرح زندگی و واقعه -->
 
     <div class="description">
 
@@ -203,6 +319,9 @@ h1 {
 
     </div>
 
+
+    <!-- پایین صفحه -->
+
     <div class="footer">
 
         یاد و نام احمد چراغیان
@@ -213,58 +332,100 @@ h1 {
 
     </div>
 
+
 </div>
+
 
 <script>
 
+/* ==========================================
+   تایمر زنده احمد چراغیان
+   تاریخ شروع: ۲۷ آبان ۱۳۹۸
+   معادل میلادی: ۱۸ نوامبر ۲۰۱۹
+   ========================================== */
+
 function updateTimer() {
 
-    // ۲۷ آبان ۱۳۹۸ = ۱۸ نوامبر ۲۰۱۹
-    const startDate = new Date("2019-11-18T00:00:00");
 
-    const now = new Date();
+    const startDate =
+        new Date("2019-11-18T00:00:00");
 
-    let difference = now - startDate;
+
+    const now =
+        new Date();
+
+
+    let difference =
+        now - startDate;
+
 
     if (difference < 0) {
+
         difference = 0;
+
     }
 
-    const totalSeconds = Math.floor(difference / 1000);
 
-    const days = Math.floor(totalSeconds / 86400);
+    const totalSeconds =
+        Math.floor(difference / 1000);
 
-    const hours = Math.floor(
-        (totalSeconds % 86400) / 3600
-    );
 
-    const minutes = Math.floor(
-        (totalSeconds % 3600) / 60
-    );
+    const days =
+        Math.floor(
+            totalSeconds / 86400
+        );
 
-    const seconds = totalSeconds % 60;
+
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+
+    const seconds =
+        totalSeconds % 60;
+
 
     document.getElementById("days").textContent =
         days.toLocaleString("fa-IR");
 
+
     document.getElementById("hours").textContent =
         hours.toLocaleString("fa-IR");
+
 
     document.getElementById("minutes").textContent =
         minutes.toLocaleString("fa-IR");
 
+
     document.getElementById("seconds").textContent =
         seconds.toLocaleString("fa-IR");
+
 }
+
+
+/* اجرای اولیه */
 
 updateTimer();
 
-setInterval(updateTimer, 1000);
+
+/* به‌روزرسانی هر ثانیه */
+
+setInterval(
+    updateTimer,
+    1000
+);
 
 </script>
+
 
 </body>
 
 </html>
 ```
-
