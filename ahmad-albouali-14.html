@@ -1,1 +1,277 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام احمد آلبوعلی</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px 15px 40px;
+    background: #111;
+    color: #eee;
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* عنوان */
+h1 {
+    font-size: 34px;
+    margin: 10px 0 22px;
+    color: #f2f2f2;
+}
+
+/* عکس */
+.photo {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    margin: 0 auto 18px;
+    border-radius: 6px;
+}
+
+/* عنوان تایمر */
+.timer-title {
+    font-size: 19px;
+    color: #ddd;
+    margin: 8px 0 12px;
+    line-height: 1.8;
+}
+
+/* تایمر */
+.timer {
+    direction: ltr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto 25px;
+    flex-wrap: nowrap;
+}
+
+.time-box {
+    min-width: 75px;
+}
+
+.number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e63946;
+    line-height: 1.2;
+}
+
+.unit {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+/* شهر */
+.city {
+    font-size: 22px;
+    font-weight: bold;
+    color: #eee;
+    margin: 8px 0 22px;
+}
+
+/* متن توضیحات */
+.description {
+    text-align: right;
+    font-size: 18px;
+    line-height: 2.1;
+    border-right: 3px solid #c62828;
+    padding: 4px 15px 4px 5px;
+    margin-bottom: 28px;
+}
+
+/* پانوشت */
+.footer {
+    margin-top: 35px;
+    padding-top: 18px;
+    border-top: 1px solid #333;
+    color: #999;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px 10px 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+
+    .photo {
+        max-width: 100%;
+        margin-bottom: 14px;
+    }
+
+    .timer-title {
+        font-size: 17px;
+    }
+
+    .timer {
+        gap: 4px;
+    }
+
+    .time-box {
+        min-width: 64px;
+    }
+
+    .number {
+        font-size: 27px;
+    }
+
+    .unit {
+        font-size: 12px;
+    }
+
+    .city {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 17px;
+        line-height: 2;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام احمد آلبوعلی</h1>
+
+    <!-- عکس -->
+    <img src="14.jpg"
+         alt="احمد آلبوعلی"
+         class="photo">
+
+    <!-- تایمر بلافاصله بعد از عکس -->
+    <div class="timer-title">
+        ساعات، دقایق و ثانیه‌هایی که از نبودن احمد آلبوعلی گذشت
+    </div>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <div class="number" id="days">0</div>
+            <div class="unit">روز</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="hours">0</div>
+            <div class="unit">ساعت</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="minutes">0</div>
+            <div class="unit">دقیقه</div>
+        </div>
+
+        <div class="time-box">
+            <div class="number" id="seconds">0</div>
+            <div class="unit">ثانیه</div>
+        </div>
+
+    </div>
+
+    <!-- شهر -->
+    <div class="city">
+        ماهشهر
+    </div>
+
+    <!-- توضیحات -->
+    <div class="description">
+
+        <strong>احمد آلبوعلی، ۱۷ ساله</strong><br><br>
+
+        احمد آلبوعلی، نوجوان ۱۷ ساله، در
+        <strong>۲۷ آبان ۱۳۹۸</strong>
+        در ماهشهر، بر اساس اطلاعات منتشرشده، با شلیک مستقیم مأموران امنیتی جان خود را از دست داد.
+
+        <br><br>
+
+        پیج اینستاگرامی «خون جاری خوزستان» گزارش‌های رسیده درباره جان‌باختگان و بازداشت‌شدگان اعتراضات سراسری خوزستان را منتشر می‌کند.
+
+        <br><br>
+
+        اگر شما نیز اطلاعاتی درباره جان‌باختگان یا بازداشت‌شدگان دارید، برای ما بفرستید.
+
+    </div>
+
+    <div class="footer">
+        یاد و نام احمد آلبوعلی
+    </div>
+
+</div>
+
+<script>
+
+/* تاریخ شروع تایمر:
+   ۲۷ آبان ۱۳۹۸ - ساعت ۲۲:۳۰
+*/
+
+const startDate = new Date(2019, 10, 18, 22, 30, 0);
+
+function updateTimer() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("days").textContent = days.toLocaleString("fa-IR");
+    document.getElementById("hours").textContent = hours.toLocaleString("fa-IR");
+    document.getElementById("minutes").textContent = minutes.toLocaleString("fa-IR");
+    document.getElementById("seconds").textContent = seconds.toLocaleString("fa-IR");
+}
+
+updateTimer();
+
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
+```
+
