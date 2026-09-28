@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -8,6 +9,7 @@
 <title>یاد و نام فرشاد حاجی‌پور میلاسی</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -42,7 +44,6 @@ h1 {
     height: auto;
     margin: 0 auto 25px;
     border-radius: 10px;
-    object-fit: contain;
 }
 
 .timer-title {
@@ -50,6 +51,7 @@ h1 {
     color: #d71920;
     font-size: 21px;
     font-weight: bold;
+    line-height: 1.8;
     margin: 10px 0 18px;
 }
 
@@ -57,17 +59,15 @@ h1 {
     direction: ltr;
     display: flex;
     justify-content: center;
-    align-items: stretch;
     gap: 10px;
-    margin: 0 auto 30px;
     max-width: 650px;
+    margin: 0 auto 30px;
 }
 
 .time-box {
     flex: 1;
-    min-width: 0;
     background: #151515;
-    border: 1px solid #333;
+    border: 1px solid #333333;
     border-radius: 8px;
     padding: 12px 5px 8px;
     text-align: center;
@@ -78,19 +78,19 @@ h1 {
     color: #d71920;
     font-size: 30px;
     font-weight: bold;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 .label {
     direction: rtl;
     color: #bbbbbb;
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .info {
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
     padding: 15px 5px;
     margin-bottom: 25px;
 }
@@ -120,11 +120,11 @@ h1 {
 
 .footer {
     text-align: center;
-    color: #999;
+    color: #999999;
     font-size: 15px;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #333333;
 }
 
 .home-link {
@@ -133,15 +133,15 @@ h1 {
     margin: 25px auto 0;
     padding: 8px 18px;
     color: #eeeeee;
-    border: 1px solid #555;
+    border: 1px solid #555555;
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
 }
 
 .home-link:hover {
-    border-color: #d71920;
     color: #d71920;
+    border-color: #d71920;
 }
 
 @media (max-width: 600px) {
@@ -158,7 +158,6 @@ h1 {
 
     .timer-title {
         font-size: 17px;
-        line-height: 1.7;
     }
 
     .timer {
@@ -190,6 +189,7 @@ h1 {
         font-size: 20px;
     }
 }
+
 </style>
 </head>
 
@@ -199,9 +199,11 @@ h1 {
 
     <h1>یاد و نام فرشاد حاجی‌پور میلاسی</h1>
 
-    <img src="17.jpg"
-         alt="فرشاد حاجی‌پور میلاسی"
-         class="photo">
+    <img
+        src="17.jpg"
+        alt="فرشاد حاجی‌پور میلاسی"
+        class="photo"
+    >
 
     <div class="timer-title">
         ساعات، دقایق و ثانیه‌هایی که از نبودن فرشاد حاجی‌پور میلاسی گذشت
@@ -209,25 +211,21 @@ h1 {
 
     <div class="timer">
 
-        <!-- روز -->
         <div class="time-box">
             <div class="number" id="days">۰</div>
             <div class="label">روز</div>
         </div>
 
-        <!-- ساعت -->
         <div class="time-box">
             <div class="number" id="hours">۰</div>
             <div class="label">ساعت</div>
         </div>
 
-        <!-- دقیقه -->
         <div class="time-box">
             <div class="number" id="minutes">۰</div>
             <div class="label">دقیقه</div>
         </div>
 
-        <!-- ثانیه -->
         <div class="time-box">
             <div class="number" id="seconds">۰</div>
             <div class="label">ثانیه</div>
@@ -294,28 +292,130 @@ h1 {
         خون جاری خوزستان
     </div>
 
-    <a class="home-link"
-       href="https://armin388shahram-wq.github.io/">
+    <a
+        class="home-link"
+        href="https://armin388shahram-wq.github.io/"
+    >
         بازگشت به خون جاری خوزستان
     </a>
 
 </div>
 
+
 <script>
 
 /*
-    زمان مبنا:
-    ۲۶ آبان ۱۳۹۸ — ساعت ۱۸:۰۰
+==================================================
+تایمر فرشاد حاجی‌پور میلاسی - صفحه شماره ۱۷
+
+زمان مبنا:
+۲۶ آبان ۱۳۹۸
+ساعت ۱۸:۰۰ به وقت ایران
+
+معادل UTC:
+2019-11-17 ساعت 14:30
+==================================================
 */
 
-const startDate = new Date("2019-11-17T18:00:00+03:30");
 
-function toPersianDigits(number) {
-    return number
-        .toString()
+// زمان ثابت شروع تایمر
+const START_TIME = Date.UTC(
+    2019,
+    10,
+    17,
+    14,
+    30,
+    0
+);
+
+
+// تبدیل اعداد انگلیسی به فارسی
+function persianNumber(number) {
+
+    return String(number)
         .replace(/0/g, "۰")
         .replace(/1/g, "۱")
         .replace(/2/g, "۲")
-        .
-```
+        .replace(/3/g, "۳")
+        .replace(/4/g, "۴")
+        .replace(/5/g, "۵")
+        .replace(/6/g, "۶")
+        .replace(/7/g, "۷")
+        .replace(/8/g, "۸")
+        .replace(/9/g, "۹");
 
+}
+
+
+// محاسبه و نمایش تایمر
+function updateTimer() {
+
+    const now = Date.now();
+
+    let difference = now - START_TIME;
+
+
+    // اگر ساعت دستگاه اشتباه باشد
+    // تایمر منفی نمایش داده نمی‌شود
+    if (difference < 0) {
+        difference = 0;
+    }
+
+
+    // تبدیل میلی‌ثانیه به ثانیه
+    const totalSeconds =
+        Math.floor(difference / 1000);
+
+
+    // محاسبه روز
+    const days =
+        Math.floor(totalSeconds / 86400);
+
+
+    // محاسبه ساعت
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
+
+
+    // محاسبه دقیقه
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+
+    // محاسبه ثانیه
+    const seconds =
+        totalSeconds % 60;
+
+
+    // نمایش اعداد
+    document.getElementById("days").textContent =
+        persianNumber(days);
+
+    document.getElementById("hours").textContent =
+        persianNumber(hours);
+
+    document.getElementById("minutes").textContent =
+        persianNumber(minutes);
+
+    document.getElementById("seconds").textContent =
+        persianNumber(seconds);
+
+}
+
+
+// اجرای اولیه
+updateTimer();
+
+
+// به‌روزرسانی هر یک ثانیه
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
+```
