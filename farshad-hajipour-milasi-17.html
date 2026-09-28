@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -16,148 +15,156 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 20px 12px 40px;
     background: #0b0b0b;
-    color: #eeeeee;
+    color: #ffffff;
     font-family: Tahoma, Arial, sans-serif;
-    line-height: 2;
+    text-align: center;
 }
 
 .container {
-    width: 92%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 25px 0 40px;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
 }
 
 h1 {
-    text-align: center;
-    color: #eeeeee;
-    font-size: 30px;
-    margin: 10px 0 25px;
+    font-size: 28px;
+    margin: 10px 0 20px;
+    color: #ffffff;
+    line-height: 1.7;
 }
 
 .photo {
-    display: block;
     width: 100%;
-    max-width: 650px;
+    max-width: 500px;
     height: auto;
+    display: block;
     margin: 0 auto 25px;
-    border-radius: 10px;
+    border-radius: 12px;
 }
+
+/* عنوان تایمر */
 
 .timer-title {
-    text-align: center;
-    color: #d71920;
-    font-size: 21px;
-    font-weight: bold;
+    font-size: 18px;
     line-height: 1.8;
-    margin: 10px 0 18px;
+    margin: 10px auto 18px;
+    color: #d71920;
+    font-weight: bold;
 }
 
+/* تایمر */
+
 .timer {
-    direction: ltr;
     display: flex;
+    direction: ltr;
     justify-content: center;
-    gap: 10px;
-    max-width: 650px;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto 30px;
 }
 
 .time-box {
     flex: 1;
+    min-width: 0;
     background: #151515;
     border: 1px solid #333333;
-    border-radius: 8px;
-    padding: 12px 5px 8px;
-    text-align: center;
+    border-radius: 10px;
+    padding: 12px 5px 9px;
 }
 
 .number {
-    direction: rtl;
-    color: #d71920;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: bold;
+    color: #d71920;
+    direction: rtl;
     line-height: 1.3;
 }
 
 .label {
-    direction: rtl;
-    color: #bbbbbb;
-    font-size: 14px;
-    margin-top: 4px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #dddddd;
 }
+
+/* اطلاعات */
 
 .info {
-    border-top: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    padding: 15px 5px;
-    margin-bottom: 25px;
+    margin-top: 15px;
+    text-align: right;
+    background: #111111;
+    border-radius: 10px;
+    padding: 18px;
+    line-height: 2.1;
+    font-size: 16px;
 }
 
-.info p {
-    margin: 6px 0;
-    font-size: 17px;
+.info strong {
+    color: #d71920;
 }
+
+/* متن سرگذشت */
 
 .story {
+    margin-top: 22px;
+    padding: 5px 18px 5px 18px;
     border-right: 4px solid #d71920;
-    padding-right: 16px;
-    margin-top: 25px;
+    text-align: right;
+    line-height: 2.2;
+    font-size: 16px;
 }
 
-.story h2 {
-    color: #d71920;
-    font-size: 23px;
-    margin-top: 0;
-}
-
-.story p {
-    font-size: 17px;
-    text-align: justify;
-    margin-bottom: 18px;
-}
+/* فوتر */
 
 .footer {
-    text-align: center;
-    color: #999999;
-    font-size: 15px;
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 30px;
+    padding-top: 18px;
     border-top: 1px solid #333333;
+    color: #cccccc;
+    font-size: 15px;
+    line-height: 1.8;
 }
+
+/* دکمه بازگشت به صفحه اصلی */
 
 .home-link {
     display: block;
-    width: fit-content;
-    margin: 25px auto 0;
-    padding: 8px 18px;
-    color: #eeeeee;
-    border: 1px solid #555555;
-    border-radius: 6px;
+    width: 90%;
+    max-width: 420px;
+    margin: 35px auto 10px;
+    padding: 15px 20px;
+    background: #151515;
+    color: #ffffff;
+    border: 2px solid #d71920;
+    border-radius: 10px;
+    text-align: center;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
+    box-shadow: 0 0 12px rgba(215, 25, 32, 0.25);
+    transition: 0.3s;
 }
 
 .home-link:hover {
-    color: #d71920;
-    border-color: #d71920;
+    background: #d71920;
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(215, 25, 32, 0.5);
 }
 
-@media (max-width: 600px) {
+/* موبایل */
 
-    .container {
-        width: 94%;
-        padding-top: 18px;
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px 10px 35px;
     }
 
     h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .timer-title {
-        font-size: 17px;
+        font-size: 23px;
     }
 
     .timer {
@@ -165,33 +172,32 @@ h1 {
     }
 
     .time-box {
-        padding: 10px 2px 7px;
+        padding: 10px 3px 8px;
     }
 
     .number {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .label {
         font-size: 11px;
     }
 
-    .info p,
-    .story p {
+    .info,
+    .story {
         font-size: 15px;
     }
 
-    .story {
-        padding-right: 12px;
-    }
-
-    .story h2 {
-        font-size: 20px;
+    .home-link {
+        width: 95%;
+        font-size: 16px;
+        padding: 14px 12px;
     }
 }
 
 </style>
 </head>
+
 
 <body>
 
@@ -200,10 +206,13 @@ h1 {
     <h1>یاد و نام فرشاد حاجی‌پور میلاسی</h1>
 
     <img
+        class="photo"
         src="17.jpg"
         alt="فرشاد حاجی‌پور میلاسی"
-        class="photo"
     >
+
+
+    <!-- تایمر -->
 
     <div class="timer-title">
         ساعات، دقایق و ثانیه‌هایی که از نبودن فرشاد حاجی‌پور میلاسی گذشت
@@ -211,20 +220,28 @@ h1 {
 
     <div class="timer">
 
+        <!-- روز -->
+
         <div class="time-box">
             <div class="number" id="days">۰</div>
             <div class="label">روز</div>
         </div>
+
+        <!-- ساعت -->
 
         <div class="time-box">
             <div class="number" id="hours">۰</div>
             <div class="label">ساعت</div>
         </div>
 
+        <!-- دقیقه -->
+
         <div class="time-box">
             <div class="number" id="minutes">۰</div>
             <div class="label">دقیقه</div>
         </div>
+
+        <!-- ثانیه -->
 
         <div class="time-box">
             <div class="number" id="seconds">۰</div>
@@ -233,58 +250,88 @@ h1 {
 
     </div>
 
+
+    <!-- اطلاعات -->
+
     <div class="info">
 
-        <p><strong>نام:</strong> فرشاد حاجی‌پور میلاسی</p>
+        <div>
+            <strong>نام:</strong>
+            فرشاد حاجی‌پور میلاسی
+        </div>
 
-        <p><strong>سال تولد:</strong> ۱۳۶۸</p>
+        <div>
+            <strong>سال تولد:</strong>
+            ۱۳۶۸
+        </div>
 
-        <p><strong>زادگاه:</strong> روستای له‌دراز، لردگان</p>
+        <div>
+            <strong>محل تولد:</strong>
+            روستای له‌دراز، شهرستان لردگان، چهارمحال و بختیاری
+        </div>
 
-        <p><strong>محل جان‌باختن:</strong> ماهشهر</p>
+        <div>
+            <strong>محل کار:</strong>
+            شرکت پتروشیمی ماهشهر
+        </div>
 
-        <p><strong>تاریخ:</strong> ۲۶ آبان ۱۳۹۸</p>
+        <div>
+            <strong>وضعیت تأهل:</strong>
+            متأهل، دارای یک فرزند پسر چهار ساله به نام اهورا
+        </div>
 
-        <p><strong>شغل:</strong> کارمند پتروشیمی ماهشهر</p>
+        <div>
+            <strong>تاریخ:</strong>
+            ۲۶ آبان ۱۳۹۸
+        </div>
 
-        <p><strong>خانواده:</strong> متأهل و دارای یک فرزند پسر به نام اهورا</p>
+        <div>
+            <strong>محل:</strong>
+            ماهشهر
+        </div>
 
     </div>
+
+
+    <!-- سرگذشت -->
 
     <div class="story">
 
-        <h2>زندگی</h2>
-
         <p>
-            فرشاد حاجی‌پور میلاسی در سال ۱۳۶۸ در روستای له‌دراز
-            از توابع لردگان در استان چهارمحال و بختیاری متولد شد.
-            او متأهل و دارای یک فرزند پسر چهار ساله به نام «اهورا» بود.
-            فرشاد کارمند شرکت پتروشیمی ماهشهر بود.
-        </p>
-
-        <h2>کشته شدن</h2>
-
-        <p>
-            فرشاد حاجی‌پور میلاسی در روز ۲۶ آبان ۱۳۹۸، در جریان اعتراضات
-            ماهشهر که پس از افزایش قیمت بنزین در سراسر ایران شکل گرفت،
-            حضور داشت. بر اساس گزارش‌های منتشرشده، او هدف شلیک مستقیم
-            نیروهای امنیتی قرار گرفت و بر اثر اصابت گلوله به قلبش جان باخت.
+            فرشاد حاجی‌پور میلاسی، متولد سال ۱۳۶۸ در روستای له‌دراز
+            شهرستان لردگان در استان چهارمحال و بختیاری بود.
+            او متأهل و پدر یک پسر چهار ساله به نام اهورا بود و
+            در شرکت پتروشیمی ماهشهر کار می‌کرد.
         </p>
 
         <p>
-            پیکر او پس از سه روز به خانواده‌اش تحویل داده شد و در زادگاهش،
-            روستای له‌دراز لردگان، به خاک سپرده شد.
+            فرشاد در روز ۲۶ آبان ۱۳۹۸، در جریان اعتراضات ماهشهر
+            که پس از افزایش قیمت بنزین شکل گرفت، در این اعتراضات
+            حضور داشت.
         </p>
 
-        <h2>یاد و نام</h2>
+        <p>
+            بر اساس اطلاعات ارائه‌شده درباره این واقعه، فرشاد
+            مورد اصابت گلوله نیروهای امنیتی قرار گرفت و گلوله
+            به قلب او اصابت کرد و جان باخت.
+        </p>
 
         <p>
-            فرشاد حاجی‌پور میلاسی، همسر و پدری بود که زندگی‌اش در ماهشهر
-            ناتمام ماند. نام او و یاد کودک چهار ساله‌اش، اهورا، در حافظه
-            خانواده و نزدیکانش باقی مانده است.
+            پیکر او پس از سه روز به خانواده تحویل داده شد و در
+            روستای له‌دراز، شهرستان لردگان، به خاک سپرده شد.
+            بنا بر گزارش‌های مربوط به مراسم خاکسپاری، جمعی از
+            مردم و افراد ایل میلاسی در این مراسم حضور داشتند و
+            موسیقی محلی نیز اجرا شد.
+        </p>
+
+        <p>
+            پیکر فرشاد با گرفتن تعهدهایی از خانواده تحویل داده شد.
         </p>
 
     </div>
+
+
+    <!-- فوتر -->
 
     <div class="footer">
         یاد و نام فرشاد حاجی‌پور میلاسی
@@ -292,11 +339,13 @@ h1 {
         خون جاری خوزستان
     </div>
 
+
+    <!-- بازگشت به صفحه اصلی -->
+
     <a
         class="home-link"
-        href="https://armin388shahram-wq.github.io/"
-    >
-        بازگشت به خون جاری خوزستان
+        href="https://armin388shahram-wq.github.io/">
+        ← بازگشت به «خون جاری خوزستان»
     </a>
 
 </div>
@@ -305,20 +354,14 @@ h1 {
 <script>
 
 /*
-==================================================
-تایمر فرشاد حاجی‌پور میلاسی - صفحه شماره ۱۷
+   زمان مبنا:
+   ۲۶ آبان ۱۳۹۸ - ساعت ۱۸:۰۰
+   به وقت ایران
 
-زمان مبنا:
-۲۶ آبان ۱۳۹۸
-ساعت ۱۸:۰۰ به وقت ایران
-
-معادل UTC:
-2019-11-17 ساعت 14:30
-==================================================
+   این ساعت صرفاً زمان مبنای شمارنده پروژه است
+   و به معنی ادعای ساعت دقیق جان‌باختن نیست.
 */
 
-
-// زمان ثابت شروع تایمر
 const START_TIME = Date.UTC(
     2019,
     10,
@@ -329,69 +372,52 @@ const START_TIME = Date.UTC(
 );
 
 
-// تبدیل اعداد انگلیسی به فارسی
+/* تبدیل اعداد انگلیسی به فارسی */
+
 function persianNumber(number) {
 
-    return String(number)
-        .replace(/0/g, "۰")
-        .replace(/1/g, "۱")
-        .replace(/2/g, "۲")
-        .replace(/3/g, "۳")
-        .replace(/4/g, "۴")
-        .replace(/5/g, "۵")
-        .replace(/6/g, "۶")
-        .replace(/7/g, "۷")
-        .replace(/8/g, "۸")
-        .replace(/9/g, "۹");
+    return String(number).replace(
+        /\d/g,
+        function(digit) {
+            return "۰۱۲۳۴۵۶۷۸۹"[digit];
+        }
+    );
 
 }
 
 
-// محاسبه و نمایش تایمر
+/* به‌روزرسانی تایمر */
+
 function updateTimer() {
 
     const now = Date.now();
 
     let difference = now - START_TIME;
 
-
-    // اگر ساعت دستگاه اشتباه باشد
-    // تایمر منفی نمایش داده نمی‌شود
     if (difference < 0) {
         difference = 0;
     }
 
-
-    // تبدیل میلی‌ثانیه به ثانیه
-    const totalSeconds =
-        Math.floor(difference / 1000);
-
-
-    // محاسبه روز
-    const days =
-        Math.floor(totalSeconds / 86400);
+    const totalSeconds = Math.floor(
+        difference / 1000
+    );
 
 
-    // محاسبه ساعت
-    const hours =
-        Math.floor(
-            (totalSeconds % 86400) / 3600
-        );
+    const days = Math.floor(
+        totalSeconds / 86400
+    );
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
 
 
-    // محاسبه دقیقه
-    const minutes =
-        Math.floor(
-            (totalSeconds % 3600) / 60
-        );
-
-
-    // محاسبه ثانیه
-    const seconds =
-        totalSeconds % 60;
-
-
-    // نمایش اعداد
     document.getElementById("days").textContent =
         persianNumber(days);
 
@@ -407,15 +433,16 @@ function updateTimer() {
 }
 
 
-// اجرای اولیه
+/* اجرای اولیه */
+
 updateTimer();
 
 
-// به‌روزرسانی هر یک ثانیه
+/* به‌روزرسانی هر یک ثانیه */
+
 setInterval(updateTimer, 1000);
 
 </script>
 
 </body>
 </html>
-```
