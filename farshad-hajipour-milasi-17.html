@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام فرشاد حاجی‌پور میلاسی</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0b0b0b;
+    color: #eeeeee;
+    font-family: Tahoma, Arial, sans-serif;
+    line-height: 2;
+}
+
+.container {
+    width: 92%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 25px 0 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #eeeeee;
+    font-size: 30px;
+    margin: 10px 0 25px;
+}
+
+.photo {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto 25px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.timer-title {
+    text-align: center;
+    color: #d71920;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 10px 0 18px;
+}
+
+.timer {
+    direction: ltr;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+.time-box {
+    flex: 1;
+    min-width: 0;
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 5px 8px;
+    text-align: center;
+}
+
+.number {
+    direction: rtl;
+    color: #d71920;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.label {
+    direction: rtl;
+    color: #bbbbbb;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.info {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 15px 5px;
+    margin-bottom: 25px;
+}
+
+.info p {
+    margin: 6px 0;
+    font-size: 17px;
+}
+
+.story {
+    border-right: 4px solid #d71920;
+    padding-right: 16px;
+    margin-top: 25px;
+}
+
+.story h2 {
+    color: #d71920;
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.story p {
+    font-size: 17px;
+    text-align: justify;
+    margin-bottom: 18px;
+}
+
+.footer {
+    text-align: center;
+    color: #999;
+    font-size: 15px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.home-link {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 8px 18px;
+    color: #eeeeee;
+    border: 1px solid #555;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.home-link:hover {
+    border-color: #d71920;
+    color: #d71920;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+        padding-top: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .timer-title {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .timer {
+        gap: 5px;
+    }
+
+    .time-box {
+        padding: 10px 2px 7px;
+    }
+
+    .number {
+        font-size: 22px;
+    }
+
+    .label {
+        font-size: 11px;
+    }
+
+    .info p,
+    .story p {
+        font-size: 15px;
+    }
+
+    .story {
+        padding-right: 12px;
+    }
+
+    .story h2 {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام فرشاد حاجی‌پور میلاسی</h1>
+
+    <img src="17.jpg"
+         alt="فرشاد حاجی‌پور میلاسی"
+         class="photo">
+
+    <div class="timer-title">
+        ساعات، دقایق و ثانیه‌هایی که از نبودن فرشاد حاجی‌پور میلاسی گذشت
+    </div>
+
+    <div class="timer">
+
+        <!-- روز -->
+        <div class="time-box">
+            <div class="number" id="days">۰</div>
+            <div class="label">روز</div>
+        </div>
+
+        <!-- ساعت -->
+        <div class="time-box">
+            <div class="number" id="hours">۰</div>
+            <div class="label">ساعت</div>
+        </div>
+
+        <!-- دقیقه -->
+        <div class="time-box">
+            <div class="number" id="minutes">۰</div>
+            <div class="label">دقیقه</div>
+        </div>
+
+        <!-- ثانیه -->
+        <div class="time-box">
+            <div class="number" id="seconds">۰</div>
+            <div class="label">ثانیه</div>
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <p><strong>نام:</strong> فرشاد حاجی‌پور میلاسی</p>
+
+        <p><strong>سال تولد:</strong> ۱۳۶۸</p>
+
+        <p><strong>زادگاه:</strong> روستای له‌دراز، لردگان</p>
+
+        <p><strong>محل جان‌باختن:</strong> ماهشهر</p>
+
+        <p><strong>تاریخ:</strong> ۲۶ آبان ۱۳۹۸</p>
+
+        <p><strong>شغل:</strong> کارمند پتروشیمی ماهشهر</p>
+
+        <p><strong>خانواده:</strong> متأهل و دارای یک فرزند پسر به نام اهورا</p>
+
+    </div>
+
+    <div class="story">
+
+        <h2>زندگی</h2>
+
+        <p>
+            فرشاد حاجی‌پور میلاسی در سال ۱۳۶۸ در روستای له‌دراز
+            از توابع لردگان در استان چهارمحال و بختیاری متولد شد.
+            او متأهل و دارای یک فرزند پسر چهار ساله به نام «اهورا» بود.
+            فرشاد کارمند شرکت پتروشیمی ماهشهر بود.
+        </p>
+
+        <h2>کشته شدن</h2>
+
+        <p>
+            فرشاد حاجی‌پور میلاسی در روز ۲۶ آبان ۱۳۹۸، در جریان اعتراضات
+            ماهشهر که پس از افزایش قیمت بنزین در سراسر ایران شکل گرفت،
+            حضور داشت. بر اساس گزارش‌های منتشرشده، او هدف شلیک مستقیم
+            نیروهای امنیتی قرار گرفت و بر اثر اصابت گلوله به قلبش جان باخت.
+        </p>
+
+        <p>
+            پیکر او پس از سه روز به خانواده‌اش تحویل داده شد و در زادگاهش،
+            روستای له‌دراز لردگان، به خاک سپرده شد.
+        </p>
+
+        <h2>یاد و نام</h2>
+
+        <p>
+            فرشاد حاجی‌پور میلاسی، همسر و پدری بود که زندگی‌اش در ماهشهر
+            ناتمام ماند. نام او و یاد کودک چهار ساله‌اش، اهورا، در حافظه
+            خانواده و نزدیکانش باقی مانده است.
+        </p>
+
+    </div>
+
+    <div class="footer">
+        یاد و نام فرشاد حاجی‌پور میلاسی
+        <br>
+        خون جاری خوزستان
+    </div>
+
+    <a class="home-link"
+       href="https://armin388shahram-wq.github.io/">
+        بازگشت به خون جاری خوزستان
+    </a>
+
+</div>
+
+<script>
+
+/*
+    زمان مبنا:
+    ۲۶ آبان ۱۳۹۸ — ساعت ۱۸:۰۰
+*/
+
+const startDate = new Date("2019-11-17T18:00:00+03:30");
+
+function toPersianDigits(number) {
+    return number
+        .toString()
+        .replace(/0/g, "۰")
+        .replace(/1/g, "۱")
+        .replace(/2/g, "۲")
+        .
+```
 
