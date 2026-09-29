@@ -1,1 +1,466 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>یاد و نام مهدی رودباریان</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #090909;
+    color: #f2f2f2;
+    font-family: Tahoma, Arial, sans-serif;
+    line-height: 2;
+}
+
+.container {
+    width: 92%;
+    max-width: 760px;
+    margin: 30px auto 50px;
+}
+
+/* عنوان */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin: 10px 0 25px;
+}
+
+/* عکس */
+.photo-box {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.photo-box img.main-photo {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+/* لوگوی پروژه روی عکس */
+.project-logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+    z-index: 5;
+}
+
+/* عنوان شمارنده */
+.timer-title {
+    text-align: center;
+    margin-top: 28px;
+    margin-bottom: 18px;
+    color: #d7d7d7;
+    font-size: 19px;
+}
+
+/* شمارنده */
+.counter {
+    display: flex;
+    direction: ltr;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 35px;
+    width: 100%;
+}
+
+.time-box {
+    width: 23%;
+    max-width: 150px;
+    min-height: 95px;
+    background: #151515;
+    border: 1px solid #8b0000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 12px rgba(150, 0, 0, 0.25);
+}
+
+.number {
+    color: #d71920;
+    font-size: 30px;
+    font-weight: bold;
+    direction: rtl;
+    line-height: 1.2;
+}
+
+.label {
+    color: #bbbbbb;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/* اطلاعات */
+.info {
+    text-align: center;
+    margin: 25px 0 30px;
+    color: #dddddd;
+    font-size: 17px;
+}
+
+.info div {
+    margin: 5px 0;
+}
+
+.info strong {
+    color: #d71920;
+}
+
+/* متن روایت */
+.story {
+    border-right: 4px solid #b00000;
+    padding: 5px 18px 5px 5px;
+    margin-top: 25px;
+    color: #e5e5e5;
+    font-size: 17px;
+    text-align: right;
+}
+
+.story p {
+    margin: 0 0 18px;
+}
+
+/* متن پایانی */
+.footer-title {
+    text-align: center;
+    color: #d71920;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* دکمه اینستاگرام */
+.instagram-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: fit-content;
+    margin: 0 auto;
+
+    padding: 10px 22px;
+
+    background: #171717;
+    border: 1px solid #8b0000;
+    border-radius: 8px;
+
+    color: #eeeeee;
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.instagram-button:hover {
+    background: #8b0000;
+    color: white;
+}
+
+.instagram-icon {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    .project-logo {
+        width: 58px !important;
+        height: 58px !important;
+        top: 10px;
+        left: 10px;
+    }
+
+    .timer-title {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 22px;
+    }
+
+    .counter {
+        gap: 6px;
+    }
+
+    .time-box {
+        min-height: 78px;
+        border-radius: 8px;
+    }
+
+    .number {
+        font-size: 22px;
+    }
+
+    .label {
+        font-size: 11px;
+        margin-top: 4px;
+    }
+
+    .info {
+        font-size: 15px;
+    }
+
+    .story {
+        font-size: 15px;
+        line-height: 2.1;
+        padding-right: 13px;
+    }
+
+    .footer-title {
+        font-size: 17px;
+    }
+
+    .instagram-button {
+        font-size: 13px;
+        padding: 9px 17px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام مهدی رودباریان</h1>
+
+
+    <!-- عکس -->
+    <div class="photo-box">
+
+        <img src="20.jpg"
+             alt="مهدی رودباریان"
+             class="main-photo">
+
+        <!-- لوگوی پروژه -->
+        <img src="logo.png"
+             alt="خون جاری خوزستان"
+             class="project-logo">
+
+    </div>
+
+
+    <!-- شمارنده -->
+    <div class="timer-title">
+        ساعات، دقایق و ثانیه‌هایی که از نبودن مهدی رودباریان گذشت
+    </div>
+
+    <div class="counter">
+
+        <!-- روز -->
+        <div class="time-box">
+            <div class="number" id="days">۰</div>
+            <div class="label">روز</div>
+        </div>
+
+        <!-- ساعت -->
+        <div class="time-box">
+            <div class="number" id="hours">۰</div>
+            <div class="label">ساعت</div>
+        </div>
+
+        <!-- دقیقه -->
+        <div class="time-box">
+            <div class="number" id="minutes">۰</div>
+            <div class="label">دقیقه</div>
+        </div>
+
+        <!-- ثانیه -->
+        <div class="time-box">
+            <div class="number" id="seconds">۰</div>
+            <div class="label">ثانیه</div>
+        </div>
+
+    </div>
+
+
+    <!-- اطلاعات -->
+    <div class="info">
+
+        <div>
+            <strong>نام:</strong>
+            مهدی رودباریان
+        </div>
+
+        <div>
+            <strong>سن:</strong>
+            ۲۱ سال
+        </div>
+
+        <div>
+            <strong>همراه:</strong>
+            برادرش مصطفی رودباریان، ۳۴ ساله
+        </div>
+
+        <div>
+            <strong>محل:</strong>
+            ماهشهر
+        </div>
+
+        <div>
+            <strong>تاریخ:</strong>
+            ۲۶ آبان ۱۳۹۸
+        </div>
+
+    </div>
+
+
+    <!-- روایت -->
+    <div class="story">
+
+        <p>
+            مهدی رودباریان، ۲۱ ساله، همراه برادرش مصطفی رودباریان،
+            ۳۴ ساله، روز ۲۶ آبان در ماهشهر در صف معترضان بود.
+        </p>
+
+        <p>
+            یکی از معترضان با گلوله نیروهای امنیتی مجروح می‌شود.
+            مصطفی به سمت او می‌شتابد که مأموران به سینه‌اش شلیک می‌کنند.
+            مهدی نیز به سمت برادرش می‌رود که مأموران به سر او شلیک می‌کنند.
+        </p>
+
+        <p>
+            نیروهای امنیتی مصطفی و مهدی را درون یک وانت باربری
+            سپاه پاسداران می‌اندازند و با خود می‌برند.
+        </p>
+
+        <p>
+            به گفته شاهدان، با توجه به جراحات مهلک ناشی از اصابت گلوله‌ها،
+            به احتمال زیاد مصطفی و مهدی کشته شده‌اند؛
+            با این حال پیکر آنان به خانواده‌شان تحویل داده نشده است.
+        </p>
+
+        <p>
+            مسئولان و مقامات امنیتی از هرگونه اطلاع‌رسانی درباره این دو
+            برادر خودداری کرده‌اند و خانواده‌شان را نیز تهدید کرده بودند
+            که در صورت اطلاع‌رسانی، آن‌ها را نیز دستگیر خواهند کرد.
+        </p>
+
+    </div>
+
+
+    <!-- یاد و نام -->
+    <div class="footer-title">
+        یاد و نام مهدی رودباریان
+    </div>
+
+
+    <!-- اینستاگرام -->
+    <a class="instagram-button"
+       href="https://www.instagram.com/khoon.jari"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <img src="instagram.png"
+             alt="Instagram"
+             class="instagram-icon">
+
+        بازگشت به «خون جاری خوزستان»
+
+    </a>
+
+</div>
+
+
+<script>
+
+/* تاریخ و زمان مبنا
+   ۲۶ آبان ۱۳۹۸ - ساعت ۱۲:۰۰ ظهر
+*/
+
+const startDate = new Date(2019, 10, 17, 12, 0, 0);
+
+function toPersianNumber(number) {
+
+    return number
+        .toString()
+        .replace(/\d/g, function(d) {
+            return "۰۱۲۳۴۵۶۷۸۹"[d];
+        });
+
+}
+
+function updateCounter() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds =
+        totalSeconds % 60;
+
+
+    document.getElementById("days").textContent =
+        toPersianNumber(days);
+
+    document.getElementById("hours").textContent =
+        toPersianNumber(hours);
+
+    document.getElementById("minutes").textContent =
+        toPersianNumber(minutes);
+
+    document.getElementById("seconds").textContent =
+        toPersianNumber(seconds);
+
+}
+
+updateCounter();
+
+setInterval(updateCounter, 1000);
+
+</script>
+
+</body>
+</html>
