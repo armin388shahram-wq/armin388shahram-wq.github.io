@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -40,7 +41,7 @@ h1 {
     max-width: 600px;
     height: auto;
     display: block;
-    margin: 0 auto 28px;
+    margin: 0 auto 25px;
     border-radius: 10px;
 }
 
@@ -57,7 +58,7 @@ h1 {
     justify-content: center;
     gap: 10px;
     margin: 0 auto 35px;
-    flex-wrap: nowrap;
+    width: 100%;
 }
 
 .time-box {
@@ -66,6 +67,7 @@ h1 {
     border-radius: 8px;
     width: 105px;
     min-height: 105px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +78,6 @@ h1 {
     font-size: 30px;
     font-weight: bold;
     color: #d71920;
-    direction: ltr;
     line-height: 1.2;
 }
 
@@ -93,7 +94,7 @@ h1 {
 }
 
 .info p {
-    margin: 8px 0;
+    margin: 7px 0;
 }
 
 .story {
@@ -139,11 +140,6 @@ h1 {
         margin-bottom: 20px;
     }
 
-    .photo {
-        max-width: 100%;
-        margin-bottom: 22px;
-    }
-
     .timer-title {
         font-size: 17px;
         line-height: 1.8;
@@ -157,7 +153,6 @@ h1 {
     .time-box {
         width: 23vw;
         min-height: 85px;
-        max-width: 95px;
     }
 
     .number {
@@ -188,9 +183,11 @@ h1 {
 
     <h1>یاد و نام عباس عساکره (منصوری)</h1>
 
-    <img src="19.jpg"
-         alt="عباس عساکره (منصوری)"
-         class="photo">
+    <img
+        src="19.jpg"
+        alt="عباس عساکره (منصوری)"
+        class="photo"
+    >
 
     <div class="timer-title">
         ساعات، دقایق و ثانیه‌هایی که از نبودن عباس عساکره (منصوری) گذشت
@@ -226,13 +223,25 @@ h1 {
 
     <div class="info">
 
-        <p><strong>تاریخ:</strong> ۲۷ آبان ۱۳۹۸</p>
+        <p>
+            <strong>تاریخ:</strong>
+            ۲۷ آبان ۱۳۹۸
+        </p>
 
-        <p><strong>محل:</strong> ماهشهر، خوزستان</p>
+        <p>
+            <strong>محل:</strong>
+            ماهشهر، خوزستان
+        </p>
 
-        <p><strong>شغل:</strong> میوه‌فروش</p>
+        <p>
+            <strong>شغل:</strong>
+            میوه‌فروش
+        </p>
 
-        <p><strong>وضعیت:</strong> تازه‌داماد</p>
+        <p>
+            <strong>وضعیت:</strong>
+            تازه‌داماد
+        </p>
 
     </div>
 
@@ -240,13 +249,13 @@ h1 {
 
         <p>
             عباس عساکره (منصوری)، تازه‌داماد و میوه‌فروش،
-            در ۲۷ آبان ۱۳۹۸ در ماهشهر، در جریان اعتراضات آبان ۱۳۹۸،
-            جان باخت.
+            در ۲۷ آبان ۱۳۹۸ در ماهشهر، در جریان اعتراضات
+            آبان ۱۳۹۸ جان باخت.
         </p>
 
         <p>
-            نام او در میان جان‌باختگان وقایع ماهشهر و کشتار در محدوده
-            نیزار ثبت شده است.
+            نام او در میان جان‌باختگان وقایع ماهشهر و
+            محدوده نیزار ثبت شده است.
         </p>
 
     </div>
@@ -261,37 +270,11 @@ h1 {
 
         <br>
 
-        <a class="instagram"
-           href="https://www.instagram.com/khoon.jari.khuzestan/reels/"
-           target="_blank">
+        <a
+            class="instagram"
+            href="https://www.instagram.com/khoon.jari.khuzestan/reels/"
+            target="_blank"
+        >
             ← بازگشت به «خون جاری خوزستان»
         </a>
-
-    </div>
-
-</div>
-
-<script>
-
-/*
-    تاریخ جان‌باختن عباس عساکره (منصوری)
-    ۲۷ آبان ۱۳۹۸
-
-    زمان انتخاب‌شده:
-    ۲۷ آبان ۱۳۹۸، ساعت ۱۲:۰۰ ظهر
-*/
-
-const startDate = new Date(
-    "2019-11-18T12:00:00+03:30"
-);
-
-const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
-
-function toPersianNumber(number) {
-
-    return String(number).replace(
-        /\d/g,
-        digit => persianDigits[digit]
-    )
 ```
-
