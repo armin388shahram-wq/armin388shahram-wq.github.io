@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -17,41 +16,41 @@
 body {
     margin: 0;
     padding: 0;
-    background: #090909;
-    color: #f2f2f2;
+    background: #080808;
+    color: #ffffff;
     font-family: Tahoma, Arial, sans-serif;
     line-height: 2;
 }
 
 .container {
     width: 92%;
-    max-width: 760px;
-    margin: 30px auto 50px;
+    max-width: 850px;
+    margin: 35px auto;
+    text-align: center;
 }
 
 /* عنوان */
 h1 {
-    text-align: center;
     color: #ffffff;
-    font-size: 28px;
-    margin: 10px 0 25px;
+    font-size: 32px;
+    margin-bottom: 25px;
 }
 
-/* عکس */
+/* بخش عکس */
 .photo-box {
     position: relative;
     width: 100%;
-    text-align: center;
+    margin: 0 auto 25px;
 }
 
-.photo-box img.main-photo {
+.main-photo {
     display: block;
     width: 100%;
     max-width: 700px;
     height: auto;
     margin: 0 auto;
     border-radius: 12px;
-    object-fit: contain;
+    border: 2px solid #333;
 }
 
 /* لوگوی پروژه روی عکس */
@@ -59,145 +58,371 @@ h1 {
     position: absolute;
     top: 15px;
     left: 15px;
-
-    width: 144px !important;
-    height: 144px !important;
-
-    object-fit: contain !important;
-    border-radius: 0 !important;
-
+    width: 144px;
+    height: 144px;
+    object-fit: contain;
     z-index: 5;
 }
 
 /* عنوان شمارنده */
 .timer-title {
-    text-align: center;
-    margin-top: 28px;
-    margin-bottom: 18px;
-
-    color: #d7d7d7;
-    font-size: 19px;
+    color: #dddddd;
+    font-size: 22px;
+    margin: 20px 0 18px;
 }
 
 /* شمارنده */
-.counter {
+.timer {
     display: flex;
     direction: ltr;
     justify-content: center;
-
-    gap: 10px;
-    margin: 0 auto 35px;
-
-    width: 100%;
+    gap: 12px;
+    margin: 0 auto 30px;
+    flex-wrap: wrap;
 }
 
 .time-box {
-    width: 23%;
-    max-width: 150px;
-
-    min-height: 95px;
-
+    width: 130px;
     background: #151515;
-
-    border: 1px solid #8b0000;
-    border-radius: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    border: 2px solid #a00000;
+    border-radius: 12px;
+    padding: 12px 8px;
     box-shadow: 0 0 12px rgba(150, 0, 0, 0.25);
 }
 
-.number {
-    color: #d71920;
-
-    font-size: 30px;
+.time-number {
+    display: block;
+    color: #ff3333;
+    font-size: 34px;
     font-weight: bold;
-
-    direction: rtl;
-
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
-.label {
-    color: #bbbbbb;
-
-    font-size: 14px;
-
-    margin-top: 6px;
+.time-label {
+    display: block;
+    color: #cccccc;
+    font-size: 15px;
+    margin-top: 4px;
 }
 
 /* اطلاعات */
 .info {
-    text-align: center;
-
-    margin: 25px 0 30px;
-
+    font-size: 20px;
     color: #dddddd;
-
-    font-size: 17px;
-}
-
-.info div {
-    margin: 5px 0;
+    margin: 20px 0;
 }
 
 .info strong {
-    color: #d71920;
+    color: #ff3333;
 }
 
-/* روایت */
+/* متن داستان */
 .story {
-    border-right: 4px solid #b00000;
-
-    padding: 5px 18px 5px 5px;
-
-    margin-top: 25px;
-
-    color: #e5e5e5;
-
-    font-size: 17px;
-
     text-align: right;
+    font-size: 19px;
+    color: #eeeeee;
+    border-right: 5px solid #b00000;
+    padding-right: 18px;
+    margin-top: 30px;
+    margin-bottom: 35px;
 }
 
-.story p {
-    margin: 0 0 18px;
-}
-
-/* عنوان پایانی */
-.footer-title {
-    text-align: center;
-
-    color: #d71920;
-
-    font-size: 20px;
-    font-weight: bold;
-
-    margin-top: 40px;
-    margin-bottom: 20px;
+/* فوتر */
+.footer {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 35px;
+    color: #aaaaaa;
+    font-size: 17px;
 }
 
 /* دکمه اینستاگرام */
 .instagram-button {
-    display: flex;
-
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 12px;
 
-    gap: 10px;
-
-    width: fit-content;
-
-    margin: 0 auto;
-
+    margin-top: 22px;
     padding: 10px 22px;
 
-    background: #171717;
+    color: #ffffff;
+    text-decoration: none;
 
-    border: 1px solid #8b0000;
+    border: 1px solid #444;
+    border-radius: 10px;
 
-    border-rad
-```
+    background: #151515;
+    transition: 0.3s;
+}
+
+.instagram-button:hover {
+    background: #242424;
+    border-color: #b00000;
+}
+
+/* آیکون اینستاگرام */
+.instagram-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .project-logo {
+        width: 116px;
+        height: 116px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .timer-title {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .timer {
+        gap: 7px;
+    }
+
+    .time-box {
+        width: 72px;
+        padding: 8px 4px;
+    }
+
+    .time-number {
+        font-size: 23px;
+    }
+
+    .time-label {
+        font-size: 12px;
+    }
+
+    .info {
+        font-size: 17px;
+    }
+
+    .story {
+        font-size: 17px;
+        padding-right: 12px;
+    }
+
+    .instagram-icon {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>یاد و نام مهدی رودباریان</h1>
+
+
+    <!-- عکس مهدی -->
+    <div class="photo-box">
+
+        <img
+            src="20.jpg"
+            alt="مهدی رودباریان"
+            class="main-photo"
+        >
+
+        <!-- لوگوی خون جاری خوزستان -->
+        <img
+            src="logo-khoon-jari-khuzestan.png"
+            alt="خون جاری خوزستان"
+            class="project-logo"
+        >
+
+    </div>
+
+
+    <!-- شمارنده -->
+    <div class="timer-title">
+        ساعات، دقایق و ثانیه‌هایی که از نبودن مهدی رودباریان گذشت
+    </div>
+
+    <div class="timer">
+
+        <div class="time-box">
+            <span id="days" class="time-number">۰</span>
+            <span class="time-label">روز</span>
+        </div>
+
+        <div class="time-box">
+            <span id="hours" class="time-number">۰</span>
+            <span class="time-label">ساعت</span>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes" class="time-number">۰</span>
+            <span class="time-label">دقیقه</span>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds" class="time-number">۰</span>
+            <span class="time-label">ثانیه</span>
+        </div>
+
+    </div>
+
+
+    <!-- مشخصات -->
+    <div class="info">
+        <div><strong>نام:</strong> مهدی رودباریان</div>
+        <div><strong>سن:</strong> ۲۱ سال</div>
+        <div><strong>محل:</strong> ماهشهر</div>
+        <div><strong>تاریخ:</strong> ۲۶ آبان ۱۳۹۸</div>
+        <div><strong>برادر:</strong> مصطفی رودباریان، ۳۴ ساله</div>
+    </div>
+
+
+    <!-- روایت -->
+    <div class="story">
+
+        مهدی رودباریان و برادرش مصطفی، در روز ۲۶ آبان ۱۳۹۸ در میان صف معترضان در ماهشهر حضور داشتند.
+
+        <br><br>
+
+        یکی از معترضان بر اثر شلیک نیروهای امنیتی زخمی شد. مصطفی برای کمک به او دوید، اما گلوله‌ای به سینه‌اش اصابت کرد.
+
+        <br><br>
+
+        مهدی نیز به سمت برادرش دوید و گلوله‌ای به سر او اصابت کرد.
+
+        <br><br>
+
+        نیروهای امنیتی هر دو برادر را داخل یک خودروی باری سپاه گذاشته و با خود بردند.
+
+        <br><br>
+
+        بر اساس گفته شاهدان، با توجه به شدت جراحات ناشی از اصابت گلوله، احتمال کشته‌شدن آنان وجود داشت؛ با این حال پیکرهای آنان به خانواده تحویل داده نشد.
+
+        <br><br>
+
+        مسئولان و نهادهای امنیتی نیز از ارائه اطلاعات درباره سرنوشت آنان خودداری کردند و خانواده را تهدید کردند که در صورت رسانه‌ای کردن موضوع، با بازداشت روبه‌رو خواهند شد.
+
+    </div>
+
+
+    <!-- فوتر -->
+    <div class="footer">
+
+        یاد و نام مهدی رودباریان
+
+        <br>
+
+        خون جاری خوزستان
+
+        <br>
+
+        <a
+            href="https://www.instagram.com/khoon.jari"
+            target="_blank"
+            class="instagram-button"
+        >
+            <img
+                src="instagram.png"
+                alt="Instagram"
+                class="instagram-icon"
+            >
+
+            بازگشت به «خون جاری خوزستان»
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* تبدیل اعداد انگلیسی به فارسی */
+function persianNumber(number) {
+
+    return number
+        .toString()
+        .replace(/\d/g, function(digit) {
+            return "۰۱۲۳۴۵۶۷۸۹"[digit];
+        });
+
+}
+
+
+/*
+   تاریخ شروع شمارنده:
+   ۲۶ آبان ۱۳۹۸
+   معادل 17 November 2019
+   ساعت انتخابی: 12 ظهر
+*/
+
+const startDate = new Date(2019, 10, 17, 12, 0, 0);
+
+
+function updateTimer() {
+
+    const now = new Date();
+
+    let difference = now - startDate;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+
+    document.getElementById("days").textContent =
+        persianNumber(days);
+
+    document.getElementById("hours").textContent =
+        persianNumber(hours);
+
+    document.getElementById("minutes").textContent =
+        persianNumber(minutes);
+
+    document.getElementById("seconds").textContent =
+        persianNumber(seconds);
+
+}
+
+
+updateTimer();
+
+setInterval(updateTimer, 1000);
+
+</script>
+
+</body>
+</html>
