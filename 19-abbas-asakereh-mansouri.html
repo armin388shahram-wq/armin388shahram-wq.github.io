@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -33,14 +32,48 @@ h1 {
     margin-bottom: 25px;
 }
 
-.photo {
+
+/* =========================================
+   عکس + لوگوی خون جاری خوزستان
+   ========================================= */
+
+.photo-wrapper {
+    position: relative;
     width: 100%;
     max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.photo {
+    width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 25px;
     border-radius: 10px;
 }
+
+
+/* لوگو داخل گوشه بالا-چپ عکس */
+
+.project-logo {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 105px;
+    height: 105px;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   عنوان تایمر
+   ========================================= */
 
 .timer-title {
     color: #d71920;
@@ -48,6 +81,11 @@ h1 {
     font-weight: bold;
     margin: 15px auto 20px;
 }
+
+
+/* =========================================
+   تایمر
+   ========================================= */
 
 .timer {
     display: flex;
@@ -84,6 +122,11 @@ h1 {
     margin-top: 8px;
 }
 
+
+/* =========================================
+   اطلاعات
+   ========================================= */
+
 .info {
     text-align: right;
     font-size: 18px;
@@ -94,28 +137,80 @@ h1 {
     text-align: right;
     font-size: 18px;
     line-height: 2;
+
     border-right: 4px solid #d71920;
+
     padding-right: 15px;
     margin-top: 25px;
 }
+
+
+/* =========================================
+   پایین صفحه
+   ========================================= */
 
 .footer {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #333;
+
     font-size: 16px;
     color: #bbb;
 }
 
+
+/* =========================================
+   دکمه اینستاگرام
+   ========================================= */
+
 .instagram {
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
     margin-top: 20px;
+
     padding: 9px 18px;
+
     color: white;
+
     text-decoration: none;
+
     border: 1px solid #d71920;
+
     border-radius: 6px;
+
+    font-size: 16px;
+
+    transition: 0.2s;
 }
+
+
+/* آیکون اینستاگرام */
+
+.instagram-icon {
+    width: 21px;
+    height: 21px;
+
+    display: inline-block;
+
+    flex-shrink: 0;
+}
+
+
+/* حالت لمس / ماوس */
+
+.instagram:hover {
+    background: #d71920;
+}
+
+
+/* =========================================
+   موبایل
+   ========================================= */
 
 @media (max-width: 600px) {
 
@@ -123,14 +218,17 @@ h1 {
         font-size: 23px;
     }
 
+
     .timer-title {
         font-size: 17px;
         line-height: 1.8;
     }
 
+
     .timer {
         gap: 4px;
     }
+
 
     .time-box {
         width: 23vw;
@@ -138,17 +236,43 @@ h1 {
         height: 85px;
     }
 
+
     .number {
         font-size: 23px;
     }
+
 
     .label {
         font-size: 12px;
     }
 
+
     .info,
     .story {
         font-size: 16px;
+    }
+
+
+    /* لوگوی داخل عکس در موبایل */
+
+    .project-logo {
+        width: 72px;
+        height: 72px;
+
+        top: 10px;
+        left: 10px;
+    }
+
+
+    .instagram {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+
+    .instagram-icon {
+        width: 19px;
+        height: 19px;
     }
 
 }
@@ -161,50 +285,132 @@ h1 {
 
 <div class="container">
 
+
     <h1>
         یاد و نام عباس عساکره (منصوری)
     </h1>
 
 
-    <img
-        src="19.jpg"
-        alt="عباس عساکره (منصوری)"
-        class="photo"
-    >
+    <!-- =====================================
+         عکس شهید + لوگوی پروژه
+         ===================================== -->
+
+    <div class="photo-wrapper">
+
+        <img
+            src="19.jpg"
+            alt="عباس عساکره (منصوری)"
+            class="photo"
+        >
 
 
-    <div class="timer-title">
-        ساعات، دقایق و ثانیه‌هایی که از نبودن عباس عساکره (منصوری) گذشت
+        <!-- لوگوی ثابت پروژه -->
+
+        <img
+            src="logo-khoon-jari-khuzestan.png"
+            alt="خون جاری خوزستان"
+            class="project-logo"
+        >
+
     </div>
 
+
+    <!-- =====================================
+         عنوان تایمر
+         ===================================== -->
+
+    <div class="timer-title">
+
+        ساعات، دقایق و ثانیه‌هایی که از نبودن
+        عباس عساکره (منصوری) گذشت
+
+    </div>
+
+
+    <!-- =====================================
+         تایمر
+         ===================================== -->
 
     <div class="timer">
 
+
+        <!-- روز -->
+
         <div class="time-box">
-            <div class="number" id="days">۰</div>
-            <div class="label">روز</div>
+
+            <div
+                class="number"
+                id="days"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                روز
+            </div>
+
         </div>
 
 
+        <!-- ساعت -->
+
         <div class="time-box">
-            <div class="number" id="hours">۰</div>
-            <div class="label">ساعت</div>
+
+            <div
+                class="number"
+                id="hours"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                ساعت
+            </div>
+
         </div>
 
 
+        <!-- دقیقه -->
+
         <div class="time-box">
-            <div class="number" id="minutes">۰</div>
-            <div class="label">دقیقه</div>
+
+            <div
+                class="number"
+                id="minutes"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                دقیقه
+            </div>
+
         </div>
 
 
+        <!-- ثانیه -->
+
         <div class="time-box">
-            <div class="number" id="seconds">۰</div>
-            <div class="label">ثانیه</div>
+
+            <div
+                class="number"
+                id="seconds"
+            >
+                ۰
+            </div>
+
+            <div class="label">
+                ثانیه
+            </div>
+
         </div>
 
     </div>
 
+
+    <!-- =====================================
+         اطلاعات
+         ===================================== -->
 
     <div class="info">
 
@@ -231,6 +437,10 @@ h1 {
     </div>
 
 
+    <!-- =====================================
+         داستان
+         ===================================== -->
+
     <div class="story">
 
         <p>
@@ -247,6 +457,10 @@ h1 {
     </div>
 
 
+    <!-- =====================================
+         پایین صفحه
+         ===================================== -->
+
     <div class="footer">
 
         یاد و نام عباس عساکره (منصوری)
@@ -257,12 +471,58 @@ h1 {
 
         <br>
 
+
+        <!-- =====================================
+             دکمه اینستاگرام
+             ===================================== -->
+
         <a
             class="instagram"
             href="https://www.instagram.com/khoon.jari.khuzestan/reels/"
             target="_blank"
+            rel="noopener noreferrer"
         >
+
+
+            <!-- آیکون اینستاگرام -->
+
+            <svg
+                class="instagram-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+
+                <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1.2"
+                    fill="currentColor"
+                />
+
+            </svg>
+
+
             ← بازگشت به «خون جاری خوزستان»
+
         </a>
 
     </div>
@@ -286,6 +546,7 @@ h1 {
 
  Timestamp:
  1574073000000
+
 ====================================================
 */
 
@@ -293,24 +554,29 @@ h1 {
 /*
  زمان شروع شمارنده
 */
+
 var startTime = 1574073000000;
 
 
 /*
  اعداد فارسی
 */
+
 var persianDigits = "۰۱۲۳۴۵۶۷۸۹";
 
 
 /*
  تبدیل اعداد انگلیسی به فارسی
 */
+
 function persian(number) {
 
     return String(number).replace(
         /\d/g,
         function(d) {
+
             return persianDigits[d];
+
         }
     );
 
@@ -320,39 +586,51 @@ function persian(number) {
 /*
  تابع اصلی تایمر
 */
+
 function timer() {
 
     var now = Date.now();
 
-    var difference = now - startTime;
+    var difference =
+        now - startTime;
 
 
     /*
     اگر اختلاف منفی شد،
     صفر نمایش داده شود.
     */
+
     if (difference < 0) {
+
         difference = 0;
+
     }
 
 
     /*
     تبدیل میلی‌ثانیه به ثانیه
     */
+
     var totalSeconds =
-        Math.floor(difference / 1000);
+        Math.floor(
+            difference / 1000
+        );
 
 
     /*
     محاسبه روز
     */
+
     var days =
-        Math.floor(totalSeconds / 86400);
+        Math.floor(
+            totalSeconds / 86400
+        );
 
 
     /*
     محاسبه ساعت
     */
+
     var hours =
         Math.floor(
             (totalSeconds % 86400) / 3600
@@ -362,6 +640,7 @@ function timer() {
     /*
     محاسبه دقیقه
     */
+
     var minutes =
         Math.floor(
             (totalSeconds % 3600) / 60
@@ -371,24 +650,38 @@ function timer() {
     /*
     محاسبه ثانیه
     */
+
     var seconds =
         totalSeconds % 60;
 
 
     /*
-    نمایش اعداد
+    نمایش روز
     */
+
     document.getElementById("days").innerHTML =
         persian(days);
 
+
+    /*
+    نمایش ساعت
+    */
 
     document.getElementById("hours").innerHTML =
         persian(hours);
 
 
+    /*
+    نمایش دقیقه
+    */
+
     document.getElementById("minutes").innerHTML =
         persian(minutes);
 
+
+    /*
+    نمایش ثانیه
+    */
 
     document.getElementById("seconds").innerHTML =
         persian(seconds);
@@ -399,17 +692,21 @@ function timer() {
 /*
  اجرای فوری
 */
+
 timer();
 
 
 /*
  اجرای دوباره هر یک ثانیه
 */
-setInterval(timer, 1000);
+
+setInterval(
+    timer,
+    1000
+);
 
 </script>
 
 </body>
 
 </html>
-```
