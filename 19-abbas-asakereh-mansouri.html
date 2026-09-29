@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -15,23 +16,20 @@
 
 body {
     margin: 0;
-    padding: 0;
     background: #090909;
     color: #f1f1f1;
     font-family: Tahoma, Arial, sans-serif;
-    line-height: 2;
 }
 
 .container {
-    width: 92%;
+    width: 94%;
     max-width: 800px;
-    margin: 30px auto 50px;
+    margin: 25px auto 50px;
     text-align: center;
 }
 
 h1 {
     font-size: 30px;
-    color: #ffffff;
     margin-bottom: 25px;
 }
 
@@ -45,27 +43,27 @@ h1 {
 }
 
 .timer-title {
-    font-size: 20px;
     color: #d71920;
-    margin: 10px auto 20px;
+    font-size: 20px;
     font-weight: bold;
+    margin: 15px auto 20px;
 }
 
 .timer {
     display: flex;
     direction: ltr;
     justify-content: center;
-    gap: 10px;
-    margin: 0 auto 35px;
+    gap: 8px;
     width: 100%;
+    margin-bottom: 35px;
 }
 
 .time-box {
+    width: 105px;
+    height: 105px;
     background: #151515;
     border: 1px solid #333;
     border-radius: 8px;
-    width: 105px;
-    min-height: 105px;
 
     display: flex;
     flex-direction: column;
@@ -74,84 +72,70 @@ h1 {
 }
 
 .number {
+    color: #d71920;
     font-size: 30px;
     font-weight: bold;
-    color: #d71920;
     line-height: 1.2;
 }
 
 .label {
+    color: #ccc;
     font-size: 14px;
-    color: #cccccc;
     margin-top: 8px;
 }
 
 .info {
     text-align: right;
     font-size: 18px;
-    margin-top: 15px;
-}
-
-.info p {
-    margin: 7px 0;
+    line-height: 2;
 }
 
 .story {
-    margin-top: 30px;
-    padding-right: 18px;
-    border-right: 4px solid #d71920;
     text-align: right;
     font-size: 18px;
+    line-height: 2;
+    border-right: 4px solid #d71920;
+    padding-right: 15px;
+    margin-top: 25px;
 }
 
 .footer {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #333;
-    color: #bbbbbb;
-    font-size: 17px;
+    font-size: 16px;
+    color: #bbb;
 }
 
 .instagram {
     display: inline-block;
-    margin-top: 25px;
-    padding: 10px 22px;
+    margin-top: 20px;
+    padding: 9px 18px;
+    color: white;
+    text-decoration: none;
     border: 1px solid #d71920;
     border-radius: 6px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.instagram:hover {
-    background: #d71920;
 }
 
 @media (max-width: 600px) {
 
-    .container {
-        width: 94%;
-        margin-top: 20px;
-    }
-
     h1 {
         font-size: 23px;
-        margin-bottom: 20px;
     }
 
     .timer-title {
         font-size: 17px;
         line-height: 1.8;
-        margin-bottom: 15px;
     }
 
     .timer {
-        gap: 5px;
+        gap: 4px;
     }
 
     .time-box {
         width: 23vw;
-        min-height: 85px;
+        max-width: 95px;
+        height: 85px;
     }
 
     .number {
@@ -160,7 +144,6 @@ h1 {
 
     .label {
         font-size: 12px;
-        margin-top: 5px;
     }
 
     .info,
@@ -168,19 +151,20 @@ h1 {
         font-size: 16px;
     }
 
-    .footer {
-        font-size: 15px;
-    }
 }
 
 </style>
 </head>
 
+
 <body>
 
 <div class="container">
 
-    <h1>یاد و نام عباس عساکره (منصوری)</h1>
+    <h1>
+        یاد و نام عباس عساکره (منصوری)
+    </h1>
+
 
     <img
         src="19.jpg"
@@ -188,37 +172,39 @@ h1 {
         class="photo"
     >
 
+
     <div class="timer-title">
         ساعات، دقایق و ثانیه‌هایی که از نبودن عباس عساکره (منصوری) گذشت
     </div>
 
+
     <div class="timer">
 
-        <!-- روز -->
         <div class="time-box">
             <div class="number" id="days">۰</div>
             <div class="label">روز</div>
         </div>
 
-        <!-- ساعت -->
+
         <div class="time-box">
             <div class="number" id="hours">۰</div>
             <div class="label">ساعت</div>
         </div>
 
-        <!-- دقیقه -->
+
         <div class="time-box">
             <div class="number" id="minutes">۰</div>
             <div class="label">دقیقه</div>
         </div>
 
-        <!-- ثانیه -->
+
         <div class="time-box">
             <div class="number" id="seconds">۰</div>
             <div class="label">ثانیه</div>
         </div>
 
     </div>
+
 
     <div class="info">
 
@@ -244,6 +230,7 @@ h1 {
 
     </div>
 
+
     <div class="story">
 
         <p>
@@ -258,6 +245,7 @@ h1 {
         </p>
 
     </div>
+
 
     <div class="footer">
 
@@ -276,4 +264,152 @@ h1 {
         >
             ← بازگشت به «خون جاری خوزستان»
         </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/*
+====================================================
+ تایمر عباس عساکره (منصوری)
+====================================================
+
+ 27 آبان 1398
+ برابر با:
+ 18 November 2019
+
+ زمان انتخاب شده:
+ 12:00:00
+
+ Timestamp:
+ 1574073000000
+====================================================
+*/
+
+
+/*
+ زمان شروع شمارنده
+*/
+var startTime = 1574073000000;
+
+
+/*
+ اعداد فارسی
+*/
+var persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+
+
+/*
+ تبدیل اعداد انگلیسی به فارسی
+*/
+function persian(number) {
+
+    return String(number).replace(
+        /\d/g,
+        function(d) {
+            return persianDigits[d];
+        }
+    );
+
+}
+
+
+/*
+ تابع اصلی تایمر
+*/
+function timer() {
+
+    var now = Date.now();
+
+    var difference = now - startTime;
+
+
+    /*
+    اگر اختلاف منفی شد،
+    صفر نمایش داده شود.
+    */
+    if (difference < 0) {
+        difference = 0;
+    }
+
+
+    /*
+    تبدیل میلی‌ثانیه به ثانیه
+    */
+    var totalSeconds =
+        Math.floor(difference / 1000);
+
+
+    /*
+    محاسبه روز
+    */
+    var days =
+        Math.floor(totalSeconds / 86400);
+
+
+    /*
+    محاسبه ساعت
+    */
+    var hours =
+        Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
+
+
+    /*
+    محاسبه دقیقه
+    */
+    var minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+
+    /*
+    محاسبه ثانیه
+    */
+    var seconds =
+        totalSeconds % 60;
+
+
+    /*
+    نمایش اعداد
+    */
+    document.getElementById("days").innerHTML =
+        persian(days);
+
+
+    document.getElementById("hours").innerHTML =
+        persian(hours);
+
+
+    document.getElementById("minutes").innerHTML =
+        persian(minutes);
+
+
+    document.getElementById("seconds").innerHTML =
+        persian(seconds);
+
+}
+
+
+/*
+ اجرای فوری
+*/
+timer();
+
+
+/*
+ اجرای دوباره هر یک ثانیه
+*/
+setInterval(timer, 1000);
+
+</script>
+
+</body>
+
+</html>
 ```
