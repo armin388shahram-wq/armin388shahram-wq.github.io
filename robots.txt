@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://armin388shahram-wq.github.io/sitemap.xml
