@@ -1,295 +1,706 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>یاد و نام کیان پیرفلک</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<style>
+    <title>خون جاری خوزستان | یاد و نام جان‌باختگان</title>
 
-* {
-    box-sizing: border-box;
-}
+    <meta name="description"
+          content="خون جاری خوزستان؛ آرشیو یاد و نام جان‌باختگان قیام و مقاومت در خوزستان، برای آنکه نام‌ها در هیاهوی زمان گم نشوند.">
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-}
+    <meta name="keywords"
+          content="خون جاری خوزستان, خوزستان, جان‌باختگان, یاد و نام, قیام, مقاومت">
 
-body {
-    background: #111;
-    color: #fff;
-    font-family: Arial, Tahoma, sans-serif;
-}
+    <meta name="robots"
+          content="index, follow">
 
-.container {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 30px 20px 60px;
-    text-align: center;
-}
+    <link rel="canonical"
+          href="https://armin388shahram-wq.github.io/">
 
-/* عنوان */
+    <style>
 
-h1 {
-    font-size: 36px;
-    margin: 0 0 25px;
-    line-height: 1.5;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-/* عکس */
+        html {
+            scroll-behavior: smooth;
+        }
 
-.photo-box {
-    width: 100%;
-    max-width: 430px;
-    margin: 0 auto 25px;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #222;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0b0b0b;
+            color: #eeeeee;
+            font-family: Tahoma, Arial, sans-serif;
+            line-height: 1.9;
+        }
 
-.photo-box img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+        .container {
+            width: 92%;
+            max-width: 850px;
+            margin: 0 auto;
+        }
 
-/* اطلاعات */
+        /* =========================
+           HEADER
+        ========================= */
 
-.info {
-    margin-top: 10px;
-}
+        header {
+            text-align: center;
+            padding: 45px 20px 35px;
+            border-bottom: 1px solid #292929;
+        }
 
-.place {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
+        .logo {
+            width: 125px;
+            height: 125px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 18px;
+        }
 
-.date {
-    font-size: 20px;
-    color: #aaa;
-}
+        h1 {
+            margin: 0;
+            font-size: 31px;
+            font-weight: bold;
+            color: #eeeeee;
+        }
 
-/* عنوان شمارنده */
+        .subtitle {
+            margin-top: 10px;
+            color: #bdbdbd;
+            font-size: 17px;
+        }
 
-.timer-title {
-    margin-top: 42px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #aaa;
-    letter-spacing: 1px;
-}
+        .motto {
+            margin: 20px auto 0;
+            color: #8f8f8f;
+            font-size: 15px;
+        }
 
-/* شمارنده */
+        /* =========================
+           INTRO
+        ========================= */
 
-.timer {
-    font-size: 38px;
-    font-weight: 800;
-    direction: ltr;
-    text-align: center;
-    letter-spacing: 3px;
-    line-height: 1.5;
-    white-space: nowrap;
-    color: #d62828;
-    text-shadow: 0 0 12px rgba(214, 40, 40, 0.25);
+        .intro {
+            margin-top: 35px;
+            padding: 25px 24px;
+            background: #111111;
+            border-right: 4px solid #8f1717;
+            border-radius: 6px;
+        }
 
-    margin: 8px auto 0;
-    padding: 14px 18px;
+        .intro p {
+            margin: 0;
+            color: #d5d5d5;
+            font-size: 16px;
+            line-height: 2;
+            text-align: right;
+        }
 
-    border-top: 1px solid rgba(214, 40, 40, 0.45);
-    border-bottom: 1px solid rgba(214, 40, 40, 0.45);
+        /* =========================
+           ARCHIVE TITLE
+        ========================= */
 
-    max-width: 620px;
-}
+        .archive-header {
+            text-align: center;
+            margin: 45px 0 25px;
+        }
 
-/* شرح حال */
+        .archive-header h2 {
+            margin: 0;
+            font-size: 25px;
+            color: #eeeeee;
+        }
 
-.description {
-    margin-top: 38px;
-    padding: 28px 24px;
+        .archive-header p {
+            margin: 8px 0 0;
+            color: #8d8d8d;
+            font-size: 14px;
+        }
 
-    background: #181818;
-    border-right: 3px solid #d62828;
-    border-radius: 8px;
+        /* =========================
+           ARCHIVE ITEMS
+        ========================= */
 
-    line-height: 2;
-    font-size: 17px;
-    font-weight: 300;
-    text-align: right;
+        .archive {
+            margin-bottom: 45px;
+        }
 
-    color: #FFFFFFD9;
-}
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 15px;
 
-/* متن‌های برجسته داخل شرح حال */
+            width: 100%;
+            min-height: 72px;
 
-.description strong {
-    font-weight: bold;
-}
+            margin-bottom: 12px;
+            padding: 12px 17px;
 
-/* عنوان پایانی */
+            background: #121212;
+            border: 1px solid #282828;
+            border-radius: 6px;
 
-.footer-title {
-    margin-top: 35px;
-    font-size: 20px;
-    font-weight: bold;
-}
+            color: #eeeeee;
+            text-decoration: none;
 
-/* موبایل */
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
 
-@media (max-width: 600px) {
+        .person:hover {
+            background: #181818;
+            border-color: #5a2525;
+            transform: translateX(-3px);
+        }
 
-    .container {
-        padding: 25px 15px 45px;
-    }
+        .number {
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
 
-    h1 {
-        font-size: 30px;
-    }
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    .place {
-        font-size: 23px;
-    }
+            background: #181818;
+            border: 1px solid #3a3a3a;
+            border-radius: 50%;
 
-    .date {
-        font-size: 18px;
-    }
+            color: #cfcfcf;
+            font-size: 14px;
+        }
 
-    .timer-title {
-        font-size: 17px;
-    }
+        .person-info {
+            flex: 1;
+            text-align: right;
+        }
 
-    .timer {
-        font-size: 27px;
-        letter-spacing: 1px;
-        padding: 12px 8px;
-    }
+        .person-name {
+            font-size: 17px;
+            font-weight: bold;
+            color: #eeeeee;
+        }
 
-    .description {
-        font-size: 16px;
-        line-height: 1.8;
-        padding: 24px 18px;
-        text-align: right;
-        font-weight: 300;
-    }
+        .person-location {
+            margin-top: 2px;
+            color: #888888;
+            font-size: 13px;
+        }
 
-    .footer-title {
-        font-size: 20px;
-    }
+        .arrow {
+            color: #777777;
+            font-size: 22px;
+        }
 
-}
+        /* =========================
+           FOOTER
+        ========================= */
 
-</style>
+        footer {
+            margin-top: 55px;
+            padding: 25px 15px 40px;
+
+            text-align: center;
+
+            border-top: 1px solid #252525;
+
+            color: #777777;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #999999;
+            font-size: 15px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 30px 15px 25px;
+            }
+
+            .logo {
+                width: 95px;
+                height: 95px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            .motto {
+                font-size: 13px;
+            }
+
+            .intro {
+                padding: 20px 17px;
+            }
+
+            .intro p {
+                font-size: 14px;
+                line-height: 1.9;
+            }
+
+            .archive-header {
+                margin-top: 38px;
+            }
+
+            .archive-header h2 {
+                font-size: 21px;
+            }
+
+            .person {
+                min-height: 65px;
+                padding: 10px 11px;
+                gap: 10px;
+            }
+
+            .number {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                font-size: 13px;
+            }
+
+            .person-name {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .person-location {
+                font-size: 11px;
+            }
+
+            .arrow {
+                font-size: 18px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<div class="container">
 
-    <h1>کیان پیرفلک</h1>
+<header>
 
-    <div class="photo-box">
-        <img src="کیان.jpg" alt="کیان پیرفلک">
-    </div>
+    <div class="container">
 
-    <div class="info">
+        <img
+            src="logo-khoon-jari-khuzestan.png"
+            alt="لوگوی خون جاری خوزستان"
+            class="logo">
 
-        <div class="place">
-            ایذه
+        <h1>
+            خون جاری خوزستان
+        </h1>
+
+        <div class="subtitle">
+            یاد و نام جان‌باختگان قیام و مقاومت در خوزستان
         </div>
 
-        <div class="date">
-            ۲۵ آبان ۱۴۰۱
+        <div class="motto">
+            برای آنکه نام‌ها در هیاهوی زمان گم نشوند.
         </div>
 
     </div>
 
-    <div class="timer-title">
-        مدت زمان گذشته
-    </div>
+</header>
 
-    <div id="timer" class="timer">
-        0 | 0 | 0 | 0
-    </div>
-<div class="description">
+
+<main class="container">
+
+
+    <!-- معرفی پروژه -->
+
+    <section class="intro">
+
+        <p>
+            این آرشیو برای ثبت و حفظ یاد و نام جان‌باختگان
+            قیام و مقاومت در خوزستان شکل گرفته است.
+            هر نام، بخشی از حافظه این سرزمین است و هر صفحه،
+            تلاشی برای آنکه نام‌ها و روایت‌ها در گذر زمان فراموش نشوند.
+        </p>
+
+    </section>
+
+
+    <!-- عنوان آرشیو -->
+
+    <section class="archive-header">
+
+        <h2>
+            آرشیو یاد و نام
+        </h2>
+
+        <p>
+            برای مشاهده صفحه اختصاصی هر نام، روی آن کلیک کنید.
+        </p>
+
+    </section>
+
+
+    <!-- آرشیو -->
+
+    <section class="archive">
+
+
+        <!-- ۱۱ -->
+
+        <a
+            href="11-ahad-beshare-doraghi.html"
+            class="person">
+
+            <div class="number">
+                ۱۱
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    احد بشاره دورقی
+                </div>
+
+                <div class="person-location">
+                    خوزستان
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۲ -->
+
+        <a
+            href="12.html"
+            class="person">
+
+            <div class="number">
+                ۱۲
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    احمد چراغیان
+                </div>
+
+                <div class="person-location">
+                    جایزان / امیدیه
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۳ -->
+
+        <a
+            href="ali-albouali-13.html"
+            class="person">
+
+            <div class="number">
+                ۱۳
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    علی البوعلی
+                </div>
+
+                <div class="person-location">
+                    خوزستان
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۴ -->
+
+        <a
+            href="ahmad-albouali-14.html"
+            class="person">
+
+            <div class="number">
+                ۱۴
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    احمد البوعلی
+                </div>
+
+                <div class="person-location">
+                    ماهشهر
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۵ -->
+
+        <a
+            href="raham-seyf-15.html"
+            class="person">
+
+            <div class="number">
+                ۱۵
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    رحام سیف
+                </div>
+
+                <div class="person-location">
+                    اهواز
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۶ -->
+
+        <a
+            href="eqbal-esmaeili-16.html"
+            class="person">
+
+            <div class="number">
+                ۱۶
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    اقبال اسماعیلی
+                </div>
+
+                <div class="person-location">
+                    خوزستان
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۷ -->
+
+        <a
+            href="farshad-hajipour-milasi-17.html"
+            class="person">
+
+            <div class="number">
+                ۱۷
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    فرشاد حاجی‌پور میلاسی
+                </div>
+
+                <div class="person-location">
+                    خوزستان
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۸ -->
+
+        <a
+            href="ghasem-bavi-18.html"
+            class="person">
+
+            <div class="number">
+                ۱۸
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    قاسم باوی
+                </div>
+
+                <div class="person-location">
+                    اهواز
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۹ - مجید مقدم -->
+
+        <a
+            href="majid-majdam-19.html"
+            class="person">
+
+            <div class="number">
+                ۱۹
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    مجید مقدم
+                </div>
+
+                <div class="person-location">
+                    ماهشهر
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۱۹ - عباس عساکره -->
+
+        <a
+            href="19-abbas-asakereh-mansouri.html"
+            class="person">
+
+            <div class="number">
+                ۱۹
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    عباس عساکره (منصوری)
+                </div>
+
+                <div class="person-location">
+                    ماهشهر
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+        <!-- ۲۰ -->
+
+        <a
+            href="20-mehdi-rudbarian.html"
+            class="person">
+
+            <div class="number">
+                ۲۰
+            </div>
+
+            <div class="person-info">
+
+                <div class="person-name">
+                    مهدی رودبریان و مصطفی رودبریان
+                </div>
+
+                <div class="person-location">
+                    خوزستان
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </a>
+
+
+    </section>
+
+
+</main>
+
+
+<footer>
 
     <strong>
-    کیان پیرفلک، پسری ۹ ساله از ایذه خوزستان بود؛
-    کودکی که عاشق ربات‌ها بود و رؤیای مهندس رباتیک شدن را در سر داشت.
+        خون جاری خوزستان
     </strong>
 
-    <br><br>
+    <br>
 
-    شامگاه ۲۵ آبان ۱۴۰۱، هنگام بازگشت خانواده،
-    خودروی آنان در ایذه هدف تیراندازی نیروهای امنیتی جمهوری اسلامی قرار گرفت
-    و کیان بر اثر اصابت گلوله جان باخت.
+    یاد و نامشان ماندگار
 
-    <br><br>
+</footer>
 
-    کیان تنها ۹ سال داشت و فرصت آن را پیدا نکرد
-    که رؤیاهای کودکی‌اش را به واقعیت تبدیل کند.
-
-    <br><br>
-
-    نام او اما در حافظه بسیاری ماند؛
-    کودکی از دیار زاگرس،
-    با رؤیای ربات‌ها و مهندس شدن،
-    که فرصت بزرگ شدن پیدا نکرد.
-
-    <br><br>
-
-    این صفحه برای زنده نگه داشتن نام و یاد کیان
-    و ثبت گذر زمان از آن شب ساخته شده است.
-
-</div>
-<div class="footer-title">
-    یاد و نام کیان پیرفلک
-</div>
-
-<script>
-
-const martyrdomDate = new Date(2022, 10, 16, 0, 0, 0);
-
-function updateTimer() {
-
-    const now = new Date();
-
-    let totalSeconds = Math.floor(
-        (now - martyrdomDate) / 1000
-    );
-
-    let days = Math.floor(totalSeconds / 86400);
-
-    totalSeconds %= 86400;
-
-    let hours = Math.floor(totalSeconds / 3600);
-
-    totalSeconds %= 3600;
-
-    let minutes = Math.floor(totalSeconds / 60);
-
-    let seconds = totalSeconds % 60;
-
-    document.getElementById("timer").textContent =
-        days + " | " +
-        hours + " | " +
-        minutes + " | " +
-        seconds;
-}
-
-updateTimer();
-
-setInterval(updateTimer, 1000);
-
-</script>
 
 </body>
+
 </html>
-```
