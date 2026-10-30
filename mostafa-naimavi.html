@@ -8,6 +8,7 @@
 <title>مصطفی نعیماوی | خون جاری خوزستان</title>
 
 <meta name="description" content="یادبود مصطفی نعیماوی، ۲۶ ساله، اهل عباس‌آباد شادگان، جان‌باخته اعتراضات خوزستان در ۲۶ تیر ۱۴۰۰.">
+
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://khoonjari.com/mostafa-naimavi.html">
 
@@ -35,14 +36,16 @@ body {
 .container {
     width: 94%;
     max-width: 850px;
-    margin: 35px auto;
+    margin: 15px auto;
 }
+
+/* عکس شهید */
 
 .photo-wrapper {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto 25px;
+    max-width: 400px;
+    margin: 0 auto 12px;
 }
 
 .main-photo {
@@ -54,61 +57,65 @@ body {
 
 .logo {
     position: absolute;
-    top: 18px;
-    left: 18px;
-    width: 105px;
-    height: 105px;
+    top: 12px;
+    left: 12px;
+    width: 85px;
+    height: 85px;
     object-fit: contain;
     border-radius: 50%;
 }
 
-h1 {
-    font-size: 27px;
-    color: #e7c77b;
-    margin: 20px 0;
-}
-
-.subtitle {
-    font-size: 19px;
-    color: #d2b36e;
-    margin-bottom: 30px;
-}
+/* تایمر */
 
 .timer-title {
     font-size: 19px;
-    color: #eee;
-    margin: 30px 0 20px;
+    color: #e5c477;
+    margin: 12px 0 15px;
 }
 
 .timer {
     display: flex;
     direction: ltr;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
-    margin: 20px auto 35px;
+    margin: 10px auto 25px;
 }
 
 .time-box {
     background: #202020;
     border: 1px solid #a98643;
     border-radius: 9px;
-    min-width: 105px;
-    padding: 15px 10px;
+    min-width: 95px;
+    padding: 12px 9px;
 }
 
 .time-box span {
     display: block;
-    font-size: 30px;
+    font-size: 29px;
     color: #e5c477;
     font-weight: bold;
 }
 
 .time-box small {
     display: block;
-    margin-top: 9px;
+    margin-top: 7px;
     color: #ccc;
-    font-size: 14px;
+    font-size: 13px;
+}
+
+/* مشخصات شهید */
+
+h1 {
+    font-size: 26px;
+    color: #e7c77b;
+    margin: 20px 0 12px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #d2b36e;
+    margin-bottom: 22px;
 }
 
 .story {
@@ -116,7 +123,7 @@ h1 {
     border-right: 4px solid #a52a2a;
     border-radius: 6px;
     padding: 22px;
-    margin: 30px auto;
+    margin: 25px auto;
     text-align: right;
     line-height: 2.3;
     font-size: 17px;
@@ -137,59 +144,76 @@ h1 {
 .quote {
     color: #d8bd81;
     font-size: 19px;
-    margin: 25px 0;
+    text-align: center;
+    margin: 25px 0 10px;
 }
+
+/* انتهای صفحه و اینستاگرام */
 
 .footer {
     border-top: 1px solid #444;
-    margin-top: 40px;
+    margin-top: 35px;
     padding: 25px 10px;
     color: #aaa;
     line-height: 2;
 }
 
-.instagram-button {
-    display: inline-block;
-    background: #a52a2a;
-    color: #fff !important;
-    text-decoration: none !important;
-    padding: 13px 25px;
-    border-radius: 8px;
-    margin-top: 18px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 1px solid #d7b46c;
-    transition: 0.3s;
+.instagram-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 1px solid #a98643;
+    border-radius: 10px;
 }
 
-.instagram-button:hover {
-    background: #c13a3a;
+.instagram-link img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.instagram-link span {
+    color: #e5c477;
+    font-size: 15px;
+    margin-top: 8px;
 }
 
 @media (max-width: 600px) {
+
     .container {
         width: 96%;
-        margin-top: 15px;
+        margin: 10px auto;
+    }
+
+    .photo-wrapper {
+        max-width: 400px;
+        margin-bottom: 10px;
     }
 
     .logo {
-        width: 72px;
-        height: 72px;
-        top: 10px;
-        left: 10px;
+        width: 65px;
+        height: 65px;
+        top: 8px;
+        left: 8px;
     }
 
-    h1 {
-        font-size: 22px;
-    }
-
-    .subtitle {
+    .timer-title {
         font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .timer {
+        gap: 7px;
+        margin: 8px auto 20px;
     }
 
     .time-box {
         min-width: 75px;
-        padding: 12px 7px;
+        padding: 10px 6px;
     }
 
     .time-box span {
@@ -198,6 +222,14 @@ h1 {
 
     .time-box small {
         font-size: 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 16px;
     }
 
     .story {
@@ -211,6 +243,8 @@ h1 {
 <body>
 
 <div class="container">
+
+    <!-- عکس شهید -->
 
     <div class="photo-wrapper">
 
@@ -228,11 +262,7 @@ h1 {
 
     </div>
 
-    <h1>مصطفی نعیماوی</h1>
-
-    <div class="subtitle">
-        زمان می‌گذرد، یاد تو زنده است...
-    </div>
+    <!-- تایمر بلافاصله بعد از عکس -->
 
     <div class="timer-title">
         زمان سپری‌شده از نبودن مصطفی نعیماوی
@@ -260,6 +290,14 @@ h1 {
             <small>ثانیه</small>
         </div>
 
+    </div>
+
+    <!-- مشخصات شهید -->
+
+    <h1>مصطفی نعیماوی</h1>
+
+    <div class="subtitle">
+        زمان می‌گذرد، یاد تو زنده است...
     </div>
 
     <div class="story">
@@ -292,6 +330,8 @@ h1 {
 
     </div>
 
+    <!-- لینک تصویری اینستاگرام -->
+
     <div class="footer">
 
         <p>
@@ -304,34 +344,57 @@ h1 {
         </p>
 
         <a
-            class="instagram-button"
+            class="instagram-link"
             href="https://www.instagram.com/avayebandar_ahvaz/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="ورود به صفحه اینستاگرام آوای بندر"
         >
-            ورود به صفحه اینستاگرام آوای بندر
+
+            <img
+                src="instagram.png"
+                alt="لوگوی اینستاگرام"
+            >
+
+            <span>
+                آوای بندر | ورود به صفحه اینستاگرام
+            </span>
+
         </a>
 
     </div>
 
 </div>
 
-<script>
-const startDate = new Date("2021-07-16T22:00:00+03:30").getTime();
+<!-- تایمر زنده -->
 
-const persianNumber = new Intl.NumberFormat("fa-IR");
+<script>
+
+const startDate =
+    new Date("2021-07-16T22:00:00+03:30").getTime();
+
+const persianNumber =
+    new Intl.NumberFormat("fa-IR");
 
 function updateTimer() {
 
     const now = Date.now();
+
     let distance = now - startDate;
 
     if (distance < 0) distance = 0;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((distance / (1000 * 60)) % 60);
-    const seconds = Math.floor((distance / 1000) % 60);
+    const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+    const minutes =
+        Math.floor((distance / (1000 * 60)) % 60);
+
+    const seconds =
+        Math.floor((distance / 1000) % 60);
 
     document.getElementById("days").textContent =
         persianNumber.format(days);
@@ -347,7 +410,9 @@ function updateTimer() {
 }
 
 updateTimer();
+
 setInterval(updateTimer, 1000);
+
 </script>
 
 </body>
