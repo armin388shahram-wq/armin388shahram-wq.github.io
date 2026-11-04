@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عبدالله فتحی | خون جاری خوزستان</title>
+
+<meta name="description" content="یادبود عبدالله فتحی، ۴۳ ساله، اهل شوشتر؛ مهندس و کارمند صنایع فولاد اهواز و پدر سه فرزند. یاد و نام او در خون جاری خوزستان ماندگار است.">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://khoonjari.com/29-abdollah-fathi.html">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --gold: #e9b84e;
+  --red: #e51c2a;
+  --paper: #f5eee1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #070707;
+  color: var(--paper);
+  font-family: Vazirmatn, Tahoma, sans-serif;
+}
+
+.page {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 70% 25%,
+    #33251c 0, #101010 38%, #050505 78%);
+  border-inline: 1px solid #2b2117;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 28px;
+  border-bottom: 3px solid #8e1018;
+  background: linear-gradient(90deg,#050505,#17110c);
+}
+
+.logo {
+  font-size: 42px;
+  color: var(--gold);
+}
+
+.brand {
+  flex: 1;
+}
+
+.brand h1 {
+  font-size: clamp(24px,4vw,42px);
+  margin: 0;
+  font-weight: 900;
+}
+
+.brand h1 span {
+  color: var(--red);
+}
+
+.brand p {
+  margin: 3px 0 0;
+  color: #e5d9c7;
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  min-height: 560px;
+}
+
+.portrait {
+  min-height: 560px;
+  background:
+    linear-gradient(0deg,rgba(0,0,0,.25),transparent 40%),
+    url("29-abdollah-fathi.jpg") center center / cover no-repeat;
+  position: relative;
+}
+
+.portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,transparent 70%,#080808 100%);
+}
+
+.details {
+  padding: 55px 35px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kicker {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: clamp(38px,6vw,68px);
+  line-height: 1.3;
+  margin: 8px 0 10px;
+  font-weight: 900;
+}
+
+h2 span {
+  color: var(--red);
+}
+
+.subtitle {
+  font-size: clamp(17px,2.3vw,25px);
+  font-weight: 600;
+  color: #eee;
+  margin: 0 0 28px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  border-top: 1px solid var(--red);
+  border-bottom: 1px solid #7a5a28;
+  padding: 17px 0;
+  margin-bottom: 22px;
+  text-align: center;
+  row-gap: 16px;
+}
+
+.fact {
+  padding: 5px 10px;
+  border-left: 1px solid #a77c36;
+}
+
+.fact:nth-child(2n) {
+  border-left: 0;
+}
+
+.fact b {
+  display: block;
+  color: var(--gold);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.fact span {
+  font-size: 17px;
+}
+
+.timer {
+  border: 3px solid var(--gold);
+  border-radius: 17px;
+  padding: 15px 14px 18px;
+  background: rgba(0,0,0,.82);
+  box-shadow: 0 0 20px #a66a2530;
+}
+
+.timer h3 {
+  text-align: center;
+  color: var(--gold);
+  font-size: 21px;
+  margin: 0 0 12px;
+}
+
+.units {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  direction: ltr;
+}
+
+.unit {
+  text-align: center;
+  border-left: 1px solid #9a722e;
+  padding: 2px 5px;
+}
+
+.unit:last-child {
+  border: 0;
+}
+
+.num {
+  font-size: clamp(28px,4vw,45px);
+  font-weight: 900;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+}
+
+.unit small {
+  display: block;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.lower {
+  padding: 28px 34px 24px;
+}
+
+.story h3 {
+  display: inline-block;
+  background: linear-gradient(90deg,#b80e19,#e51c2a,#9a0c15);
+  padding: 8px 38px;
+  margin: 0 0 15px;
+  font-size: 25px;
+}
+
+.story p {
+  font-size: clamp(16px,2.1vw,21px);
+  line-height: 2.15;
+  margin: 0;
+  color: #f0e9df;
+  text-align: justify;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 18px 34px 28px;
+}
+
+.action {
+  display: block;
+  border: 1px solid #9e692d;
+  border-radius: 30px;
+  padding: 14px 18px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 17px;
+  background: linear-gradient(100deg,#8b1bc6,#e51d70,#f0a52c);
+  color: white;
+  text-decoration: none;
+}
+
+.action.secondary {
+  background: #100d09;
+  border-color: #8f1b1c;
+  color: #f5e6c8;
+}
+
+.motto {
+  text-align: center;
+  border-top: 2px solid #8e1018;
+  border-bottom: 2px solid #8e1018;
+  padding: 18px;
+  color: #eee;
+  font-size: clamp(20px,3vw,30px);
+  font-weight: 700;
+}
+
+footer {
+  padding: 18px;
+  text-align: center;
+  color: #cbbd9f;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+@media(max-width:720px) {
+
+  header {
+    padding: 12px 14px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 34px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-around;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .portrait {
+    min-height: 420px;
+    background-position: center 30%;
+  }
+
+  .portrait::after {
+    background: linear-gradient(
+      0deg,#080808 0%,transparent 48%
+    );
+  }
+
+  .details {
+    padding: 10px 18px 22px;
+    margin-top: -20px;
+    position: relative;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    margin-bottom: 18px;
+  }
+
+  .facts {
+    margin-bottom: 16px;
+    padding: 12px 0;
+  }
+
+  .fact span {
+    font-size: 15px;
+  }
+
+  .timer h3 {
+    font-size: 18px;
+  }
+
+  .num {
+    font-size: 30px;
+  }
+
+  .unit small {
+    font-size: 13px;
+  }
+
+  .lower {
+    padding: 20px 16px;
+  }
+
+  .story h3 {
+    font-size: 20px;
+    padding: 7px 24px;
+  }
+
+  .story p {
+    font-size: 15px;
+    line-height: 2;
+  }
+
+  .actions {
+    padding: 12px 14px 20px;
+    gap: 10px;
+  }
+
+  .action {
+    font-size: 12px;
+    padding: 12px 8px;
+  }
+
+  .motto {
+    font-size: 19px;
+    padding: 14px 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+  <div class="logo">𓃭</div>
+
+  <div class="brand">
+    <h1>خون جاری <span>خوزستان</span></h1>
+    <p>یاد و نام جان‌باختگان قیام و مقاومت در خوزستان</p>
+  </div>
+
+  <nav>
+    <a href="https://khoonjari.com/">خانه</a>
+    <a href="https://khoonjari.com/">آرشیو شهدا</a>
+    <a href="https://www.instagram.com/khoonjari.khz/">اینستاگرام</a>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="portrait"></div>
+
+  <div class="details">
+
+    <div class="kicker">صفحه یادبود شماره ۲۹</div>
+
+    <h2>عبدالله <span>فتحي</span></h2>
+
+    <p class="subtitle">
+      مهندس، پدر سه فرزند؛ مردی مهربان از شوشتر
+    </p>
+
+    <div class="facts">
+
+      <div class="fact">
+        <b>تاریخ آسمانی شدن</b>
+        <span>۹ ژانویه ۲۰۲۶</span>
+      </div>
+
+      <div class="fact">
+        <b>سن</b>
+        <span>۴۳ سال</span>
+      </div>
+
+      <div class="fact">
+        <b>نشان مهر</b>
+        <span>مهربان</span>
+      </div>
+
+      <div class="fact">
+        <b>استان</b>
+        <span>خوزستان</span>
+      </div>
+
+      <div class="fact">
+        <b>محل</b>
+        <span>شوشتر</span>
+      </div>
+
+      <div class="fact">
+        <b>شغل</b>
+        <span>مهندس صنایع فولاد اهواز</span>
+      </div>
+
+    </div>
+
+    <div class="timer">
+
+      <h3>زمانی که از نبودن عبدالله گذشت</h3>
+
+      <div class="units">
+
+        <div class="unit">
+          <div class="num" id="days">۰۰۰</div>
+          <small>روز</small>
+        </div>
+
+        <div class="unit">
+          <div class="num" id="hours">۰۰</div>
+          <small>ساعت</small>
+        </div>
+
+        <div class="unit">
+          <div class="num" id="minutes">۰۰</div>
+          <small>دقیقه</small>
+        </div>
+
+        <div class="unit">
+          <div class="num" id="seconds">۰۰</div>
+          <small>ثانیه</small>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="lower">
+
+  <article class="story">
+
+    <h3>روایت زندگی</h3>
+
+    <p>
+      عبدالله فتحی منجزی، مردی ۴۳ ساله و اهل شوشتر در استان خوزستان،
+      در ۱۹ دی‌ماه ۱۴۰۴، در جریان اعتراضات این شهر جان‌باخت.
+      <br><br>
+
+      او شهروندی لر بختیاری، مهندس و کارمند صنایع فولاد اهواز
+      و پدر سه فرزند بود. عبدالله در شب ۱۹ دی در شهر شوشتر،
+      بر اثر اصابت گلوله جنگی به سرش، جان خود را از دست داد.
+      <br><br>
+
+      نزدیکانش او را انسانی شجاع و مهربان می‌شناختند که دغدغه
+      زندگی بهتر برای مردم را داشت.
+      <br><br>
+
+      ویدئوی گریه فرزند این جان‌باخته در شبکه‌های اجتماعی
+      بازتاب گسترده‌ای داشت؛ اشک‌های این کودک، عمق اندوه
+      از دست دادن پدر را به تصویر می‌کشید.
+      <br><br>
+
+      یادش گرامی و راهش پرنور باد.
+    </p>
+
+  </article>
+
+</section>
+
+<section class="actions">
+
+  <a class="action"
+     href="https://www.instagram.com/khoonjari.khz/"
+     target="_blank">
+    ما را در اینستاگرام دنبال کنید
+    <br>
+    @khoonjari.khz
+  </a>
+
+  <a class="action secondary"
+     href="https://khoonjari.com/">
+    شهیدان دیگر خوزستان
+    <br>
+    <small>مشاهده آرشیو یاد و نام جان‌باختگان</small>
+  </a>
+
+</section>
+
+<div class="motto">
+  یادشان گرامی، راهشان پرنور...
+</div>
+
+<footer>
+  <a href="https://khoonjari.com/">بازگشت به آرشیو خون جاری خوزستان</a>
+</footer>
+
+</main>
+
+<script>
+
+const start = new Date('2026-01-09T00:00:00');
+
+const fa = n =>
+  String(n).replace(/[0-9]/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+function tick() {
+
+  const diff = Math.max(0, Date.now() - start.getTime());
+
+  const totalSeconds = Math.floor(diff / 1000);
+
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  document.getElementById('days').textContent =
+    fa(String(days).padStart(3,'0'));
+
+  document.getElementById('hours').textContent =
+    fa(String(hours).padStart(2,'0'));
+
+  document.getElementById('minutes').textContent =
+    fa(String(minutes).padStart(2,'0'));
+
+  document.getElementById('seconds').textContent =
+    fa(String(seconds).padStart(2,'0'));
+}
+
+tick();
+setInterval(tick, 1000);
+
+</script>
+
+</body>
+</html>
