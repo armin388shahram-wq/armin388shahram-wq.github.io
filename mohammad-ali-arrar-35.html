@@ -5,21 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>محمدعلی عرار | یاد و نام شهدای خوزستان - شماره ۳۵</title>
+<title>محمدعلی عرار | شماره ۳۵ | خون جاری خوزستان</title>
 
-<meta name="description" content="یادبود محمدعلی عرار، ۳۵ ساله، از تستر شوشتر که در ۱۹ دی ۱۴۰۴ با شلیک مستقیم نیروهای امنیتی جان باخت. یاد و نامش جاودان.">
+<meta name="description" content="یادبود محمدعلی عرار، ۳۵ ساله، اهل تستر شوشتر؛ جان‌باخته در ۱۹ دی ۱۴۰۴. یاد و نام جان‌باختگان خوزستان را زنده نگه می‌داریم.">
 
-<meta name="keywords" content="محمدعلی عرار, شهدای خوزستان, شهدای شوشتر, تستر, قیام ۱۴۰۴, خون جاری خوزستان">
+<meta name="keywords" content="محمدعلی عرار, شهدای شوشتر, شهدای خوزستان, تستر, قیام دی ۱۴۰۴, خون جاری خوزستان">
 
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://khoonjari.com/mohammad-ali-arrar-35.html">
 
+<meta property="og:type" content="article">
 <meta property="og:title" content="محمدعلی عرار | خون جاری خوزستان">
-<meta property="og:description" content="یاد و نام محمدعلی عرار، جان‌باخته راه آزادی در شوشتر">
+<meta property="og:description" content="یاد و نام محمدعلی عرار، جان‌باخته شوشتر">
 <meta property="og:image" content="https://khoonjari.com/mohammad-ali-arrar-35.png">
 <meta property="og:url" content="https://khoonjari.com/mohammad-ali-arrar-35.html">
-<meta property="og:type" content="article">
 
 <style>
 * {
@@ -28,185 +27,279 @@
 
 body {
     margin: 0;
-    padding: 20px 14px;
-    background: #101010;
-    color: #eee;
+    padding: 25px 15px 40px;
+    background: #0b0b0b;
+    color: #e8e8e8;
     font-family: Tahoma, Arial, sans-serif;
-    line-height: 2.1;
+    direction: rtl;
 }
 
 .container {
-    max-width: 760px;
-    margin: auto;
-    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* عنوان صفحه */
+
+.page-title {
+    text-align: center;
     margin-bottom: 22px;
 }
 
-.logo {
-    width: 110px;
-    height: auto;
-    object-fit: contain;
+.page-title h1 {
+    color: #eeeeee;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 8px;
 }
 
-.number {
-    color: #c9a45c;
+.page-title .subtitle {
+    color: #aaa;
     font-size: 15px;
-    border: 1px solid #8d713c;
-    padding: 4px 13px;
-    border-radius: 5px;
 }
 
-h1 {
-    color: #e0bd78;
-    font-size: 27px;
-    margin: 12px 0;
-}
+/* تصویر و لوگو */
 
-.subtitle {
-    color: #bbb;
-    font-size: 15px;
-    margin-bottom: 20px;
+.photo-wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
 }
 
 .photo {
     width: 100%;
-    max-width: 520px;
     height: auto;
-    border-radius: 7px;
-    border: 1px solid #57452b;
     display: block;
-    margin: 0 auto 18px;
+    border-radius: 12px;
+    border: 1px solid #292929;
 }
 
-.timer-box {
-    background: #1c1c1c;
-    border: 1px solid #57452b;
-    border-radius: 9px;
-    padding: 17px 8px;
-    margin: 15px 0 22px;
+.logo-overlay {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 105px;
+    height: auto;
+    object-fit: contain;
+    background: rgba(0,0,0,0.45);
+    padding: 5px;
+    border-radius: 7px;
+}
+
+/* شمارنده */
+
+.timer-section {
+    max-width: 620px;
+    margin: 24px auto 30px;
+    padding: 14px 5px;
+    border-top: 2px solid #d62828;
+    border-bottom: 2px solid #d62828;
 }
 
 .timer-title {
-    color: #d8b46e;
-    font-size: 16px;
-    margin-bottom: 14px;
+    text-align: center;
+    color: #e5e5e5;
+    font-size: 17px;
+    margin-bottom: 16px;
+    line-height: 1.9;
 }
 
 .timer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     direction: ltr;
-    gap: 5px;
+    gap: 3px;
+    text-align: center;
 }
 
-.time-unit {
-    background: #292929;
-    border-radius: 6px;
-    padding: 9px 2px;
+.timer-item {
+    min-width: 0;
 }
 
-.time-number {
-    color: #e6bd70;
-    font-size: 25px;
-    font-weight: bold;
-    direction: rtl;
+.timer-number {
+    color: #d62828;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.4;
     display: block;
+    direction: rtl;
+    font-variant-numeric: tabular-nums;
 }
 
-.time-label {
-    color: #bbb;
-    font-size: 12px;
+.timer-label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 4px;
 }
 
-.story {
-    background: #191919;
-    border-right: 3px solid #a83a35;
-    padding: 15px 17px;
-    text-align: right;
-    border-radius: 5px;
-    margin: 20px 0;
+/* اطلاعات شهید */
+
+.info {
+    margin: 28px 0;
+    padding: 20px 22px;
+    background: #151515;
+    border-right: 3px solid #d71920;
+    border-radius: 8px;
 }
 
-.story h2 {
-    color: #d9b36d;
-    font-size: 19px;
-    margin-top: 0;
+.info h2 {
+    color: #d71920;
+    font-size: 20px;
+    margin: 0 0 15px;
 }
 
-.story p {
+.info p {
     color: #ddd;
-    font-size: 15px;
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 2;
+}
+
+.info strong {
+    color: #e5b96a;
+}
+
+/* روایت */
+
+.description {
+    margin-top: 38px;
+    padding: 28px 24px;
+    background: #181818;
+    border-right: 3px solid #d71920;
+    border-radius: 8px;
+    line-height: 2.25;
+    font-size: 18px;
+    color: #e8e8e8;
     text-align: justify;
 }
 
-.location {
-    color: #d4ad67;
-    font-size: 15px;
-    margin: 15px 0;
+.description h2 {
+    color: #d71920;
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: right;
 }
+
+.description p {
+    margin: 0 0 18px;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+.date-location {
+    text-align: center;
+    color: #d6b16b;
+    font-size: 15px;
+    line-height: 2.2;
+    margin: 25px 0;
+}
+
+/* دکمه اینستاگرام */
 
 .footer {
-    border-top: 1px solid #493b29;
-    padding-top: 20px;
-    margin-top: 28px;
+    text-align: center;
+    margin-top: 42px;
+    padding-top: 25px;
+    border-top: 1px solid #333;
 }
 
-.footer p {
-    color: #c8aa76;
-    font-size: 16px;
+.footer-message {
+    color: #d6b16b;
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 22px;
 }
 
-.instagram {
+.home-link {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-    background: #8e302d;
-    color: white;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 22px;
+    background: #171717;
+    border: 1px solid #d71920;
+    border-radius: 8px;
+    color: #eee;
     text-decoration: none;
-    padding: 10px 25px;
-    border-radius: 6px;
     font-size: 15px;
-    margin: 12px 0;
+    transition: 0.3s;
 }
 
-.instagram img {
-    width: 25px;
-    height: 25px;
+.home-link:hover {
+    background: #d71920;
+    color: #fff;
+}
+
+.home-link img {
+    width: 27px;
+    height: 27px;
     object-fit: contain;
 }
 
-.copy {
+.copyright {
+    margin-top: 25px;
     color: #777;
     font-size: 12px;
-    margin-top: 17px;
 }
 
-@media(max-width:480px) {
+/* نمایش موبایل */
+
+@media (max-width: 600px) {
+
     body {
-        padding: 12px 10px;
+        padding: 15px 10px 30px;
     }
 
-    h1 {
-        font-size: 23px;
+    .page-title h1 {
+        font-size: 25px;
     }
 
-    .logo {
-        width: 90px;
+    .logo-overlay {
+        width: 85px;
+        top: 10px;
+        left: 10px;
     }
 
-    .time-number {
-        font-size: 20px;
+    .timer-section {
+        margin: 20px auto 25px;
+        padding: 12px 4px;
     }
 
-    .story p {
-        font-size: 14px;
+    .timer-title {
+        font-size: 15px;
+    }
+
+    .timer-number {
+        font-size: 27px;
+    }
+
+    .timer-label {
+        font-size: 12px;
+    }
+
+    .info {
+        padding: 17px;
+    }
+
+    .description {
+        margin-top: 30px;
+        padding: 24px 18px;
+        font-size: 19px;
+        line-height: 2.3;
+    }
+
+    .description h2 {
+        font-size: 19px;
+    }
+
+    .home-link {
+        font-size: 13px;
+        padding: 11px 15px;
     }
 }
 </style>
@@ -216,122 +309,168 @@ h1 {
 
 <div class="container">
 
-    <div class="header">
-        <img class="logo"
+    <header class="page-title">
+        <h1>محمدعلی عرار</h1>
+        <div class="subtitle">
+            یاد و نام جان‌باختگان قیام و مقاومت در خوزستان
+        </div>
+    </header>
+
+    <!-- تصویر یادبود -->
+
+    <div class="photo-wrapper">
+
+        <img
+        class="photo"
+        src="mohammad-ali-arrar-35.png"
+        alt="تصویر محمدعلی عرار، شماره ۳۵">
+
+        <img
+        class="logo-overlay"
         src="logo-khoon-jari-khuzestan.png"
-        alt="لوگوی خون جاری خوزستان">
+        alt="خون جاری خوزستان">
 
-        <div class="number">شماره ۳۵</div>
     </div>
 
-    <h1>محمدعلی عرار</h1>
+    <!-- شمارنده زنده -->
 
-    <div class="subtitle">
-        ۳۵ ساله | تستر (شوشتر) | خوزستان
-    </div>
-
-    <img class="photo"
-    src="mohammad-ali-arrar-35.png"
-    alt="تصویر محمدعلی عرار">
-
-    <div class="timer-box">
+    <section class="timer-section">
 
         <div class="timer-title">
-            ساعات، دقایق و ثانیه‌هایی که از نبودن محمدعلی گذشت
+            ساعات، دقایق و ثانیه‌هایی که از خاک‌سپاری محمدعلی گذشت
         </div>
 
         <div class="timer">
 
-            <div class="time-unit">
-                <span class="time-number" id="days">۰</span>
-                <span class="time-label">روز</span>
+            <div class="timer-item">
+                <span class="timer-number" id="days">۰</span>
+                <span class="timer-label">روز</span>
             </div>
 
-            <div class="time-unit">
-                <span class="time-number" id="hours">۰</span>
-                <span class="time-label">ساعت</span>
+            <div class="timer-item">
+                <span class="timer-number" id="hours">۰</span>
+                <span class="timer-label">ساعت</span>
             </div>
 
-            <div class="time-unit">
-                <span class="time-number" id="minutes">۰</span>
-                <span class="time-label">دقیقه</span>
+            <div class="timer-item">
+                <span class="timer-number" id="minutes">۰</span>
+                <span class="timer-label">دقیقه</span>
             </div>
 
-            <div class="time-unit">
-                <span class="time-number" id="seconds">۰</span>
-                <span class="time-label">ثانیه</span>
+            <div class="timer-item">
+                <span class="timer-number" id="seconds">۰</span>
+                <span class="timer-label">ثانیه</span>
             </div>
 
         </div>
-    </div>
 
-    <div class="story">
+    </section>
 
-        <h2>روایت زندگی و جان‌باختن محمدعلی عرار</h2>
+    <!-- مشخصات -->
+
+    <section class="info">
+
+        <h2>مشخصات محمدعلی عرار</h2>
+
+        <p><strong>نام:</strong> محمدعلی عرار</p>
+
+        <p><strong>سن:</strong> ۳۵ سال</p>
+
+        <p><strong>محل زندگی:</strong> تستر (شوشتر)، خوزستان</p>
+
+        <p><strong>تاریخ جان‌باختن:</strong> ۱۹ دی‌ماه ۱۴۰۴</p>
+
+        <p><strong>محل جان‌باختن:</strong> بلوار عمار، شوشتر</p>
+
+        <p><strong>تاریخ خاک‌سپاری:</strong> ۲۱ دی‌ماه ۱۴۰۴</p>
+
+        <p><strong>محل خاک‌سپاری:</strong> قبرستان تستر</p>
+
+    </section>
+
+    <!-- روایت زندگی -->
+
+    <section class="description">
+
+        <h2>روایت جان‌باختن محمدعلی عرار</h2>
 
         <p>
         محمدعلی عرار، ۳۵ ساله و اهل تستر (شوشتر)، روز ۱۹ دی‌ماه ۱۴۰۴ در بلوار عمار این شهر هدف تیراندازی مستقیم نیروهای امنیتی قرار گرفت.
         </p>
 
         <p>
-        بنا بر گزارش شاهدان عینی، او مقابل منزل خود و در نزدیکی مسجد عمار ایستاده بود که هنگام تلاش برای کمک به دو دختر جوان معترض، هدف گلوله قرار گرفت.
+        بنا بر گزارش‌های شاهدان عینی، او مقابل منزل خود و در نزدیکی مسجد عمار ایستاده بود که در جریان تلاش برای کمک به دو دختر جوان معترض، هدف گلوله قرار گرفت.
         </p>
 
         <p>
-        به گفته منابع محلی، محمدعلی پس از زخمی‌شدن، با شلیک دو گلوله به قلب و سر جان باخت؛ اقدامی که شاهدان آن را «تیر خلاص» توصیف کرده‌اند.
+        به گفته منابع محلی، وی پس از زخمی‌شدن، با شلیک دو گلوله به قلب و سر جان باخت؛ اقدامی که از سوی شاهدان به عنوان «تیر خلاص» توصیف شده است.
         </p>
 
         <p>
-        پیکر او روز ۲۱ دی‌ماه ۱۴۰۴ در قبرستان تستر به خاک سپرده شد. گزارش‌ها حاکی است که نیروهای امنیتی پس از مراسم خاک‌سپاری، بنرهای تسلیت نصب‌شده بر دیوار منزلش را جمع‌آوری کردند و چند روز بعد حجله یادبود او را نیز تخریب کردند.
+        پیکر محمدعلی روز ۲۱ دی‌ماه ۱۴۰۴ در قبرستان تستر به خاک سپرده شد.
         </p>
 
         <p>
-        در رویدادی دیگر، اشکان عرار، پسرعموی محمدعلی، روز ۱۸ دی‌ماه ۱۴۰۴ در شهریار استان تهران با شلیک مستقیم نیروهای امنیتی کشته شد.
+        با این حال، گزارش‌ها حاکی است که نیروهای امنیتی پس از مراسم خاک‌سپاری، بنرهای تسلیت نصب‌شده بر دیوار منزل او را جمع‌آوری کرده و چند روز بعد نیز حجله یادبودش را تخریب کرده‌اند؛ اقداماتی که به گفته خانواده و نزدیکان، فشار مضاعفی بر بازماندگان وارد کرده است.
         </p>
 
         <p>
-        خانواده‌های این دو جان‌باخته خواستار روشن‌شدن حقیقت، انجام تحقیقات مستقل و پاسخگویی عاملان هستند.
+        در رویدادی دیگر، اشکان عرار، پسرعموی محمدعلی، روز ۱۸ دی‌ماه ۱۴۰۴ در شهر شهریار استان تهران با شلیک مستقیم نیروهای امنیتی کشته شد.
         </p>
 
         <p>
-        یاد محمدعلی عرار و اشکان عرار گرامی باد.
+        کشته‌شدن این دو شهروند در فاصله زمانی کوتاه، بار دیگر موضوع استفاده از سلاح گرم علیه معترضان و لزوم انجام تحقیقات مستقل، شفاف و بی‌طرفانه درباره موارد مرگ در جریان اعتراضات را برجسته کرده است.
         </p>
 
-    </div>
+        <p>
+        خانواده‌های این قربانیان خواستار روشن‌شدن حقیقت، پاسخگویی عاملان و تضمین عدم تکرار چنین رویدادهایی شده‌اند.
+        </p>
 
-    <div class="location">
-        محل خاک‌سپاری: قبرستان تستر (شوشتر)
+    </section>
+
+    <div class="date-location">
+        محمدعلی عرار
         <br>
-        تاریخ خاک‌سپاری: ۲۱ دی‌ماه ۱۴۰۴
+        ۱۹ دی‌ماه ۱۴۰۴ — شوشتر، خوزستان
+        <br>
+        ۲۱ دی‌ماه ۱۴۰۴ — روز خاک‌سپاری
     </div>
 
-    <div class="footer">
+    <!-- بازگشت به اینستاگرام -->
 
-        <p>
-        نام‌ها را زنده نگه می‌داریم؛
-        تا هیچ‌کس فراموش نشود.
-        </p>
+    <footer class="footer">
 
-        <a class="instagram"
+        <div class="footer-message">
+            نام‌ها را زنده نگه می‌داریم؛
+            <br>
+            تا هیچ‌کس فراموش نشود.
+        </div>
+
+        <a
+        class="home-link"
         href="https://www.instagram.com/khoonjari.khz/"
         target="_blank"
-        rel="noopener">
+        rel="noopener noreferrer">
 
-            <img src="instagram.png" alt="اینستاگرام">
+            <img src="instagram.png" alt="Instagram">
 
-            مشاهده نام و یاد دیگر جان‌باختگان خوزستان
+            مشاهده دیگر جان‌باختگان در خون جاری خوزستان
 
         </a>
 
-        <div class="copy">
-        خون جاری خوزستان | یاد و نام جان‌باختگان قیام و مقاومت در خوزستان
+        <div class="copyright">
+            خون جاری خوزستان | شماره ۳۵
         </div>
 
-    </div>
+    </footer>
 
 </div>
 
 <script>
+
+// تاریخ خاک‌سپاری: ۲۱ دی ۱۴۰۴
+// معادل ۱۱ ژانویه ۲۰۲۶
+
 const burialDate = new Date(2026, 0, 11, 0, 0, 0);
 
 const persianNumbers = new Intl.NumberFormat('fa-IR');
@@ -340,19 +479,19 @@ function updateTimer() {
 
     const now = new Date();
 
-    let difference = now - burialDate;
+    let difference = Math.floor(
+        (now.getTime() - burialDate.getTime()) / 1000
+    );
 
     if (difference < 0) difference = 0;
 
-    const totalSeconds = Math.floor(difference / 1000);
+    const days = Math.floor(difference / 86400);
 
-    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((difference % 86400) / 3600);
 
-    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((difference % 3600) / 60);
 
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-
-    const seconds = totalSeconds % 60;
+    const seconds = difference % 60;
 
     document.getElementById('days').textContent =
         persianNumbers.format(days);
@@ -370,6 +509,7 @@ function updateTimer() {
 updateTimer();
 
 setInterval(updateTimer, 1000);
+
 </script>
 
 </body>
