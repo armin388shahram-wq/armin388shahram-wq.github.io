@@ -5,14 +5,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>حسین پوشنه | خون جاری خوزستان</title>
-<meta name="description" content="یادبود حسین پوشنه، جوان ۱۹ ساله اهل باغملک، جان‌باخته در خیابان نادری اهواز در ۱۹ دی ۱۴۰۴.">
+<title>حسین پوشنه | شماره ۳۷ | خون جاری خوزستان</title>
+
+<meta name="description" content="یادبود حسین پوشنه، جوان ۱۹ ساله اهل باغملک که در ۱۹ دی ۱۴۰۴ در خیابان نادری اهواز جان باخت.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://khoonjari.com/hossein-poshneh-37.html">
 
 <meta property="og:title" content="حسین پوشنه | خون جاری خوزستان">
 <meta property="og:description" content="یاد و نام حسین پوشنه، جوان ۱۹ ساله اهل باغملک">
 <meta property="og:image" content="https://khoonjari.com/hossein-poshneh-37.jpg">
+<meta property="og:type" content="article">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
@@ -31,6 +33,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     background: var(--black);
     color: #eee;
     font-family: Vazirmatn, Tahoma, sans-serif;
@@ -38,8 +41,8 @@ body {
 }
 
 .container {
-    max-width: 1000px;
     width: 94%;
+    max-width: 1000px;
     margin: 25px auto;
 }
 
@@ -48,12 +51,12 @@ body {
 .header {
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 16px 22px;
-    background: linear-gradient(110deg,#111,#201817);
+    gap: 16px;
+    padding: 15px 20px;
+    background: linear-gradient(110deg, #111, #211817);
     border: 1px solid #493b2b;
-    border-radius: 15px;
     border-bottom: 3px solid var(--red);
+    border-radius: 15px;
     margin-bottom: 25px;
 }
 
@@ -61,6 +64,10 @@ body {
     width: 95px;
     height: 95px;
     object-fit: contain;
+}
+
+.brand {
+    flex: 1;
 }
 
 .brand h1 {
@@ -77,12 +84,12 @@ body {
 }
 
 .page-number {
-    margin-right: auto;
     border: 1px solid var(--gold);
     color: var(--gold);
-    padding: 5px 15px;
+    padding: 4px 14px;
     border-radius: 25px;
-    font-size: 14px;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 /* عنوان */
@@ -99,26 +106,32 @@ body {
     color: var(--red);
 }
 
-/* بخش اصلی تصویر و مشخصات */
+/* تصویر و مشخصات */
 
 .profile {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 22px;
+    gap: 20px;
     align-items: stretch;
 }
 
+/* تصویر */
+
 .photo-panel {
+    position: relative;
     background: var(--panel);
     border: 1px solid #55432e;
     border-radius: 15px;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
+    overflow: hidden;
+    min-width: 0;
 }
 
-.photo-panel img {
+.photo-panel > img {
     width: 100%;
-    height: 450px;
+    height: auto;
+    max-height: 680px;
     object-fit: contain;
     border-radius: 9px;
     display: block;
@@ -127,17 +140,75 @@ body {
 .photo-caption {
     color: var(--gold);
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 9px;
 }
 
+/* تایمر روی تصویر */
+
+.photo-panel .timer-panel {
+    position: absolute;
+    bottom: 43px;
+    left: 5%;
+    width: 90%;
+    margin: 0;
+    padding: 10px 7px;
+    background: rgba(12, 12, 12, 0.89);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 3px 15px rgba(0,0,0,.7);
+    z-index: 2;
+}
+
+.timer-heading {
+    text-align: center;
+    color: #e5c47e;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    direction: ltr;
+    gap: 4px;
+}
+
+.timer-item {
+    text-align: center;
+    background: rgba(0,0,0,.4);
+    border: 1px solid rgba(214,179,106,.35);
+    border-radius: 7px;
+    padding: 3px 2px;
+    direction: rtl;
+}
+
+.timer-item strong {
+    display: block;
+    color: #f0d18c;
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: 800;
+    direction: ltr;
+}
+
+.timer-item span {
+    color: #e5c47e;
+    font-size: 11px;
+}
+
+/* مشخصات */
+
 .details-panel {
-    background: linear-gradient(145deg,#191514,#111);
+    background: linear-gradient(145deg, #191514, #111);
     border: 1px solid #55432e;
     border-radius: 15px;
     padding: 22px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 0;
 }
 
 .details-panel h2 {
@@ -157,63 +228,19 @@ body {
     font-size: 14px;
 }
 
+.detail:last-child {
+    border-bottom: none;
+}
+
 .detail span:first-child {
     color: var(--gold);
+    white-space: nowrap;
 }
 
 .detail span:last-child {
     color: #eee;
     font-weight: 600;
     text-align: left;
-}
-
-/* تایمر */
-
-.timer-panel {
-    margin: 25px 0;
-    padding: 20px;
-    border: 1px solid #a1824e;
-    border-radius: 15px;
-    background: linear-gradient(120deg,#211a15,#111);
-    box-shadow: 0 0 18px #000;
-}
-
-.timer-heading {
-    text-align: center;
-    color: var(--gold);
-    font-size: 18px;
-    margin-bottom: 16px;
-    font-weight: 700;
-}
-
-.timer-grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 12px;
-    direction: ltr;
-}
-
-.timer-item {
-    text-align: center;
-    background: #0b0b0b;
-    border: 1px solid #66502f;
-    border-radius: 11px;
-    padding: 12px 5px;
-    direction: rtl;
-}
-
-.timer-item strong {
-    display: block;
-    color: var(--gold);
-    font-size: 30px;
-    line-height: 1.5;
-    font-weight: 800;
-    direction: ltr;
-}
-
-.timer-item span {
-    color: #bbb;
-    font-size: 13px;
 }
 
 /* روایت */
@@ -223,7 +250,7 @@ body {
     border: 1px solid #40342a;
     border-radius: 15px;
     padding: 22px;
-    margin: 22px 0;
+    margin: 23px 0;
 }
 
 .section-title {
@@ -257,18 +284,19 @@ body {
     border: 1px solid #80643b;
     border-radius: 15px;
     padding: 20px;
-    margin: 25px 0;
+    margin: 23px 0;
 }
 
 .qr-panel h3 {
     color: var(--gold);
     margin: 0 0 12px;
+    font-size: 19px;
 }
 
 .qr-panel img {
     width: 155px;
     height: 155px;
-    padding: 8px;
+    padding: 7px;
     background: white;
     border-radius: 8px;
 }
@@ -279,7 +307,7 @@ body {
     margin: 8px 0 0;
 }
 
-/* دکمه ها */
+/* لینک ها */
 
 .links {
     display: grid;
@@ -300,7 +328,7 @@ body {
 
 .instagram {
     color: white;
-    background: linear-gradient(100deg,#8c272d,#b38b4d);
+    background: linear-gradient(100deg, #8c272d, #b38b4d);
 }
 
 .archive {
@@ -308,6 +336,12 @@ body {
     border: 1px solid #80643b;
     background: #171411;
 }
+
+.action:hover {
+    opacity: .85;
+}
+
+/* پاورقی */
 
 footer {
     border-top: 1px solid #44382c;
@@ -321,7 +355,7 @@ footer strong {
     color: var(--gold);
 }
 
-/* موبایل */
+/* نمایش موبایل */
 
 @media(max-width:650px) {
 
@@ -331,13 +365,13 @@ footer strong {
     }
 
     .header {
-        padding: 12px;
-        gap: 10px;
+        padding: 11px;
+        gap: 9px;
     }
 
     .logo {
-        width: 70px;
-        height: 70px;
+        width: 68px;
+        height: 68px;
     }
 
     .brand h1 {
@@ -346,15 +380,17 @@ footer strong {
 
     .brand p {
         font-size: 10px;
+        line-height: 1.8;
     }
 
     .page-number {
-        padding: 3px 9px;
-        font-size: 11px;
+        padding: 3px 8px;
+        font-size: 10px;
     }
 
     .main-title {
         font-size: 23px;
+        margin: 15px 0;
     }
 
     .profile {
@@ -362,9 +398,39 @@ footer strong {
         gap: 13px;
     }
 
-    .photo-panel img {
-        height: auto;
-        max-height: 520px;
+    .photo-panel {
+        padding: 7px;
+    }
+
+    .photo-panel > img {
+        max-height: 650px;
+    }
+
+    .photo-panel .timer-panel {
+        bottom: 40px;
+        left: 4%;
+        width: 92%;
+        padding: 7px 4px;
+    }
+
+    .timer-heading {
+        font-size: 11px;
+    }
+
+    .timer-grid {
+        gap: 3px;
+    }
+
+    .timer-item {
+        padding: 3px 1px;
+    }
+
+    .timer-item strong {
+        font-size: 20px;
+    }
+
+    .timer-item span {
+        font-size: 9px;
     }
 
     .details-panel {
@@ -375,28 +441,9 @@ footer strong {
         font-size: 23px;
     }
 
-    .timer-panel {
-        padding: 13px 8px;
-    }
-
-    .timer-grid {
-        gap: 5px;
-    }
-
-    .timer-item {
-        padding: 9px 2px;
-    }
-
-    .timer-item strong {
-        font-size: 21px;
-    }
-
-    .timer-item span {
-        font-size: 11px;
-    }
-
-    .timer-heading {
-        font-size: 14px;
+    .detail {
+        font-size: 13px;
+        padding: 9px 0;
     }
 
     .section {
@@ -405,22 +452,41 @@ footer strong {
 
     .story {
         font-size: 14px;
+        line-height: 2.4;
     }
 
     .links {
         grid-template-columns: 1fr;
     }
 }
+
+@media(max-width:360px) {
+    .timer-item strong {
+        font-size: 17px;
+    }
+
+    .timer-item span {
+        font-size: 8px;
+    }
+
+    .brand h1 {
+        font-size: 16px;
+    }
+}
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
+<!-- سربرگ -->
+
 <header class="header">
+
     <img class="logo"
          src="logo-khoon-jari-khuzestan.png"
-         alt="خون جاری خوزستان">
+         alt="لوگوی خون جاری خوزستان">
 
     <div class="brand">
         <h1>خون جاری خوزستان</h1>
@@ -428,6 +494,7 @@ footer strong {
     </div>
 
     <div class="page-number">شماره ۳۷</div>
+
 </header>
 
 <h2 class="main-title">
@@ -436,18 +503,59 @@ footer strong {
 
 <main>
 
+<!-- تصویر و مشخصات -->
+
 <div class="profile">
 
+    <!-- تصویر و تایمر روی تصویر -->
+
     <div class="photo-panel">
+
         <img src="hossein-poshneh-37.jpg"
              alt="تصویر حسین پوشنه"
              loading="eager">
-        <div class="photo-caption">
-            حسین پوشنه | ۱۹ ساله
+
+        <div class="timer-panel">
+
+            <div class="timer-heading">
+                زمان سپری‌شده از نبودن حسین
+            </div>
+
+            <div class="timer-grid">
+
+                <div class="timer-item">
+                    <strong id="days">۰</strong>
+                    <span>روز</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="hours">۰</strong>
+                    <span>ساعت</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="minutes">۰</strong>
+                    <span>دقیقه</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="seconds">۰</strong>
+                    <span>ثانیه</span>
+                </div>
+
+            </div>
         </div>
+
+        <div class="photo-caption">
+            حسین پوشنه | ۱۹ ساله | باغملک
+        </div>
+
     </div>
 
+    <!-- مشخصات -->
+
     <div class="details-panel">
+
         <h2>حسین پوشنه</h2>
 
         <div class="detail">
@@ -474,49 +582,23 @@ footer strong {
             <span>تاریخ جان‌باختن</span>
             <span>۱۹ دی ۱۴۰۴</span>
         </div>
+
     </div>
 
 </div>
 
-<section class="timer-panel">
-
-    <div class="timer-heading">
-        زمان سپری‌شده از نبودن حسین پوشنه
-    </div>
-
-    <div class="timer-grid">
-
-        <div class="timer-item">
-            <strong id="days">۰</strong>
-            <span>روز</span>
-        </div>
-
-        <div class="timer-item">
-            <strong id="hours">۰</strong>
-            <span>ساعت</span>
-        </div>
-
-        <div class="timer-item">
-            <strong id="minutes">۰</strong>
-            <span>دقیقه</span>
-        </div>
-
-        <div class="timer-item">
-            <strong id="seconds">۰</strong>
-            <span>ثانیه</span>
-        </div>
-
-    </div>
-</section>
+<!-- روایت -->
 
 <section class="section">
 
     <h3 class="section-title">روایت جان‌باختن</h3>
 
     <div class="story">
+
         بر اساس گزارش‌های رسیده، حسین پوشنه، جوان ۱۹ ساله اهل شهرستان باغملک، در جریان اعتراضات مردمی در خیابان نادری اهواز، با شلیک مستقیم نیروهای امنیتی جان خود را از دست داده است.
 
         به گفته منابع محلی، این شهروند معترض در روز ۱۹ دی‌ماه هدف اصابت گلوله قرار گرفته و در نتیجه جراحات وارده کشته شده است.
+
     </div>
 
     <div class="source">
@@ -525,17 +607,23 @@ footer strong {
 
 </section>
 
+<!-- QR Code -->
+
 <section class="qr-panel">
 
     <h3>برای زنده نگه داشتن یاد حسین</h3>
 
     <img
-      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fkhoonjari.com%2Fhossein-poshneh-37.html"
+      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;data=https%3A%2F%2Fkhoonjari.com%2Fhossein-poshneh-37.html"
       alt="QR Code صفحه حسین پوشنه">
 
-    <p>برای مشاهده و ثبت یاد و نام، کد را اسکن کنید.</p>
+    <p>
+        برای مشاهده روایت و یادبود حسین، کد را اسکن کنید.
+    </p>
 
 </section>
+
+<!-- لینک ها -->
 
 <div class="links">
 
@@ -555,44 +643,70 @@ footer strong {
 
 </main>
 
+<!-- پاورقی -->
+
 <footer>
+
     <strong>خون جاری خوزستان</strong>
+
     <br>
+
     برای آنکه نام‌ها در هیاهوی زمان گم نشوند.
+
     <br>
+
     یاد و نامشان ماندگار 🕊
+
 </footer>
 
 </div>
 
+<!-- محاسبه تایمر -->
+
 <script>
+
 const startDate = new Date("2026-01-09T00:00:00");
 
 const fa = new Intl.NumberFormat("fa-IR");
 
 function updateTimer() {
 
-    let diff = Math.max(0, Date.now() - startDate.getTime());
+    let diff = Math.max(
+        0,
+        Date.now() - startDate.getTime()
+    );
 
     const days = Math.floor(diff / 86400000);
+
     diff %= 86400000;
 
     const hours = Math.floor(diff / 3600000);
+
     diff %= 3600000;
 
     const minutes = Math.floor(diff / 60000);
+
     diff %= 60000;
 
     const seconds = Math.floor(diff / 1000);
 
-    document.getElementById("days").textContent = fa.format(days);
-    document.getElementById("hours").textContent = fa.format(hours);
-    document.getElementById("minutes").textContent = fa.format(minutes);
-    document.getElementById("seconds").textContent = fa.format(seconds);
+    document.getElementById("days").textContent =
+        fa.format(days);
+
+    document.getElementById("hours").textContent =
+        fa.format(hours);
+
+    document.getElementById("minutes").textContent =
+        fa.format(minutes);
+
+    document.getElementById("seconds").textContent =
+        fa.format(seconds);
 }
 
 updateTimer();
+
 setInterval(updateTimer, 1000);
+
 </script>
 
 </body>
