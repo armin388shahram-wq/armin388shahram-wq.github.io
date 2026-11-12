@@ -22,7 +22,7 @@
     button.primary{background:var(--gold);color:#17120a}
     button.secondary,.file-label{background:#302a2d;color:#f4e9d5;border:1px solid #66564a}
     button:disabled{opacity:.45;cursor:not-allowed}
-    input[type=text],input[type=url]{width:100%;background:#0d0d10;color:#fff;border:1px solid #51474b;border-radius:10px;padding:12px;font:inherit;direction:ltr;text-align:left}
+    input[type=url]{width:100%;background:#0d0d10;color:#fff;border:1px solid #51474b;border-radius:10px;padding:12px;font:inherit;direction:ltr;text-align:left}
     label{display:block;color:#ddd;margin:12px 0 6px;font-size:14px}
     #reader{width:100%;max-width:520px;margin:14px auto 0;overflow:hidden;border-radius:12px;background:#080808}
     #reader video{border-radius:12px}
@@ -60,19 +60,19 @@
   </section>
 
   <section class="panel">
-    <h2>۲. بررسی آدرس QR</h2>
-    <label for="expected">آدرس مورد انتظار (اختیاری؛ برای مقایسه دقیق)</label>
+    <h2>۲. نتیجه بررسی خودکار</h2>
+    <label for="expected">آدرس مورد انتظار (اختیاری؛ برای کنترل دقیق صفحه)</label>
     <input id="expected" type="url" placeholder="https://khoonjari.com/40-hossein-kayedi.html">
-    <p class="hint">اگر آدرس مورد انتظار را وارد کنی، ابزار آن را با آدرس داخل QR مقایسه می‌کند. اگر خالی بماند، فقط محتوای QR نمایش داده می‌شود.</p>
+    <p class="hint">اگر این کادر را خالی بگذاری، ابزار به‌طور خودکار بررسی می‌کند که لینک QR متعلق به دامنه رسمی khoonjari.com باشد و صفحه مقصد در دسترس باشد. اگر آدرس مورد انتظار را وارد کنی، تطبیق دقیق آن هم بررسی می‌شود.</p>
     <div id="result" class="result" aria-live="polite">
       <div class="status wait">در انتظار اسکن</div>
-      <div class="hint">پس از اسکن، آدرس خوانده‌شده در این قسمت نمایش داده می‌شود.</div>
+      <div class="hint">پس از اسکن، نتیجه بررسی خودکار در این قسمت نمایش داده می‌شود.</div>
     </div>
   </section>
 
   <section class="panel">
     <h2>نکته مهم</h2>
-    <div class="note">سبز شدن نتیجه یعنی متن داخل QR با آدرس مورد انتظار یکسان است؛ این موضوع به‌تنهایی تضمین نمی‌کند که صفحه مقصد آنلاین یا در دسترس باشد. برای اطمینان نهایی، لینک نمایش‌داده‌شده را هم باز کن.</div>
+    <div class="note">چراغ سبز یعنی لینک به دامنه رسمی khoonjari.com تعلق دارد و صفحه مقصد پاسخ موفق داده است؛ اگر آدرس مورد انتظار را هم وارد کرده باشی، باید با آن نیز مطابقت داشته باشد. در صورت اختلال موقت اینترنت یا سرور ممکن است بررسی دسترسی ناموفق شود.</div>
   </section>
   <footer>آزمایشگاه QR — پروژه خون جاری خوزستان 🕊️</footer>
 </div>
@@ -89,49 +89,20 @@
   let scanner = null;
   let running = false;
   let lastValue = '';
+  let checkNumber = 0;
 
   function normalize(value) {
     try {
       const u = new URL(value.trim());
       u.hash = '';
-      if (u.pathname.length > 1) u.pathname = u.pathname.replace(/\/+$/, '');
+      if (u.pathname.length > 1) u.pathname = u.pathname.replace(/\\/+$/, '');
       return u.href;
     } catch (_) {
       return value.trim();
     }
   }
 
-  function showResult(decodedText) {
-    lastValue = decodedText;
-    const expected = expectedInput.value.trim();
-    let status = '';
-    let detail = '';
-    let cls = 'wait';
-
-    if (/^https?:\/\//i.test(decodedText)) {
-      if (expected) {
-        if (normalize(decodedText) === normalize(expected)) {
-          status = '✓ آدرس QR صحیح است';
-          detail = 'آدرس داخل QR با آدرس مورد انتظار مطابقت دارد.';
-          cls = 'ok';
-        } else {
-          status = '✕ آدرس‌ها یکسان نیستند';
-          detail = 'آدرس داخل QR با آدرس مورد انتظار تفاوت دارد. پیش از انتشار آن را اصلاح کن.';
-          cls = 'bad';
-        }
-      } else {
-        status = 'QR خوانده شد؛ آدرس شناسایی شد';
-        detail = 'برای بررسی تطبیق، آدرس مورد انتظار را در کادر بالا وارد کن.';
-        cls = 'wait';
-      }
-    } else {
-      status = '⚠ QR خوانده شد، اما لینک وب نیست';
-      detail = 'محتوای QR یک آدرس با شروع http یا https نیست.';
-      cls = 'bad';
-    }
-
-    const safe = document.createElement('span');
-    safe.textContent = decodedText;
+  function renderResult(status, detail, cls, decodedText, extraNode) {
     resultBox.replaceChildren();
     const heading = document.createElement('div');
     heading.className = 'status ' + cls;
@@ -143,11 +114,11 @@
     url.className = 'url';
     url.textContent = decodedText;
     const open = document.createElement('a');
-    open.href = /^https?:\/\//i.test(decodedText) ? decodedText : '#';
+    open.href = /^https?:\\/\\//i.test(decodedText) ? decodedText : '#';
     open.target = '_blank';
     open.rel = 'noopener noreferrer';
     open.textContent = 'باز کردن لینک در زبانه جدید';
-    if (!/^https?:\/\//i.test(decodedText)) open.style.display = 'none';
+    if (!/^https?:\\/\\//i.test(decodedText)) open.style.display = 'none';
     const copy = document.createElement('button');
     copy.className = 'secondary smallbtn';
     copy.textContent = 'کپی آدرس';
@@ -156,7 +127,58 @@
       catch (_) { copy.textContent = 'کپی خودکار ممکن نیست'; }
     });
     resultBox.append(heading, description, url, open, copy);
-    scanMessage.textContent = 'اسکن با موفقیت انجام شد.';
+    if (extraNode) resultBox.append(extraNode);
+  }
+
+  async function verify(decodedText) {
+    const thisCheck = ++checkNumber;
+    lastValue = decodedText;
+    let parsed;
+    try { parsed = new URL(decodedText.trim()); }
+    catch (_) {
+      renderResult('✕ محتوای QR یک آدرس معتبر نیست', 'کد خوانده شد، اما متن آن یک URL معتبر نیست.', 'bad', decodedText);
+      return;
+    }
+
+    if (parsed.protocol !== 'https:') {
+      renderResult('✕ لینک امن نیست', 'برای تأیید خودکار، آدرس باید با https شروع شود.', 'bad', decodedText);
+      return;
+    }
+
+    const host = parsed.hostname.toLowerCase();
+    if (host !== 'khoonjari.com' && host !== 'www.khoonjari.com') {
+      renderResult('✕ دامنه QR متعلق به سایت ما نیست', 'آدرس خوانده شد، اما دامنه آن khoonjari.com نیست.', 'bad', decodedText);
+      return;
+    }
+
+    const expected = expectedInput.value.trim();
+    if (expected && normalize(decodedText) !== normalize(expected)) {
+      renderResult('✕ آدرس با صفحه مورد انتظار مطابقت ندارد', 'دامنه رسمی است، اما آدرس QR با آدرس مورد انتظارت یکسان نیست.', 'bad', decodedText);
+      return;
+    }
+
+    renderResult('در حال بررسی صفحه مقصد…', 'دامنه رسمی شناسایی شد؛ اکنون دسترسی به صفحه بررسی می‌شود.', 'wait', decodedText);
+
+    try {
+      let response;
+      try {
+        response = await fetch(parsed.href, { method: 'HEAD', cache: 'no-store', redirect: 'follow' });
+      } catch (_) {
+        response = await fetch(parsed.href, { method: 'GET', cache: 'no-store', redirect: 'follow' });
+      }
+      if (thisCheck !== checkNumber) return;
+      if (response.ok) {
+        const extra = document.createElement('div');
+        extra.className = 'hint';
+        extra.textContent = 'آدرس با دامنه رسمی مطابقت دارد' + (expected ? '، با آدرس مورد انتظار یکسان است' : '') + ' و صفحه مقصد پاسخ موفق داد.';
+        renderResult('✓ QR صحیح و صفحه در دسترس است', 'همه بررسی‌ها با موفقیت انجام شد.', 'ok', decodedText, extra);
+      } else {
+        renderResult('✕ صفحه مقصد پاسخ موفق نداد', 'دامنه صحیح است، اما سرور برای این آدرس پاسخ ' + response.status + ' داد. آدرس صفحه را بررسی کن.', 'bad', decodedText);
+      }
+    } catch (_) {
+      if (thisCheck !== checkNumber) return;
+      renderResult('⚠ دامنه صحیح است؛ دسترسی تأیید نشد', 'لینک متعلق به سایت رسمی است، اما بررسی آنلاین به‌دلیل اختلال شبکه یا محدودیت مرورگر انجام نشد. لینک را با دکمه زیر باز کن و دستی بررسی کن.', 'wait', decodedText);
+    }
   }
 
   async function stopScanner() {
@@ -182,8 +204,8 @@
         { facingMode: 'environment' },
         { fps: 10, qrbox: { width: 250, height: 250 }, aspectRatio: 1.0 },
         async (decodedText) => {
-          showResult(decodedText);
           await stopScanner();
+          await verify(decodedText);
         },
         () => {}
       );
@@ -209,8 +231,9 @@
     try {
       const tempScanner = new Html5Qrcode('reader');
       const decoded = await tempScanner.scanFile(file, true);
-      showResult(decoded);
       await tempScanner.clear();
+      await verify(decoded);
+      scanMessage.textContent = 'اسکن با موفقیت انجام شد.';
     } catch (_) {
       scanMessage.textContent = 'QR در این عکس پیدا نشد. عکس واضح‌تر و بدون برش انتخاب کن.';
     }
@@ -218,7 +241,7 @@
   });
 
   expectedInput.addEventListener('input', () => {
-    if (lastValue) showResult(lastValue);
+    if (lastValue) verify(lastValue);
   });
 })();
 </script>
