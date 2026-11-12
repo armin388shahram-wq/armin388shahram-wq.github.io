@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="ابزار ساخت و بررسی کد QR برای صفحات یادبود خون جاری خوزستان">
+<link rel="canonical" href="https://khoonjari.com/qr-maker.html">
+<title>کارگاه ساخت QR | خون جاری خوزستان</title>
+<style>
+:root{color-scheme:dark;--bg:#090909;--panel:#151515;--gold:#d6b66b;--red:#b51f2b;--muted:#b9b9b9}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#24201a 0,#0b0b0b 48%,#050505 100%);color:#f4f0e8;font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+.wrap{width:min(920px,94%);margin:28px auto 50px}
+header{text-align:center;border-bottom:1px solid #6d572c;padding:12px 8px 22px;margin-bottom:22px}
+.logo{width:82px;height:82px;object-fit:contain}
+h1{font-size:clamp(23px,4vw,34px);color:var(--gold);margin:8px 0 0}
+header p{color:#ddd;margin:3px 0}
+.panel{background:linear-gradient(145deg,#1b1b1b,#101010);border:1px solid #554728;border-radius:17px;padding:clamp(16px,3vw,28px);box-shadow:0 12px 35px #0008;margin:18px 0}
+label{display:block;font-weight:bold;margin:12px 0 6px;color:#ead7a5}
+input,select{width:100%;padding:14px;border:1px solid #625334;border-radius:10px;background:#080808;color:#fff;font:16px Tahoma,Arial}
+button,.linkbtn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;background:var(--red);color:white;font: bold 15px Tahoma,Arial;cursor:pointer;text-decoration:none;margin:12px 6px 0 0}
+button.secondary,.linkbtn.secondary{background:#343434;border:1px solid #76623a}
+button:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+#qrArea{display:none;text-align:center;background:#fff;border-radius:14px;padding:20px;margin:18px auto 8px;width:max-content;max-width:100%;min-width:220px}
+#qrcode{display:flex;justify-content:center;align-items:center;max-width:100%;overflow:hidden}
+#qrcode canvas,#qrcode img{max-width:100%;height:auto}
+.status{padding:12px 15px;border-radius:10px;margin-top:14px;background:#252525;border:1px solid #555}
+.status.good{background:#102719;border-color:#23834b;color:#baf4cc}
+.status.bad{background:#301315;border-color:#a9343b;color:#ffd0d0}
+.status.warn{background:#302713;border-color:#9a762d;color:#ffe6a8}
+.hint{color:var(--muted);font-size:14px}
+.url{direction:ltr;unicode-bidi:plaintext;overflow-wrap:anywhere;color:#e9d49b}
+footer{text-align:center;color:#aaa;font-size:13px;margin-top:25px}
+@media(max-width:520px){.wrap{width:94%;margin-top:12px}.panel{padding:15px}button,.linkbtn{width:100%;margin:8px 0 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<img class="logo" src="logo-khoon-jari-khuzestan.png" alt="نشان خون جاری خوزستان" onerror="this.style.display='none'">
+<h1>کارگاه ساخت کد QR</h1>
+<p>خون جاری خوزستان | ساخت، کنترل و دریافت کد باکیفیت</p>
+</header>
+<section class="panel">
+<h2 style="color:#d6b66b;margin-top:0">۱. نشانی صفحه را وارد کن</h2>
+<label for="targetUrl">آدرس کامل صفحه یادبود</label>
+<input id="targetUrl" type="url" inputmode="url" placeholder="https://khoonjari.com/نام-صفحه.html" autocomplete="url">
+<label for="qrSize">اندازه فایل خروجی</label>
+<select id="qrSize">
+<option value="512">۵۱۲ × ۵۱۲ پیکسل</option>
+<option value="1024" selected>۱۰۲۴ × ۱۰۲۴ پیکسل (پیشنهادی)</option>
+<option value="1600">۱۶۰۰ × ۱۶۰۰ پیکسل (چاپ باکیفیت)</option>
+</select>
+<div class="actions">
+<button id="makeBtn" type="button">ساخت و کنترل QR</button>
+<button id="clearBtn" class="secondary" type="button">پاک کردن</button>
+</div>
+<div id="status" class="status" role="status" aria-live="polite">پس از وارد کردن نشانی، روی «ساخت و کنترل QR» بزن.</div>
+<p class="hint">این ابزار فقط نشانی‌های امن سایت khoonjari.com را می‌پذیرد. کد با زمینه سفید و طرح مشکی ساخته می‌شود تا دوربین‌ها آن را راحت‌تر بخوانند.</p>
+</section>
+<section class="panel" id="resultPanel" style="display:none">
+<h2 style="color:#d6b66b;margin-top:0">۲. پیش‌نمایش و دریافت کد</h2>
+<div id="qrArea"><div id="qrcode"></div></div>
+<div class="status good" id="verifyStatus">کد ساخته و محتوای آن بررسی شد.</div>
+<p class="hint">نشانی رمزگذاری‌شده در QR:</p>
+<div class="url" id="shownUrl"></div>
+<div class="actions">
+<button id="downloadBtn" type="button">ذخیره تصویر PNG</button>
+<button id="copyBtn" class="secondary" type="button">کپی نشانی</button>
+<a class="linkbtn secondary" href="https://khoonjari.com/qr-lab.html" target="_blank" rel="noopener">آزمایش با اسکنر QR</a>
+</div>
+<p class="hint">پس از ذخیره، بهتر است تصویر PNG را در اسکنر سایت هم آزمایش کنی؛ به‌خصوص پیش از چاپ یا انتشار.</p>
+</section>
+<footer>یاد و نامشان ماندگار 🕊️<br>خون جاری خوزستان</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script>
+(function(){
+const input=document.getElementById('targetUrl');
+const sizeSelect=document.getElementById('qrSize');
+const makeBtn=document.getElementById('makeBtn');
+const status=document.getElementById('status');
+const resultPanel=document.getElementById('resultPanel');
+const qrArea=document.getElementById('qrArea');
+const qrHost=document.getElementById('qrcode');
+const verifyStatus=document.getElementById('verifyStatus');
+const shownUrl=document.getElementById('shownUrl');
+let currentCanvas=null;
+function setStatus(message,kind){status.textContent=message;status.className='status '+(kind||'');}
+function validateAddress(raw){
+ let u;
+ try{u=new URL(raw.trim());}catch(e){throw new Error('نشانی واردشده کامل یا معتبر نیست. آن را با https:// وارد کن.');}
+ if(u.protocol!=='https:')throw new Error('برای امنیت، نشانی باید با https:// شروع شود.');
+ if(!['khoonjari.com','www.khoonjari.com'].includes(u.hostname.toLowerCase()))throw new Error('فقط نشانی‌های دامنه khoonjari.com قابل قبول هستند.');
+ if(u.username||u.password)throw new Error('نشانی واردشده معتبر نیست.');
+ return raw.trim();
+}
+function getCanvas(){
+ const c=qrHost.querySelector('canvas');
+ if(c)return c;
+ const img=qrHost.querySelector('img');
+ if(img){
+  const c2=document.createElement('canvas');c2.width=img.naturalWidth;c2.height=img.naturalHeight;
+  c2.getContext('2d').drawImage(img,0,0);return c2;
+ }
+ return null;
+}
+makeBtn.addEventListener('click',function(){
+ try{
+  if(typeof QRCode==='undefined'||typeof jsQR==='undefined')throw new Error('کتابخانه ساخت یا بررسی QR بارگذاری نشد. اتصال اینترنت را بررسی و صفحه را تازه‌سازی کن.');
+  const url=validateAddress(input.value);
+  const size=Number(sizeSelect.value);
+  qrHost.innerHTML='';
+  new QRCode(qrHost,{text:url,width:size,height:size,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+  const canvas=getCanvas();
+  if(!canvas)throw new Error('تصویر QR ساخته نشد. دوباره تلاش کن.');
+  const ctx=canvas.getContext('2d',{willReadFrequently:true});
+  const decoded=jsQR(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height,{inversionAttempts:'attemptBoth'});
+  if(!decoded||decoded.data!==url){
+   resultPanel.style.display='none';
+   setStatus('کنترل خودکار موفق نبود؛ این کد را ذخیره یا منتشر نکن. دوباره تلاش کن.', 'bad');
+   return;
+  }
+  currentCanvas=canvas;
+  shownUrl.textContent=decoded.data;
+  qrArea.style.display='block';
+  resultPanel.style.display='block';
+  verifyStatus.textContent='تأیید شد: محتوای QR با نشانی واردشده دقیقاً یکسان است.';
+  setStatus('کد با موفقیت ساخته شد و محتوای آن از روی تصویر دوباره خوانده و تأیید شد. 💚','good');
+  resultPanel.scrollIntoView({behavior:'smooth',block:'start'});
+ }catch(e){resultPanel.style.display='none';setStatus(e.message,'bad');}
+});
+document.getElementById('downloadBtn').addEventListener('click',function(){
+ if(!currentCanvas)return;
+ const a=document.createElement('a');a.download='khoonjari-QR.png';a.href=currentCanvas.toDataURL('image/png');a.click();
+});
+document.getElementById('copyBtn').addEventListener('click',async function(){
+ try{await navigator.clipboard.writeText(shownUrl.textContent);this.textContent='نشانی کپی شد ✓';}
+ catch(e){setStatus('کپی خودکار ممکن نشد؛ نشانی را از کادر بالا انتخاب و کپی کن.','warn');}
+});
+document.getElementById('clearBtn').addEventListener('click',function(){
+ input.value='';qrHost.innerHTML='';currentCanvas=null;resultPanel.style.display='none';setStatus('پاک شد. نشانی صفحه بعدی را وارد کن.','');
+ input.focus();
+});
+})();
+</script>
+</body>
+</html>
