@@ -95,7 +95,7 @@
     try {
       const u = new URL(value.trim());
       u.hash = '';
-      if (u.pathname.length > 1) u.pathname = u.pathname.replace(/\\/+$/, '');
+      if (u.pathname.length > 1) u.pathname = u.pathname.replace(/\/+$/, '');
       return u.href;
     } catch (_) {
       return value.trim();
@@ -114,11 +114,11 @@
     url.className = 'url';
     url.textContent = decodedText;
     const open = document.createElement('a');
-    open.href = /^https?:\\/\\//i.test(decodedText) ? decodedText : '#';
+    open.href = /^https?:\/\//i.test(decodedText) ? decodedText : '#';
     open.target = '_blank';
     open.rel = 'noopener noreferrer';
     open.textContent = 'باز کردن لینک در زبانه جدید';
-    if (!/^https?:\\/\\//i.test(decodedText)) open.style.display = 'none';
+    if (!/^https?:\/\//i.test(decodedText)) open.style.display = 'none';
     const copy = document.createElement('button');
     copy.className = 'secondary smallbtn';
     copy.textContent = 'کپی آدرس';
