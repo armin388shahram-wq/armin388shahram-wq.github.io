@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>آزمایشگاه QR | خون جاری خوزستان</title>
+  <meta name="description" content="ابزار اختصاصی خواندن و اعتبارسنجی کدهای QR پروژه خون جاری خوزستان">
+  <style>
+    :root{--bg:#0b0b0d;--panel:#17171b;--line:#373238;--gold:#d7b66b;--red:#c83a42;--muted:#aaa2a2;--green:#39bd78}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(ellipse at top,#292027 0,#101014 42%,#080809 100%);color:#f5f1ea;font-family:Tahoma,Arial,sans-serif;line-height:1.8;min-height:100vh}
+    .wrap{width:min(920px,94%);margin:28px auto 50px}
+    header{text-align:center;padding:22px 14px 18px;border-bottom:1px solid #55452d}
+    .mark{font-size:13px;color:var(--gold);letter-spacing:.5px}
+    h1{font-size:clamp(24px,5vw,38px);margin:7px 0;color:#f4e5bf}
+    header p{margin:0;color:var(--muted);font-size:14px}
+    .panel{background:rgba(23,23,27,.96);border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:20px;box-shadow:0 12px 35px #0006}
+    h2{font-size:18px;color:var(--gold);margin:0 0 12px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+    button,.file-label{border:0;border-radius:10px;padding:11px 17px;font:inherit;font-weight:bold;cursor:pointer}
+    button.primary{background:var(--gold);color:#17120a}
+    button.secondary,.file-label{background:#302a2d;color:#f4e9d5;border:1px solid #66564a}
+    button:disabled{opacity:.45;cursor:not-allowed}
+    input[type=text],input[type=url]{width:100%;background:#0d0d10;color:#fff;border:1px solid #51474b;border-radius:10px;padding:12px;font:inherit;direction:ltr;text-align:left}
+    label{display:block;color:#ddd;margin:12px 0 6px;font-size:14px}
+    #reader{width:100%;max-width:520px;margin:14px auto 0;overflow:hidden;border-radius:12px;background:#080808}
+    #reader video{border-radius:12px}
+    .hint{font-size:13px;color:var(--muted)}
+    .result{margin-top:16px;border:1px solid var(--line);border-radius:13px;padding:15px;background:#101014;overflow-wrap:anywhere}
+    .status{font-weight:bold;font-size:18px;margin-bottom:7px}
+    .ok{color:var(--green)} .bad{color:#ff646b} .wait{color:var(--gold)}
+    .url{direction:ltr;text-align:left;display:block;color:#e9d6a8;background:#08080a;padding:10px;border-radius:8px;margin-top:8px;overflow-wrap:anywhere}
+    .smallbtn{padding:7px 12px;font-size:13px;margin:8px 5px 0 0}
+    .hidden{display:none}
+    footer{text-align:center;color:#8e8585;font-size:12px;margin:22px 0}
+    a{color:#e8c979}
+    .note{border-right:3px solid var(--red);padding:8px 12px;background:#241719;color:#e6dada;border-radius:7px;font-size:13px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">خون جاری خوزستان</div>
+    <h1>آزمایشگاه QR</h1>
+    <p>خواندن و بررسی کدهای یادبود، پیش از انتشار</p>
+  </header>
+
+  <section class="panel">
+    <h2>۱. روش اسکن را انتخاب کن</h2>
+    <div class="actions">
+      <button class="primary" id="startBtn">شروع اسکن با دوربین</button>
+      <button class="secondary" id="stopBtn" disabled>توقف دوربین</button>
+      <label class="file-label" for="fileInput">انتخاب عکس QR از کامپیوتر</label>
+      <input class="hidden" id="fileInput" type="file" accept="image/*">
+    </div>
+    <div id="reader"></div>
+    <p class="hint">برای اسکن با دوربین، اجازه دسترسی مرورگر را بده. این صفحه باید از طریق HTTPS باز شود. اگر دوربین در دسترس نبود، عکس QR را بارگذاری کن.</p>
+    <div id="scanMessage" class="hint" aria-live="polite">هنوز کدی اسکن نشده است.</div>
+  </section>
+
+  <section class="panel">
+    <h2>۲. بررسی آدرس QR</h2>
+    <label for="expected">آدرس مورد انتظار (اختیاری؛ برای مقایسه دقیق)</label>
+    <input id="expected" type="url" placeholder="https://khoonjari.com/40-hossein-kayedi.html">
+    <p class="hint">اگر آدرس مورد انتظار را وارد کنی، ابزار آن را با آدرس داخل QR مقایسه می‌کند. اگر خالی بماند، فقط محتوای QR نمایش داده می‌شود.</p>
+    <div id="result" class="result" aria-live="polite">
+      <div class="status wait">در انتظار اسکن</div>
+      <div class="hint">پس از اسکن، آدرس خوانده‌شده در این قسمت نمایش داده می‌شود.</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>نکته مهم</h2>
+    <div class="note">سبز شدن نتیجه یعنی متن داخل QR با آدرس مورد انتظار یکسان است؛ این موضوع به‌تنهایی تضمین نمی‌کند که صفحه مقصد آنلاین یا در دسترس باشد. برای اطمینان نهایی، لینک نمایش‌داده‌شده را هم باز کن.</div>
+  </section>
+  <footer>آزمایشگاه QR — پروژه خون جاری خوزستان 🕊️</footer>
+</div>
+
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script>
+(() => {
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const fileInput = document.getElementById('fileInput');
+  const expectedInput = document.getElementById('expected');
+  const resultBox = document.getElementById('result');
+  const scanMessage = document.getElementById('scanMessage');
+  let scanner = null;
+  let running = false;
+  let lastValue = '';
+
+  function normalize(value) {
+    try {
+      const u = new URL(value.trim());
+      u.hash = '';
+      if (u.pathname.length > 1) u.pathname = u.pathname.replace(/\/+$/, '');
+      return u.href;
+    } catch (_) {
+      return value.trim();
+    }
+  }
+
+  function showResult(decodedText) {
+    lastValue = decodedText;
+    const expected = expectedInput.value.trim();
+    let status = '';
+    let detail = '';
+    let cls = 'wait';
+
+    if (/^https?:\/\//i.test(decodedText)) {
+      if (expected) {
+        if (normalize(decodedText) === normalize(expected)) {
+          status = '✓ آدرس QR صحیح است';
+          detail = 'آدرس داخل QR با آدرس مورد انتظار مطابقت دارد.';
+          cls = 'ok';
+        } else {
+          status = '✕ آدرس‌ها یکسان نیستند';
+          detail = 'آدرس داخل QR با آدرس مورد انتظار تفاوت دارد. پیش از انتشار آن را اصلاح کن.';
+          cls = 'bad';
+        }
+      } else {
+        status = 'QR خوانده شد؛ آدرس شناسایی شد';
+        detail = 'برای بررسی تطبیق، آدرس مورد انتظار را در کادر بالا وارد کن.';
+        cls = 'wait';
+      }
+    } else {
+      status = '⚠ QR خوانده شد، اما لینک وب نیست';
+      detail = 'محتوای QR یک آدرس با شروع http یا https نیست.';
+      cls = 'bad';
+    }
+
+    const safe = document.createElement('span');
+    safe.textContent = decodedText;
+    resultBox.replaceChildren();
+    const heading = document.createElement('div');
+    heading.className = 'status ' + cls;
+    heading.textContent = status;
+    const description = document.createElement('div');
+    description.className = 'hint';
+    description.textContent = detail;
+    const url = document.createElement('span');
+    url.className = 'url';
+    url.textContent = decodedText;
+    const open = document.createElement('a');
+    open.href = /^https?:\/\//i.test(decodedText) ? decodedText : '#';
+    open.target = '_blank';
+    open.rel = 'noopener noreferrer';
+    open.textContent = 'باز کردن لینک در زبانه جدید';
+    if (!/^https?:\/\//i.test(decodedText)) open.style.display = 'none';
+    const copy = document.createElement('button');
+    copy.className = 'secondary smallbtn';
+    copy.textContent = 'کپی آدرس';
+    copy.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(decodedText); copy.textContent = 'کپی شد ✓'; }
+      catch (_) { copy.textContent = 'کپی خودکار ممکن نیست'; }
+    });
+    resultBox.append(heading, description, url, open, copy);
+    scanMessage.textContent = 'اسکن با موفقیت انجام شد.';
+  }
+
+  async function stopScanner() {
+    if (scanner && running) {
+      try { await scanner.stop(); } catch (_) {}
+      try { await scanner.clear(); } catch (_) {}
+    }
+    running = false;
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+
+  startBtn.addEventListener('click', async () => {
+    if (typeof Html5Qrcode === 'undefined') {
+      scanMessage.textContent = 'کتابخانه اسکن بارگذاری نشد. اتصال اینترنت را بررسی یا عکس QR را بارگذاری کن.';
+      return;
+    }
+    startBtn.disabled = true;
+    scanMessage.textContent = 'در حال آماده‌سازی دوربین…';
+    try {
+      scanner = new Html5Qrcode('reader');
+      await scanner.start(
+        { facingMode: 'environment' },
+        { fps: 10, qrbox: { width: 250, height: 250 }, aspectRatio: 1.0 },
+        async (decodedText) => {
+          showResult(decodedText);
+          await stopScanner();
+        },
+        () => {}
+      );
+      running = true;
+      stopBtn.disabled = false;
+      scanMessage.textContent = 'دوربین فعال است؛ کد QR را داخل کادر قرار بده.';
+    } catch (err) {
+      startBtn.disabled = false;
+      scanMessage.textContent = 'دوربین فعال نشد. اجازه دسترسی دوربین را بررسی کن یا عکس QR را بارگذاری کن.';
+    }
+  });
+
+  stopBtn.addEventListener('click', stopScanner);
+
+  fileInput.addEventListener('change', async (event) => {
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+    if (typeof Html5Qrcode === 'undefined') {
+      scanMessage.textContent = 'کتابخانه اسکن بارگذاری نشد. اتصال اینترنت را بررسی کن.';
+      return;
+    }
+    scanMessage.textContent = 'در حال خواندن عکس…';
+    try {
+      const tempScanner = new Html5Qrcode('reader');
+      const decoded = await tempScanner.scanFile(file, true);
+      showResult(decoded);
+      await tempScanner.clear();
+    } catch (_) {
+      scanMessage.textContent = 'QR در این عکس پیدا نشد. عکس واضح‌تر و بدون برش انتخاب کن.';
+    }
+    fileInput.value = '';
+  });
+
+  expectedInput.addEventListener('input', () => {
+    if (lastValue) showResult(lastValue);
+  });
+})();
+</script>
+</body>
+</html>
