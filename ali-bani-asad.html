@@ -1,17 +1,31 @@
 
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>یاد و نام علی بنی‌اسد</title>
-<meta name="description" content="صفحه یادبود علی بنی‌اسد در آرشیو خون جاری خوزستان؛ برای آنکه یاد و نام جان‌باختگان در گذر زمان فراموش نشود.">
+<title>علی بنی‌اسد |  | خون جاری خوزستان</title>
+
+<meta name="description" content="یادبود علی بنی‌اسد، جوان ۲۰ ساله اهل اهواز که در مهر ۱۴۰۱ در خیابان نادری اهواز جان باخت.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://khoonjari.com/ali-bani-asad.html">
 
+<meta property="og:title" content="علی بنی‌اسد | خون جاری خوزستان">
+<meta property="og:description" content="یاد و نام علی بنی‌اسد، جوان ۲۰ ساله اهل اهواز">
+<meta property="og:image" content="https://khoonjari.com/ali-bani-asad.jpg">
+<meta property="og:type" content="article">
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --gold: #d6b36a;
+    --red: #b52b32;
+    --black: #090909;
+    --panel: #151515;
+    --muted: #aaa;
+}
 
 * {
     box-sizing: border-box;
@@ -19,446 +33,680 @@
 
 body {
     margin: 0;
-    background: #111;
+    padding: 0;
+    background: var(--black);
     color: #eee;
-    font-family: Tahoma, Arial, sans-serif;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+    line-height: 2;
 }
 
 .container {
-    width: 100%;
-    max-width: 700px;
-    margin: auto;
-    padding: 25px 18px 40px;
-    text-align: center;
+    width: 94%;
+    max-width: 1000px;
+    margin: 25px auto;
+}
+
+/* سربرگ */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 20px;
+    background: linear-gradient(110deg, #111, #211817);
+    border: 1px solid #493b2b;
+    border-bottom: 3px solid var(--red);
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+}
+
+.brand {
+    flex: 1;
+}
+
+.brand h1 {
+    font-size: 25px;
+    margin: 0;
+    color: var(--red);
+    font-weight: 800;
+}
+
+.brand p {
+    margin: 3px 0 0;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.page-number {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 4px 14px;
+    border-radius: 25px;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 /* عنوان */
 
-h1 {
-    margin: 5px 0 25px;
-    font-size: 34px;
-    color: #fff;
+.main-title {
+    text-align: center;
+    font-size: 29px;
+    color: var(--gold);
+    margin: 20px 0 25px;
+    font-weight: 800;
 }
 
-/* عکس */
+.main-title span {
+    color: var(--red);
+}
 
-.photo-box {
+/* تصویر و مشخصات */
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* تصویر */
+
+.photo-panel {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid #55432e;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.photo-panel > img {
     width: 100%;
-    margin: 0 auto 28px;
-}
-
-.photo-box img {
+    height: auto;
+    max-height: 680px;
+    object-fit: contain;
+    border-radius: 9px;
     display: block;
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    border-radius: 8px;
-    object-fit: cover;
 }
 
-/* اطلاعات */
-
-.info {
-    background: #181818;
-    border-right: 3px solid #d62828;
-    border-radius: 8px;
-    padding: 18px 22px;
-    margin-bottom: 30px;
-    text-align: right;
-    line-height: 2;
-    font-size: 18px;
+.photo-caption {
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 9px;
 }
 
-.info strong {
-    color: #fff;
+/* تایمر روی تصویر */
+
+.photo-panel .timer-panel {
+    position: absolute;
+    bottom: 43px;
+    left: 5%;
+    width: 90%;
+    margin: 0;
+    padding: 10px 7px;
+    background: rgba(12, 12, 12, 0.89);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 3px 15px rgba(0,0,0,.7);
+    z-index: 2;
 }
 
-/* عنوان تایمر */
-
-.timer-title {
-    font-size: 18px;
-    color: #ddd;
-    margin: 25px 0 18px;
-    line-height: 1.8;
+.timer-heading {
+    text-align: center;
+    color: #e5c47e;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-/* تایمر چهارخانه */
-
-.timer {
-    direction: ltr;
+.timer-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    width: 100%;
-    max-width: 620px;
-    margin: 0 auto 35px;
+    direction: ltr;
+    gap: 4px;
 }
 
-/* هر خانه */
+.timer-item {
+    text-align: center;
+    background: rgba(0,0,0,.4);
+    border: 1px solid rgba(214,179,106,.35);
+    border-radius: 7px;
+    padding: 3px 2px;
+    direction: rtl;
+}
 
-.time-box {
-    background: #181818;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 18px 8px 14px;
-    min-height: 105px;
+.timer-item strong {
+    display: block;
+    color: #f0d18c;
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: 800;
+    direction: ltr;
+}
+
+.timer-item span {
+    color: #e5c47e;
+    font-size: 11px;
+}
+
+/* مشخصات */
+
+.details-panel {
+    background: linear-gradient(145deg, #191514, #111);
+    border: 1px solid #55432e;
+    border-radius: 15px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    min-width: 0;
 }
 
-/* عدد */
-
-.number {
-    direction: rtl;
-    font-size: 34px;
-    font-weight: bold;
-    color: #d62828;
-    line-height: 1.2;
+.details-panel h2 {
+    color: var(--red);
+    font-size: 27px;
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #493b2b;
 }
 
-/* عنوان زیر عدد */
+.detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid #302925;
+    font-size: 14px;
+}
 
-.label {
-    direction: rtl;
-    margin-top: 10px;
-    font-size: 16px;
+.detail:last-child {
+    border-bottom: none;
+}
+
+.detail span:first-child {
+    color: var(--gold);
+    white-space: nowrap;
+}
+
+.detail span:last-child {
+    color: #eee;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* روایت */
+
+.section {
+    background: var(--panel);
+    border: 1px solid #40342a;
+    border-radius: 15px;
+    padding: 22px;
+    margin: 23px 0;
+}
+
+.section-title {
+    color: var(--gold);
+    font-size: 20px;
+    margin: 0 0 15px;
+    padding-right: 13px;
+    border-right: 4px solid var(--red);
+}
+
+.story {
     color: #ddd;
+    font-size: 15px;
+    line-height: 2.5;
+    text-align: justify;
 }
 
-/* توضیحات */
+.source {
+    color: var(--gold);
+    font-size: 13px;
+    margin-top: 18px;
+    border-top: 1px solid #40342a;
+    padding-top: 12px;
+}
 
-.description {
-    margin-top: 10px;
-    padding: 25px 22px;
-    background: #181818;
-    border-right: 3px solid #d62828;
+/* QR */
+
+.qr-panel {
+    text-align: center;
+    background: #151515;
+    border: 1px solid #80643b;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 23px 0;
+}
+
+.qr-panel h3 {
+    color: var(--gold);
+    margin: 0 0 12px;
+    font-size: 19px;
+}
+
+.qr-panel img {
+    width: 155px;
+    height: 155px;
+    padding: 7px;
+    background: white;
     border-radius: 8px;
-
-    line-height: 2.25;
-    font-size: 18px;
-    text-align: right;
-
-    color: #e8e8e8;
 }
 
-/* عنوان پایانی */
-
-.footer {
-    margin-top: 35px;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-
-    font-size: 18px;
-    color: #aaa;
+.qr-panel p {
+    color: #bbb;
+    font-size: 13px;
+    margin: 8px 0 0;
 }
 
-/* موبایل */
+/* لینک ها */
 
-@media (max-width: 600px) {
+.links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.action {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 13px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.instagram {
+    color: white;
+    background: linear-gradient(100deg, #8c272d, #b38b4d);
+}
+
+.archive {
+    color: var(--gold);
+    border: 1px solid #80643b;
+    background: #171411;
+}
+
+.action:hover {
+    opacity: .85;
+}
+
+/* پاورقی */
+
+footer {
+    border-top: 1px solid #44382c;
+    padding: 20px 10px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* نمایش موبایل */
+
+@media(max-width:650px) {
 
     .container {
-        padding: 20px 14px 35px;
+        width: 94%;
+        margin: 12px auto;
     }
 
-    h1 {
-        font-size: 29px;
+    .header {
+        padding: 11px;
+        gap: 9px;
     }
 
-    .timer {
-        gap: 7px;
+    .logo {
+        width: 68px;
+        height: 68px;
     }
 
-    .time-box {
-        min-height: 95px;
-        padding: 14px 5px 12px;
+    .brand h1 {
+        font-size: 18px;
     }
 
-    .number {
-        font-size: 26px;
+    .brand p {
+        font-size: 10px;
+        line-height: 1.8;
     }
 
-    .label {
+    .page-number {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+
+    .main-title {
+        font-size: 23px;
+        margin: 15px 0;
+    }
+
+    .profile {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .photo-panel {
+        padding: 7px;
+    }
+
+    .photo-panel > img {
+        max-height: 650px;
+    }
+
+    .photo-panel .timer-panel {
+        bottom: 40px;
+        left: 4%;
+        width: 92%;
+        padding: 7px 4px;
+    }
+
+    .timer-heading {
+        font-size: 11px;
+    }
+
+    .timer-grid {
+        gap: 3px;
+    }
+
+    .timer-item {
+        padding: 3px 1px;
+    }
+
+    .timer-item strong {
+        font-size: 20px;
+    }
+
+    .timer-item span {
+        font-size: 9px;
+    }
+
+    .details-panel {
+        padding: 17px;
+    }
+
+    .details-panel h2 {
+        font-size: 23px;
+    }
+
+    .detail {
         font-size: 13px;
+        padding: 9px 0;
     }
 
-    .info,
-    .description {
-        font-size: 17px;
-        line-height: 2.15;
+    .section {
+        padding: 16px;
+    }
+
+    .story {
+        font-size: 14px;
+        line-height: 2.4;
+    }
+
+    .links {
+        grid-template-columns: 1fr;
     }
 }
 
+@media(max-width:360px) {
+    .timer-item strong {
+        font-size: 17px;
+    }
+
+    .timer-item span {
+        font-size: 8px;
+    }
+
+    .brand h1 {
+        font-size: 16px;
+    }
+}
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-    <!-- عنوان -->
+<!-- سربرگ -->
 
-    <h1>یاد و نام علی بنی‌اسد</h1>
+<header class="header">
 
+    <img class="logo"
+         src="logo-khoon-jari-khuzestan.png"
+         alt="لوگوی خون جاری خوزستان">
 
-    <!-- عکس -->
-
-    <div class="photo-box">
-
-        <img
-        src="ali-bani-asad.jpg"
-        alt="علی بنی‌اسد"
-        >
-
+    <div class="brand">
+        <h1>خون جاری خوزستان</h1>
+        <p>یاد و نام جان‌باختگان قیام و مقاومت در خوزستان</p>
     </div>
 
+    
+
+</header>
+
+<h2 class="main-title">
+    جاویدنام <span>علی بنی‌اسد</span>
+</h2>
+
+<main>
+
+<!-- تصویر و مشخصات -->
+
+<div class="profile">
+
+    <!-- تصویر و تایمر روی تصویر -->
+
+    <div class="photo-panel">
+
+        <img src="ali-bani-asad.jpg"
+             alt="تصویر علی بنی‌اسد"
+             loading="eager">
+
+        <div class="timer-panel">
+
+            <div class="timer-heading">
+                زمان سپری‌شده از نبودن علی
+            </div>
+
+            <div class="timer-grid">
+
+                <div class="timer-item">
+                    <strong id="days">۰</strong>
+                    <span>روز</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="hours">۰</strong>
+                    <span>ساعت</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="minutes">۰</strong>
+                    <span>دقیقه</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="seconds">۰</strong>
+                    <span>ثانیه</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="photo-caption">
+            علی بنی‌اسد | ۲۰ ساله | اهواز
+        </div>
+
+    </div>
 
     <!-- مشخصات -->
 
-    <div class="info">
+    <div class="details-panel">
 
-        <div>
-            <strong>نام:</strong>
-            علی بنی‌اسد
+        <h2>علی بنی‌اسد</h2>
+
+        <div class="detail">
+            <span>نام کامل</span>
+            <span>علی بنی‌اسد</span>
         </div>
 
-        <div>
-            <strong>سن:</strong>
-            ۲۰ سال
+        <div class="detail">
+            <span>سن</span>
+            <span>۲۰ سال</span>
         </div>
 
-        <div>
-            <strong>شهر:</strong>
-            اهواز
+        <div class="detail">
+            <span>زادگاه</span>
+            <span>اهواز</span>
         </div>
 
-        <div>
-            <strong>تاریخ:</strong>
-            مهر ۱۴۰۱
+        <div class="detail">
+            <span>محل جان‌باختن</span>
+            <span>اهواز</span>
         </div>
 
-        <div>
-            <strong>محل:</strong>
-            اهواز
+        <div class="detail">
+            <span>تاریخ جان‌باختن</span>
+            <span>مهر ۱۴۰۱</span>
         </div>
-
-    </div>
-
-
-    <!-- عنوان شمارنده -->
-
-    <div class="timer-title">
-
-        ساعات، دقایق و ثانیه‌هایی که از نبودن علی بنی‌اسد گذشت
-
-    </div>
-
-
-    <!-- تایمر چهارخانه -->
-
-    <div class="timer">
-
-
-        <!-- روز -->
-
-        <div class="time-box">
-
-            <div class="number" id="days">
-                ۰
-            </div>
-
-            <div class="label">
-                روز
-            </div>
-
-        </div>
-
-
-        <!-- ساعت -->
-
-        <div class="time-box">
-
-            <div class="number" id="hours">
-                ۰
-            </div>
-
-            <div class="label">
-                ساعت
-            </div>
-
-        </div>
-
-
-        <!-- دقیقه -->
-
-        <div class="time-box">
-
-            <div class="number" id="minutes">
-                ۰
-            </div>
-
-            <div class="label">
-                دقیقه
-            </div>
-
-        </div>
-
-
-        <!-- ثانیه -->
-
-        <div class="time-box">
-
-            <div class="number" id="seconds">
-                ۰
-            </div>
-
-            <div class="label">
-                ثانیه
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- سرگذشت -->
-
-    <div class="description">
-
-        علی بنی‌اسد، جوان ۲۰ ساله اهل اهواز بود.
-
-        <br><br>
-
-        در جریان اعتراضات سال ۱۴۰۱، نام علی بنی‌اسد در میان جان‌باختگان این اعتراضات ثبت شد.
-
-        <br><br>
-
-        در مهرماه ۱۴۰۱، پیکر او در اهواز کشف و به خانواده تحویل داده شد.
-
-        <br><br>
-
-        این صفحه برای زنده نگه داشتن یاد و نام علی بنی‌اسد و ثبت بخشی از سرگذشت او ساخته شده است.
-
-        <br><br>
-
-        زمان روی این صفحه به‌صورت زنده ادامه دارد؛
-        هر ثانیه، یادآور زمانی است که از نبودن او گذشته است.
-
-    </div>
-
-
-    <!-- پایان -->
-
-    <div class="footer">
-
-        یاد و نام علی بنی‌اسد
 
     </div>
 
 </div>
 
+<!-- روایت -->
+
+<section class="section">
+
+    <h3 class="section-title">روایت جان‌باختن</h3>
+
+    <div class="story">
+علی بنی‌اسد، جوانی ۲۰ ساله اهل اهواز بود.
+<br><br>
+در جریان اعتراضات سال ۱۴۰۱، نام او در میان جان‌باختگان این اعتراضات ثبت شد.
+<br><br>
+بر اساس اطلاعات ثبت‌شده در صفحه پیشین، پیکر او در مهرماه ۱۴۰۱ در اهواز کشف و به خانواده تحویل داده شد.
+<br><br>
+این صفحه برای زنده نگه داشتن یاد و نام علی بنی‌اسد و ثبت بخشی از سرگذشت او ساخته شده است.
+</div>
+<div class="source">زمان دقیق جان‌باختن در اطلاعات موجود مشخص نشده است؛ تایمر از ابتدای مهر ۱۴۰۱ محاسبه می‌شود.</div>
+
+</section>
+
+<!-- QR Code -->
+
+<section class="qr-panel">
+
+    <h3>برای زنده نگه داشتن یاد علی</h3>
+
+    <img
+      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;data=https%3A%2F%2Fkhoonjari.com%2Fali-bani-asad.html"
+      alt="QR Code صفحه علی بنی‌اسد">
+
+    <p>
+        برای مشاهده روایت و یادبود علی، کد را اسکن کنید.
+    </p>
+
+</section>
+
+<!-- لینک ها -->
+
+<div class="links">
+
+    <a class="action instagram"
+       href="https://www.instagram.com/khoonjari.khz/"
+       target="_blank"
+       rel="noopener">
+       مشاهده دیگر جان‌باختگان در اینستاگرام
+    </a>
+
+    <a class="action archive"
+       href="https://khoonjari.com/">
+       ورود به بایگانی خون جاری خوزستان
+    </a>
+
+</div>
+
+</main>
+
+<!-- پاورقی -->
+
+<footer>
+
+    <strong>خون جاری خوزستان</strong>
+
+    <br>
+
+    برای آنکه نام‌ها در هیاهوی زمان گم نشوند.
+
+    <br>
+
+    یاد و نامشان ماندگار 🕊
+
+</footer>
+
+</div>
+
+<!-- محاسبه تایمر -->
 
 <script>
 
-/* تاریخ آغاز شمارنده
-   ۱ مهر ۱۴۰۱ - ساعت ۰۰:۰۰:۰۰
-*/
-
 const startDate = new Date("2022-09-23T00:00:00");
 
-
-/* تبدیل اعداد انگلیسی به فارسی */
-
-function persianNumber(number) {
-
-    return number
-    .toString()
-    .replace(/0/g, "۰")
-    .replace(/1/g, "۱")
-    .replace(/2/g, "۲")
-    .replace(/3/g, "۳")
-    .replace(/4/g, "۴")
-    .replace(/5/g, "۵")
-    .replace(/6/g, "۶")
-    .replace(/7/g, "۷")
-    .replace(/8/g, "۸")
-    .replace(/9/g, "۹");
-
-}
-
-
-/* به‌روزرسانی تایمر */
+const fa = new Intl.NumberFormat("fa-IR");
 
 function updateTimer() {
 
-    const now = new Date();
+    let diff = Math.max(
+        0,
+        Date.now() - startDate.getTime()
+    );
 
-    let difference = now - startDate;
+    const days = Math.floor(diff / 86400000);
 
-    if (difference < 0) {
-        difference = 0;
-    }
+    diff %= 86400000;
 
+    const hours = Math.floor(diff / 3600000);
 
-    const totalSeconds =
-        Math.floor(difference / 1000);
+    diff %= 3600000;
 
+    const minutes = Math.floor(diff / 60000);
 
-    const days =
-        Math.floor(totalSeconds / 86400);
+    diff %= 60000;
 
-
-    const hours =
-        Math.floor(
-            (totalSeconds % 86400) / 3600
-        );
-
-
-    const minutes =
-        Math.floor(
-            (totalSeconds % 3600) / 60
-        );
-
-
-    const seconds =
-        totalSeconds % 60;
-
+    const seconds = Math.floor(diff / 1000);
 
     document.getElementById("days").textContent =
-        persianNumber(days);
-
+        fa.format(days);
 
     document.getElementById("hours").textContent =
-        persianNumber(hours);
-
+        fa.format(hours);
 
     document.getElementById("minutes").textContent =
-        persianNumber(minutes);
-
+        fa.format(minutes);
 
     document.getElementById("seconds").textContent =
-        persianNumber(seconds);
-
+        fa.format(seconds);
 }
 
-
-/* اجرای اولیه */
-
 updateTimer();
-
-
-/* بروزرسانی هر ثانیه */
 
 setInterval(updateTimer, 1000);
 
 </script>
 
-
-
-<div style="margin:30px auto 20px;text-align:center;">
-  <a href="https://www.instagram.com/khoonjari.khz/" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#a52c27;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-family:Tahoma,Arial,sans-serif;font-size:15px;font-weight:bold;">مشاهده صفحه خون جاری خوزستان در اینستاگرام</a>
-</div>
 </body>
 </html>
