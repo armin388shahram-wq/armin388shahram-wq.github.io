@@ -58,7 +58,7 @@ footer{text-align:center;color:#aaa;font-size:13px;margin-top:25px}
 <button id="clearBtn" class="secondary" type="button">پاک کردن</button>
 </div>
 <div id="status" class="status" role="status" aria-live="polite">پس از وارد کردن نشانی، روی «ساخت و کنترل QR» بزن.</div>
-<p class="hint">این ابزار فقط نشانی‌های امن سایت khoonjari.com را می‌پذیرد. کد با زمینه سفید و طرح مشکی ساخته می‌شود تا دوربین‌ها آن را راحت‌تر بخوانند.</p>
+<p class="hint">این ابزار فقط نشانی‌های امن سایت khoonjari.com را می‌پذیرد. کد با زمینه سفید، طرح مشکی و حاشیه سفید استاندارد چهارماژولی در هر چهار طرف ساخته و دوباره اسکن می‌شود.</p>
 </section>
 <section class="panel" id="resultPanel" style="display:none">
 <h2 style="color:#d6b66b;margin-top:0">۲. پیش‌نمایش و دریافت کد</h2>
@@ -114,10 +114,21 @@ makeBtn.addEventListener('click',function(){
   const url=validateAddress(input.value);
   const size=Number(sizeSelect.value);
   qrHost.innerHTML='';
-  new QRCode(qrHost,{text:url,width:size,height:size,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
-  const canvas=getCanvas();
-  if(!canvas)throw new Error('تصویر QR ساخته نشد. دوباره تلاش کن.');
+  const qrInstance=new QRCode(qrHost,{text:url,width:size,height:size,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+  const sourceCanvas=getCanvas();
+  if(!sourceCanvas)throw new Error('تصویر QR ساخته نشد. دوباره تلاش کن.');
+  // QR standard requires a clear white quiet zone of at least four modules on every side.
+  const moduleCount=qrInstance._oQRCode && qrInstance._oQRCode.getModuleCount ? qrInstance._oQRCode.getModuleCount() : 33;
+  const quietZone=Math.max(16,Math.ceil((size/moduleCount)*4));
+  const canvas=document.createElement('canvas');
+  canvas.width=size+quietZone*2;
+  canvas.height=size+quietZone*2;
   const ctx=canvas.getContext('2d',{willReadFrequently:true});
+  ctx.fillStyle='#ffffff';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.drawImage(sourceCanvas,quietZone,quietZone,size,size);
+  qrHost.innerHTML='';
+  qrHost.appendChild(canvas);
   const decoded=jsQR(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height,{inversionAttempts:'attemptBoth'});
   if(!decoded||decoded.data!==url){
    resultPanel.style.display='none';
