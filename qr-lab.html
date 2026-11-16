@@ -221,20 +221,36 @@
 
   stopBtn.addEventListener('click', stopScanner);
 
-  async function makePaddedImageFile(file) {
+  async function decodeImageFileWithQuietZone(file) {
     const bitmap = await createImageBitmap(file);
+    const base = document.createElement('canvas');
+    base.width = bitmap.width;
+    base.height = bitmap.height;
+    const baseCtx = base.getContext('2d', { willReadFrequently: true });
+    baseCtx.drawImage(bitmap, 0, 0);
+    let decoded = jsQR(baseCtx.getImageData(0, 0, base.width, base.height).data, base.width, base.height, { inversionAttempts: 'attemptBoth' });
+    if (decoded) { bitmap.close?.(); return decoded.data; }
+
+    // Retry with the QR quiet-zone required by the QR standard: four modules of white space.
     const padding = Math.max(40, Math.ceil(Math.max(bitmap.width, bitmap.height) * 0.08));
-    const canvas = document.createElement('canvas');
-    canvas.width = bitmap.width + padding * 2;
-    canvas.height = bitmap.height + padding * 2;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(bitmap, padding, padding);
+    const padded = document.createElement('canvas');
+    padded.width = bitmap.width + padding * 2;
+    padded.height = bitmap.height + padding * 2;
+    const paddedCtx = padded.getContext('2d', { willReadFrequently: true });
+    paddedCtx.fillStyle = '#ffffff';
+    paddedCtx.fillRect(0, 0, padded.width, padded.height);
+    paddedCtx.drawImage(bitmap, padding, padding);
     bitmap.close?.();
-    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    decoded = jsQR(paddedCtx.getImageData(0, 0, padded.width, padded.height).data, padded.width, padded.height, { inversionAttempts: 'attemptBoth' });
+    if (decoded) return decoded.data;
+
+    // Last fallback: let the camera library try its own image decoder on a padded copy.
+    const blob = await new Promise(resolve => padded.toBlob(resolve, 'image/png'));
     if (!blob) throw new Error('ساخت نسخه اصلاح‌شده عکس ممکن نشد.');
-    return new File([blob], 'qr-with-white-margin.png', { type: 'image/png' });
+    const paddedFile = new File([blob], 'qr-with-white-margin.png', { type: 'image/png' });
+    const fallbackScanner = new Html5Qrcode('reader');
+    try { return await fallbackScanner.scanFile(paddedFile, true); }
+    finally { try { await fallbackScanner.clear(); } catch (_) {} }
   }
 
   fileInput.addEventListener('change', async (event) => {
@@ -245,22 +261,12 @@
       return;
     }
     scanMessage.textContent = 'در حال خواندن عکس…';
-    let tempScanner = null;
     try {
-      tempScanner = new Html5Qrcode('reader');
-      let decoded = '';
-      // First try the original image. If it has no QR quiet-zone, add a clean white margin and retry.
-      try {
-        decoded = await tempScanner.scanFile(file, true);
-      } catch (_) {
-        const paddedFile = await makePaddedImageFile(file);
-        decoded = await tempScanner.scanFile(paddedFile, true);
-      }
-      await tempScanner.clear();
+      if (typeof jsQR === 'undefined') throw new Error('کتابخانه خواندن QR بارگذاری نشد.');
+      const decoded = await decodeImageFileWithQuietZone(file);
       await verify(decoded);
       scanMessage.textContent = 'اسکن با موفقیت انجام شد.';
     } catch (_) {
-      if (tempScanner) { try { await tempScanner.clear(); } catch (_) {} }
       scanMessage.textContent = 'QR در این عکس پیدا نشد. عکس واضح‌تر و کامل انتخاب کن؛ آزمایشگاه ابتدا حاشیه سفید استاندارد را هم امتحان می‌کند.';
     }
     fileInput.value = '';
