@@ -78,6 +78,7 @@
 </div>
 
 <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 <script>
 (() => {
   const startBtn = document.getElementById('startBtn');
@@ -220,6 +221,22 @@
 
   stopBtn.addEventListener('click', stopScanner);
 
+  async function makePaddedImageFile(file) {
+    const bitmap = await createImageBitmap(file);
+    const padding = Math.max(40, Math.ceil(Math.max(bitmap.width, bitmap.height) * 0.08));
+    const canvas = document.createElement('canvas');
+    canvas.width = bitmap.width + padding * 2;
+    canvas.height = bitmap.height + padding * 2;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(bitmap, padding, padding);
+    bitmap.close?.();
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    if (!blob) throw new Error('ساخت نسخه اصلاح‌شده عکس ممکن نشد.');
+    return new File([blob], 'qr-with-white-margin.png', { type: 'image/png' });
+  }
+
   fileInput.addEventListener('change', async (event) => {
     const file = event.target.files && event.target.files[0];
     if (!file) return;
@@ -228,14 +245,23 @@
       return;
     }
     scanMessage.textContent = 'در حال خواندن عکس…';
+    let tempScanner = null;
     try {
-      const tempScanner = new Html5Qrcode('reader');
-      const decoded = await tempScanner.scanFile(file, true);
+      tempScanner = new Html5Qrcode('reader');
+      let decoded = '';
+      // First try the original image. If it has no QR quiet-zone, add a clean white margin and retry.
+      try {
+        decoded = await tempScanner.scanFile(file, true);
+      } catch (_) {
+        const paddedFile = await makePaddedImageFile(file);
+        decoded = await tempScanner.scanFile(paddedFile, true);
+      }
       await tempScanner.clear();
       await verify(decoded);
       scanMessage.textContent = 'اسکن با موفقیت انجام شد.';
     } catch (_) {
-      scanMessage.textContent = 'QR در این عکس پیدا نشد. عکس واضح‌تر و بدون برش انتخاب کن.';
+      if (tempScanner) { try { await tempScanner.clear(); } catch (_) {} }
+      scanMessage.textContent = 'QR در این عکس پیدا نشد. عکس واضح‌تر و کامل انتخاب کن؛ آزمایشگاه ابتدا حاشیه سفید استاندارد را هم امتحان می‌کند.';
     }
     fileInput.value = '';
   });
