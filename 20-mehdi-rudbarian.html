@@ -1,16 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>یاد و نام مهدی رودباریان</title>
-<meta name="description" content="صفحه یادبود مهدی رودباریان در آرشیو خون جاری خوزستان؛ برای آنکه یاد و نام جان‌باختگان در گذر زمان فراموش نشود.">
+<title>مهدی و مصطفی رودباریان؛ شهیدان راه آزادی | خون جاری خوزستان</title>
+
+<meta name="description" content="یادبود مهدی و مصطفی رودباریان، دو برادر که بنا بر روایت ثبت‌شده، پس از اعتراضات ۲۶ آبان ۱۳۹۸ در ماهشهر بازداشت شدند و سرنوشتشان نامعلوم ماند.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://khoonjari.com/20-mehdi-rudbarian.html">
 
+<meta property="og:title" content="مهدی و مصطفی رودباریان؛ جان‌باخته اعتراضات اهواز | خون جاری خوزستان">
+<meta property="og:description" content="یادبود مهدی و مصطفی رودباریان؛ دو برادر که بنا بر روایت ثبت‌شده، پس از بازداشت در ماهشهر سرنوشتشان نامعلوم ماند.">
+<meta property="og:image" content="https://khoonjari.com/20.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://khoonjari.com/20-mehdi-rudbarian-20.html">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مهدی و مصطفی رودباریان؛ جان‌باخته اعتراضات اهواز | خون جاری خوزستان">
+<meta name="twitter:description" content="یادبود مهدی و مصطفی رودباریان، جوان ۱۹ ساله اهل باغملک؛ جان‌باخته در خیابان نادری اهواز در ۱۹ دی ۱۴۰۴.">
+<meta name="twitter:image" content="https://khoonjari.com/20-mehdi-rudbarian-20.jpg">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebPage",
+ "name":"مهدی و مصطفی رودباریان؛ شهیدان راه آزادی",
+ "url":"https://khoonjari.com/20-mehdi-rudbarian.html",
+ "description":"یادبود مهدی و مصطفی رودباریان؛ دو برادر که بنا بر روایت ثبت‌شده، پس از اعتراضات ۲۶ آبان ۱۳۹۸ در ماهشهر بازداشت شدند و سرنوشتشان نامعلوم ماند.",
+ "inLanguage":"fa-IR",
+ "mainEntity":[
+  {"@type":"Person","name":"مهدی رودباریان","image":"https://khoonjari.com/20.jpg","description":"در روایت ثبت‌شده در این صفحه، مهدی رودباریان ۲۱ ساله معرفی شده است."},
+  {"@type":"Person","name":"مصطفی رودباریان","image":"https://khoonjari.com/20.jpg","description":"در روایت ثبت‌شده در این صفحه، مصطفی رودباریان برادر مهدی و ۳۴ ساله معرفی شده است."}
+ ]
+}
+</script>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --gold: #d6b36a;
+    --red: #b52b32;
+    --black: #090909;
+    --panel: #151515;
+    --muted: #aaa;
+}
 
 * {
     box-sizing: border-box;
@@ -19,644 +55,621 @@
 body {
     margin: 0;
     padding: 0;
-    background: #080808;
-    color: #ffffff;
-    font-family: Tahoma, Arial, sans-serif;
+    background: var(--black);
+    color: #eee;
+    font-family: Vazirmatn, Tahoma, sans-serif;
     line-height: 2;
 }
 
 .container {
-    width: 92%;
-    max-width: 850px;
-    margin: 35px auto;
-    text-align: center;
+    width: 94%;
+    max-width: 1000px;
+    margin: 25px auto;
 }
 
-/* عنوان */
-h1 {
-    color: #ffffff;
-    font-size: 32px;
+/* سربرگ */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 20px;
+    background: linear-gradient(110deg, #111, #211817);
+    border: 1px solid #493b2b;
+    border-bottom: 3px solid var(--red);
+    border-radius: 15px;
     margin-bottom: 25px;
 }
 
-
-/* =========================
-   کادر عکس
-   ========================= */
-
-.photo-box {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 25px;
-
-    /* مهم: هیچ چیزی اجازه خروج از عکس را ندارد */
-    overflow: hidden;
-
-    border-radius: 12px;
+.logo {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
 }
 
+.brand {
+    flex: 1;
+}
 
-/* عکس اصلی */
+.brand h1 {
+    font-size: 25px;
+    margin: 0;
+    color: var(--red);
+    font-weight: 800;
+}
 
-.main-photo {
-    display: block;
+.brand p {
+    margin: 3px 0 0;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.page-number {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 4px 14px;
+    border-radius: 25px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* عنوان */
+
+.main-title {
+    text-align: center;
+    font-size: 29px;
+    color: var(--gold);
+    margin: 20px 0 25px;
+    font-weight: 800;
+}
+
+.main-title span {
+    color: var(--red);
+}
+
+/* تصویر و مشخصات */
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* تصویر */
+
+.photo-panel {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid #55432e;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.photo-panel > img {
     width: 100%;
     height: auto;
-
-    margin: 0;
-    border-radius: 12px;
-    border: 2px solid #333;
-}
-
-
-/* =========================
-   لوگوی خون جاری خوزستان
-   ========================= */
-
-.project-logo {
-    position: absolute;
-
-    /* کاملاً داخل عکس */
-    top: 15px;
-    left: 15px;
-
-    width: 110px;
-    height: 110px;
-
+    max-height: 680px;
     object-fit: contain;
-
-    z-index: 10;
-
-    /* جلوگیری از بیرون رفتن */
-    max-width: calc(100% - 30px);
-    max-height: calc(100% - 30px);
+    border-radius: 9px;
+    display: block;
 }
 
-
-/* =========================
-   عنوان شمارنده
-   ========================= */
-
-.timer-title {
-    color: #dddddd;
-    font-size: 22px;
-    margin: 20px 0 18px;
+.photo-caption {
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 9px;
 }
 
+/* تایمر روی تصویر */
 
-/* =========================
-   شمارنده
-   ========================= */
+.photo-panel .timer-panel {
+    position: absolute;
+    bottom: 43px;
+    left: 5%;
+    width: 90%;
+    margin: 0;
+    padding: 10px 7px;
+    background: rgba(12, 12, 12, 0.89);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 3px 15px rgba(0,0,0,.7);
+    z-index: 2;
+}
 
-.timer {
-    display: flex;
+.timer-heading {
+    text-align: center;
+    color: #e5c47e;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     direction: ltr;
+    gap: 4px;
+}
+
+.timer-item {
+    text-align: center;
+    background: rgba(0,0,0,.4);
+    border: 1px solid rgba(214,179,106,.35);
+    border-radius: 7px;
+    padding: 3px 2px;
+    direction: rtl;
+}
+
+.timer-item strong {
+    display: block;
+    color: #f0d18c;
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: 800;
+    direction: ltr;
+}
+
+.timer-item span {
+    color: #e5c47e;
+    font-size: 11px;
+}
+
+/* مشخصات */
+
+.details-panel {
+    background: linear-gradient(145deg, #191514, #111);
+    border: 1px solid #55432e;
+    border-radius: 15px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 12px;
-    margin: 0 auto 30px;
-    flex-wrap: wrap;
+    min-width: 0;
 }
 
-.time-box {
-    width: 130px;
-    background: #151515;
-    border: 2px solid #a00000;
-    border-radius: 12px;
-    padding: 12px 8px;
-
-    box-shadow: 0 0 12px rgba(150, 0, 0, 0.25);
+.details-panel h2 {
+    color: var(--red);
+    font-size: 27px;
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #493b2b;
 }
 
-.time-number {
-    display: block;
-    color: #ff3333;
-    font-size: 34px;
-    font-weight: bold;
-    line-height: 1.3;
+.detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid #302925;
+    font-size: 14px;
 }
 
-.time-label {
-    display: block;
-    color: #cccccc;
-    font-size: 15px;
-    margin-top: 4px;
+.detail:last-child {
+    border-bottom: none;
 }
 
+.detail span:first-child {
+    color: var(--gold);
+    white-space: nowrap;
+}
 
-/* =========================
-   اطلاعات
-   ========================= */
+.detail span:last-child {
+    color: #eee;
+    font-weight: 600;
+    text-align: left;
+}
 
-.info {
+/* روایت */
+
+.section {
+    background: var(--panel);
+    border: 1px solid #40342a;
+    border-radius: 15px;
+    padding: 22px;
+    margin: 23px 0;
+}
+
+.section-title {
+    color: var(--gold);
     font-size: 20px;
-    color: #dddddd;
-    margin: 20px 0;
+    margin: 0 0 15px;
+    padding-right: 13px;
+    border-right: 4px solid var(--red);
 }
-
-.info strong {
-    color: #ff3333;
-}
-
-
-/* =========================
-   متن داستان
-   ========================= */
 
 .story {
-    text-align: right;
-    font-size: 19px;
-    color: #eeeeee;
-
-    border-right: 5px solid #b00000;
-
-    padding-right: 18px;
-
-    margin-top: 30px;
-    margin-bottom: 35px;
+    color: #ddd;
+    font-size: 15px;
+    line-height: 2.5;
+    text-align: justify;
 }
 
-
-/* =========================
-   فوتر
-   ========================= */
-
-.footer {
-    border-top: 1px solid #333;
-
-    padding-top: 20px;
-    margin-top: 35px;
-
-    color: #aaaaaa;
-    font-size: 17px;
+.source {
+    color: var(--gold);
+    font-size: 13px;
+    margin-top: 18px;
+    border-top: 1px solid #40342a;
+    padding-top: 12px;
 }
 
+/* لینک ها */
 
-/* =========================
-   دکمه اینستاگرام
-   ========================= */
+.links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 22px 0;
+}
 
-.instagram-button {
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 18px;
-
-    margin-top: 22px;
-
-    padding: 12px 28px;
-
-    color: #ffffff;
-
+.action {
+    display: block;
     text-decoration: none;
-
-    border: 1px solid #444;
-
-    border-radius: 12px;
-
-    background: #151515;
-
-    transition: 0.3s;
-
-    cursor: pointer;
+    text-align: center;
+    padding: 13px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
-
-.instagram-button:hover {
-
-    background: #242424;
-
-    border-color: #b00000;
+.instagram {
+    color: white;
+    background: linear-gradient(100deg, #8c272d, #b38b4d);
 }
 
-
-/* =========================
-   آیکون اینستاگرام
-   دو برابر نسخه قبلی
-   ========================= */
-
-.instagram-icon {
-
-    width: 128px;
-    height: 128px;
-
-    object-fit: contain;
-
-    flex-shrink: 0;
+.archive {
+    color: var(--gold);
+    border: 1px solid #80643b;
+    background: #171411;
 }
 
+.action:hover {
+    opacity: .85;
+}
 
-/* =========================
-   موبایل
-   ========================= */
+/* پاورقی */
 
-@media (max-width: 600px) {
+footer {
+    border-top: 1px solid #44382c;
+    padding: 20px 10px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* نمایش موبایل */
+
+@media(max-width:650px) {
 
     .container {
         width: 94%;
-        margin-top: 20px;
+        margin: 12px auto;
     }
 
-
-    h1 {
-        font-size: 25px;
+    .header {
+        padding: 11px;
+        gap: 9px;
     }
 
-
-    /* لوگوی موبایل */
-    .project-logo {
-
-        width: 90px;
-        height: 90px;
-
-        top: 10px;
-        left: 10px;
-
-        max-width: calc(100% - 20px);
-        max-height: calc(100% - 20px);
+    .logo {
+        width: 68px;
+        height: 68px;
     }
 
-
-    .timer-title {
+    .brand h1 {
         font-size: 18px;
+    }
+
+    .brand p {
+        font-size: 10px;
         line-height: 1.8;
     }
 
-
-    .timer {
-        gap: 7px;
+    .page-number {
+        padding: 3px 8px;
+        font-size: 10px;
     }
 
-
-    .time-box {
-        width: 72px;
-        padding: 8px 4px;
+    .main-title {
+        font-size: 23px;
+        margin: 15px 0;
     }
 
+    .profile {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
 
-    .time-number {
+    .photo-panel {
+        padding: 7px;
+    }
+
+    .photo-panel > img {
+        max-height: 650px;
+    }
+
+    .photo-panel .timer-panel {
+        bottom: 40px;
+        left: 4%;
+        width: 92%;
+        padding: 7px 4px;
+    }
+
+    .timer-heading {
+        font-size: 11px;
+    }
+
+    .timer-grid {
+        gap: 3px;
+    }
+
+    .timer-item {
+        padding: 3px 1px;
+    }
+
+    .timer-item strong {
+        font-size: 20px;
+    }
+
+    .timer-item span {
+        font-size: 9px;
+    }
+
+    .details-panel {
+        padding: 17px;
+    }
+
+    .details-panel h2 {
         font-size: 23px;
     }
 
-
-    .time-label {
-        font-size: 12px;
+    .detail {
+        font-size: 13px;
+        padding: 9px 0;
     }
 
-
-    .info {
-        font-size: 17px;
+    .section {
+        padding: 16px;
     }
-
 
     .story {
-        font-size: 17px;
-        padding-right: 12px;
+        font-size: 14px;
+        line-height: 2.4;
     }
 
-
-    /* آیکون بزرگ اینستاگرام */
-    .instagram-icon {
-
-        width: 128px;
-        height: 128px;
+    .links {
+        grid-template-columns: 1fr;
     }
-
 }
 
+@media(max-width:360px) {
+    .timer-item strong {
+        font-size: 17px;
+    }
+
+    .timer-item span {
+        font-size: 8px;
+    }
+
+    .brand h1 {
+        font-size: 16px;
+    }
+}
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
+<!-- سربرگ -->
 
-    <h1>
-        یاد و نام مهدی رودباریان
-    </h1>
+<header class="header">
 
+    <img class="logo"
+         src="logo-khoon-jari-khuzestan.png"
+         alt="لوگوی خون جاری خوزستان">
 
-    <!-- =========================
-         عکس مهدی
-         ========================= -->
-
-    <div class="photo-box">
-
-        <img
-            src="20.jpg"
-            alt="مهدی رودباریان"
-            class="main-photo"
-        >
-
-
-        <!-- لوگوی پروژه -->
-
-        <img
-            src="logo-khoon-jari-khuzestan.png"
-            alt="خون جاری خوزستان"
-            class="project-logo"
-        >
-
+    <div class="brand">
+        <h1>خون جاری خوزستان</h1>
+        <p>یاد و نام جان‌باختگان قیام و مقاومت در خوزستان</p>
     </div>
 
+    <div class="page-number">شماره ۲۰</div>
 
-    <!-- =========================
-         شمارنده
-         ========================= -->
+</header>
 
-    <div class="timer-title">
+<h2 class="main-title">
+    شهیدان راه آزادی <span>مهدی و مصطفی رودباریان</span>
+</h2>
 
-        ساعات، دقایق و ثانیه‌هایی که از نبودن مهدی رودباریان گذشت
+<main>
 
-    </div>
+<!-- تصویر و مشخصات -->
 
+<div class="profile">
 
-    <div class="timer">
+    <!-- تصویر و تایمر روی تصویر -->
 
+    <div class="photo-panel">
 
-        <div class="time-box">
+        <img src="20.jpg"
+             alt="تصویر مهدی و مصطفی رودباریان، دو برادر اهل خوزستان"
+             loading="eager">
 
-            <span
-                id="days"
-                class="time-number"
-            >
-                ۰
-            </span>
+        <div class="timer-panel">
 
-            <span class="time-label">
-                روز
-            </span>
+            <div class="timer-heading">
+                زمان سپری‌شده از آخرین گزارش درباره سرنوشت دو برادر
+            </div>
 
+            <div class="timer-grid">
+
+                <div class="timer-item">
+                    <strong id="days">۰</strong>
+                    <span>روز</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="hours">۰</strong>
+                    <span>ساعت</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="minutes">۰</strong>
+                    <span>دقیقه</span>
+                </div>
+
+                <div class="timer-item">
+                    <strong id="seconds">۰</strong>
+                    <span>ثانیه</span>
+                </div>
+
+            </div>
         </div>
 
-
-        <div class="time-box">
-
-            <span
-                id="hours"
-                class="time-number"
-            >
-                ۰
-            </span>
-
-            <span class="time-label">
-                ساعت
-            </span>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <span
-                id="minutes"
-                class="time-number"
-            >
-                ۰
-            </span>
-
-            <span class="time-label">
-                دقیقه
-            </span>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <span
-                id="seconds"
-                class="time-number"
-            >
-                ۰
-            </span>
-
-            <span class="time-label">
-                ثانیه
-            </span>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- =========================
-         مشخصات
-         ========================= -->
-
-    <div class="info">
-
-        <div>
-            <strong>نام:</strong>
-            مهدی رودباریان
-        </div>
-
-        <div>
-            <strong>سن:</strong>
-            ۲۱ سال
-        </div>
-
-        <div>
-            <strong>محل:</strong>
-            ماهشهر
-        </div>
-
-        <div>
-            <strong>تاریخ:</strong>
-            ۲۶ آبان ۱۳۹۸
-        </div>
-
-        <div>
-            <strong>برادر:</strong>
-            مصطفی رودباریان، ۳۴ ساله
+        <div class="photo-caption">
+            مهدی و مصطفی رودباریان | ماهشهر | ۲۶ آبان ۱۳۹۸
         </div>
 
     </div>
 
+    <!-- مشخصات -->
 
-    <!-- =========================
-         روایت
-         ========================= -->
+    <div class="details-panel">
 
-    <div class="story">
+        <h2>مهدی و مصطفی رودباریان</h2>
 
-        مهدی رودباریان و برادرش مصطفی، در روز ۲۶ آبان ۱۳۹۸ در میان صف معترضان در ماهشهر حضور داشتند.
-
-        <br><br>
-
-        یکی از معترضان بر اثر شلیک نیروهای امنیتی زخمی شد. مصطفی برای کمک به او دوید، اما گلوله‌ای به سینه‌اش اصابت کرد.
-
-        <br><br>
-
-        مهدی نیز به سمت برادرش دوید و گلوله‌ای به سر او اصابت کرد.
-
-        <br><br>
-
-        نیروهای امنیتی هر دو برادر را داخل یک خودروی باری سپاه گذاشته و با خود بردند.
-
-        <br><br>
-
-        بر اساس گفته شاهدان، با توجه به شدت جراحات ناشی از اصابت گلوله، احتمال کشته‌شدن آنان وجود داشت؛ با این حال پیکرهای آنان به خانواده تحویل داده نشد.
-
-        <br><br>
-
-        مسئولان و نهادهای امنیتی نیز از ارائه اطلاعات درباره سرنوشت آنان خودداری کردند و خانواده را تهدید کردند که در صورت رسانه‌ای کردن موضوع، با بازداشت روبه‌رو خواهند شد.
+        <div class="detail">
+            <span>نام‌ها</span><span>مهدی و مصطفی رودباریان</span>
+        </div>
+        <div class="detail"><span>سن مهدی</span><span>۲۱ سال</span></div>
+        <div class="detail"><span>سن مصطفی</span><span>۳۴ سال</span></div>
+        <div class="detail"><span>محل رویداد</span><span>ماهشهر</span></div>
+        <div class="detail"><span>تاریخ آخرین گزارش</span><span>۲۶ آبان ۱۳۹۸</span></div>
+        <div class="detail"><span>وضعیت</span><span>سرنوشت نامعلوم؛ پیکرها تحویل خانواده نشد</span></div>
 
     </div>
-
-
-    <!-- =========================
-         فوتر و اینستاگرام
-         ========================= -->
-
-    <div class="footer">
-
-        یاد و نام مهدی رودباریان
-
-        <br>
-
-        خون جاری خوزستان
-
-        <br>
-
-
-        <!-- کل این دکمه لینک است -->
-
-        <a
-            href="https://www.instagram.com/khoonjari.khz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="instagram-button"
-        >
-
-            <img
-                src="instagram.png"
-                alt="Instagram"
-                class="instagram-icon"
-            >
-
-            <span>
-                بازگشت به «خون جاری خوزستان»
-            </span>
-
-        </a>
-
-    </div>
-
 
 </div>
 
+<!-- روایت -->
+
+<section class="section">
+
+    <h3 class="section-title">روایت جان‌باختن</h3>
+
+    <div class="story">
+
+        بر اساس روایت ثبت‌شده در نسخه پیشین این صفحه، مهدی رودباریان و برادرش مصطفی در ۲۶ آبان ۱۳۹۸ در میان معترضان ماهشهر حضور داشتند.
+
+        بنا بر این روایت، یکی از معترضان با شلیک نیروهای امنیتی زخمی شد و مصطفی برای کمک به او رفت؛ اما گلوله‌ای به سینه مصطفی اصابت کرد. مهدی نیز به سوی برادرش دوید و هدف گلوله قرار گرفت.
+
+        در ادامه روایت آمده است که نیروهای امنیتی هر دو برادر را به یک خودروی باری منتقل کردند و با خود بردند. با وجود گزارش شاهدان از شدت جراحات، پیکرهای آنان به خانواده تحویل داده نشد و خانواده از سرنوشتشان بی‌خبر ماند.
+
+        چون منبع اولیه این روایت در فایل پیشین مشخص نشده، جزئیات بالا به‌عنوان روایت ثبت‌شده نقل می‌شوند و نه اطلاعاتی که در این صفحه مستقلاً راستی‌آزمایی شده باشند.
+
+    </div>
+
+    <div class="source">
+        منبع: روایت ثبت‌شده در نسخه پیشین صفحه؛ منبع اولیه در فایل موجود مشخص نشده است.
+    </div>
+
+</section>
+
+<!-- لینک ها -->
+
+<div class="links">
+
+    <a class="action instagram"
+       href="https://www.instagram.com/khoonjari.khz/"
+       target="_blank"
+       rel="noopener">
+       مشاهده دیگر جان‌باختگان در اینستاگرام
+    </a>
+
+    <a class="action archive"
+       href="https://khoonjari.com/">
+       ورود به بایگانی خون جاری خوزستان
+    </a>
+
+</div>
+
+</main>
+
+<!-- پاورقی -->
+
+<footer>
+
+    <strong>خون جاری خوزستان</strong>
+
+    <br>
+
+    برای آنکه نام‌ها در هیاهوی زمان گم نشوند.
+
+    <br>
+
+    یاد و نامشان گرامی 🕊
+
+</footer>
+
+</div>
+
+<!-- محاسبه تایمر -->
 
 <script>
 
-/* =========================
-   تبدیل اعداد انگلیسی به فارسی
-   ========================= */
+const startDate = new Date("2019-11-17T00:00:00");
 
-function persianNumber(number) {
-
-    return number
-        .toString()
-        .replace(/\d/g, function(digit) {
-
-            return "۰۱۲۳۴۵۶۷۸۹"[digit];
-
-        });
-
-}
-
-
-/* =========================
-   تاریخ شروع شمارنده
-
-   ۲۶ آبان ۱۳۹۸
-   17 November 2019
-   ساعت 12 ظهر
-   ========================= */
-
-const startDate =
-    new Date(2019, 10, 17, 12, 0, 0);
-
-
-/* =========================
-   به‌روزرسانی شمارنده
-   ========================= */
+const fa = new Intl.NumberFormat("fa-IR");
 
 function updateTimer() {
 
-    const now = new Date();
+    let diff = Math.max(
+        0,
+        Date.now() - startDate.getTime()
+    );
 
+    const days = Math.floor(diff / 86400000);
 
-    let difference =
-        now - startDate;
+    diff %= 86400000;
 
+    const hours = Math.floor(diff / 3600000);
 
-    if (difference < 0) {
+    diff %= 3600000;
 
-        difference = 0;
+    const minutes = Math.floor(diff / 60000);
 
-    }
+    diff %= 60000;
 
-
-    const totalSeconds =
-        Math.floor(difference / 1000);
-
-
-    const days =
-        Math.floor(totalSeconds / 86400);
-
-
-    const hours =
-        Math.floor(
-            (totalSeconds % 86400) / 3600
-        );
-
-
-    const minutes =
-        Math.floor(
-            (totalSeconds % 3600) / 60
-        );
-
-
-    const seconds =
-        totalSeconds % 60;
-
+    const seconds = Math.floor(diff / 1000);
 
     document.getElementById("days").textContent =
-        persianNumber(days);
-
+        fa.format(days);
 
     document.getElementById("hours").textContent =
-        persianNumber(hours);
-
+        fa.format(hours);
 
     document.getElementById("minutes").textContent =
-        persianNumber(minutes);
-
+        fa.format(minutes);
 
     document.getElementById("seconds").textContent =
-        persianNumber(seconds);
-
+        fa.format(seconds);
 }
 
-
-/* اجرای اولیه */
-
 updateTimer();
-
-
-/* به‌روزرسانی هر یک ثانیه */
 
 setInterval(updateTimer, 1000);
 
 </script>
-
 
 </body>
 </html>
