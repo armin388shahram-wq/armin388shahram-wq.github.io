@@ -165,9 +165,23 @@
       try {
         response = await fetch(parsed.href, { method: 'HEAD', cache: 'no-store', redirect: 'follow' });
       } catch (_) {
-        response = await fetch(parsed.href, { method: 'GET', cache: 'no-store', redirect: 'follow' });
+        response = null;
+      }
+
+      // Some hosts/CDN layers return an incorrect status for HEAD.
+      // If HEAD is unavailable or non-successful, verify the actual page with GET.
+      if (!response || !response.ok) {
+        try {
+          response = await fetch(parsed.href, { method: 'GET', cache: 'no-store', redirect: 'follow' });
+        } catch (_) {
+          response = null;
+        }
       }
       if (thisCheck !== checkNumber) return;
+      if (!response) {
+        renderResult('⚠ دامنه صحیح است؛ دسترسی تأیید نشد', 'اتصال به صفحه مقصد برقرار نشد. لینک را با دکمه زیر باز کن و دستی بررسی کن.', 'wait', decodedText);
+        return;
+      }
       if (response.ok) {
         const extra = document.createElement('div');
         extra.className = 'hint';
