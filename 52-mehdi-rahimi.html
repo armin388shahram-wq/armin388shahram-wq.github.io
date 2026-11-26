@@ -534,6 +534,9 @@ footer strong {
     font-size: 10px;
 }
 .audio-credit a { color: #d6b36a; }
+.audio-welcome[hidden] {
+    display: none !important;
+}
 .audio-welcome {
     position: fixed;
     inset: 0;
@@ -794,15 +797,13 @@ const audioWelcome = document.getElementById("audioWelcome");
 const audioEnter = document.getElementById("audioEnter");
 const audioError = document.getElementById("audioError");
 
-audioEnter.addEventListener("click", async () => {
-    try {
-        await audio.play();
-        audioWelcome.hidden = true;
-    } catch (error) {
+audioEnter.addEventListener("click", () => {
+    // ابتدا پنجره را کنار می‌زنیم تا صفحه در هر شرایطی باز شود.
+    audioWelcome.hidden = true;
+    audio.play().catch(() => {
         audioError.hidden = false;
         audio.controls = true;
-        audioWelcome.hidden = true;
-    }
+    });
 });
 
 audio.addEventListener("ended", () => {
