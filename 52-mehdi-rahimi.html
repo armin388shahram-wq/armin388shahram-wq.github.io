@@ -501,10 +501,102 @@ footer strong {
         font-size: 16px;
     }
 }
+
+/* پخش‌کننده موسیقی یادبود */
+.memorial-audio {
+    position: fixed;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    width: min(94%, 520px);
+    padding: 10px 14px;
+    background: rgba(15, 13, 12, .96);
+    border: 1px solid var(--gold);
+    border-radius: 13px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.65);
+    text-align: center;
+}
+.memorial-audio p {
+    margin: 0 0 5px;
+    color: var(--gold);
+    font-size: 12px;
+}
+.memorial-audio audio {
+    display: block;
+    width: 100%;
+    height: 34px;
+}
+.audio-credit {
+    display: block;
+    margin-top: 4px;
+    color: #aaa;
+    font-size: 10px;
+}
+.audio-credit a { color: #d6b36a; }
+.audio-welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(0,0,0,.94);
+    backdrop-filter: blur(7px);
+}
+.audio-welcome-card {
+    width: min(100%, 430px);
+    padding: 30px 22px;
+    text-align: center;
+    background: linear-gradient(145deg, #1d1915, #090909);
+    border: 1px solid var(--gold);
+    border-radius: 18px;
+    box-shadow: 0 0 35px rgba(214,179,106,.12);
+}
+.audio-welcome-card h2 {
+    margin: 0 0 12px;
+    color: var(--gold);
+    font-size: 23px;
+}
+.audio-welcome-card p {
+    margin: 0 0 22px;
+    color: #ddd;
+    font-size: 14px;
+    line-height: 2.2;
+}
+.audio-enter {
+    border: 1px solid #e0c27e;
+    border-radius: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(100deg, #6f2025, #a27a3e);
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.audio-enter:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+@media(max-width:650px) {
+    .memorial-audio { bottom: 8px; padding: 8px 10px; }
+    body { padding-bottom: 90px; }
+}
+
 </style>
 </head>
 
 <body>
+
+
+<!-- ورود همراه با پخش موسیقی یادبود -->
+<div class="audio-welcome" id="audioWelcome" role="dialog" aria-modal="true" aria-labelledby="audioWelcomeTitle">
+  <div class="audio-welcome-card">
+    <h2 id="audioWelcomeTitle">یادبود شهید مهدی رحیمی</h2>
+    <p>برای ورود به صفحه یادبود و شنیدن موسیقی آرام پیانو، دکمه زیر را انتخاب کنید.</p>
+    <button class="audio-enter" id="audioEnter" type="button">ورود و پخش موسیقی</button>
+    <p id="audioError" hidden style="margin:14px 0 0;color:#e5a0a0;font-size:12px;">پخش موسیقی آغاز نشد. می‌توانید از پخش‌کننده پایین صفحه استفاده کنید.</p>
+  </div>
+</div>
 
 <div class="container">
 
@@ -678,9 +770,45 @@ footer strong {
 
 </div>
 
+
+<!-- موسیقی آرام پیانو؛ فایل با مجوز Creative Commons BY-SA 2.0 -->
+<div class="memorial-audio" id="memorialAudioPlayer">
+  <p>موسیقی یادبود | پیانو آرام</p>
+  <audio id="memorialAudio" controls preload="none">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/9/99/L._Sarason_-_Piano_Sonata_-_Slow_and_Espressivo.ogg" type="audio/ogg">
+    مرورگر شما از پخش این فایل صوتی پشتیبانی نمی‌کند.
+  </audio>
+  <span class="audio-credit">اثر پیانویی L. Sarason با اجرای Martha Goldstein ·
+    <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">مجوز CC BY-SA 2.0</a>
+    · <a href="https://commons.wikimedia.org/wiki/File:L._Sarason_-_Piano_Sonata_-_Slow_and_Espressivo.ogg" target="_blank" rel="noopener">منبع فایل</a>
+  </span>
+</div>
+
 <!-- محاسبه تایمر -->
 
 <script>
+
+
+const audio = document.getElementById("memorialAudio");
+const audioWelcome = document.getElementById("audioWelcome");
+const audioEnter = document.getElementById("audioEnter");
+const audioError = document.getElementById("audioError");
+
+audioEnter.addEventListener("click", async () => {
+    try {
+        await audio.play();
+        audioWelcome.hidden = true;
+    } catch (error) {
+        audioError.hidden = false;
+        audio.controls = true;
+    }
+});
+
+audio.addEventListener("ended", () => {
+    const title = document.querySelector(".memorial-audio p");
+    title.textContent = "موسیقی یادبود به پایان رسید";
+});
+
 
 const startDate = new Date("2026-01-09T00:00:00");
 
