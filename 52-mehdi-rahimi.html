@@ -627,6 +627,19 @@ footer strong {
 
 </section>
 
+
+<!-- موسیقی یادبود -->
+<section class="section music-panel" style="text-align:center; margin-top:22px;">
+    <h3 class="section-title">موسیقی یادبود</h3>
+    <p style="color:#d6b36a; margin:0 0 12px;">علی زندوکیلی – به سوی تو (نسخه بی‌کلام)؛ آغاز از دقیقهٔ ۱:۴۰</p>
+    <audio id="memorialAudio" controls preload="metadata" style="width:100%; max-width:560px;">
+        <source src="https://dl.newsong.ir/music/99/07/Bi%20Kalam%20Be%20Sooye%20To_%28www.newsong.ir%29.mp3" type="audio/mpeg">
+        مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+    </audio>
+    <p style="font-size:12px; color:#aaa; margin-top:8px;">برای شنیدن موسیقی، دکمهٔ پخش را انتخاب کنید.</p>
+    <p style="font-size:11px; color:#888;">منبع فایل: <a href="https://newsong.ir/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D8%A2%D9%87%D9%86%DA%AF-%D8%B9%D9%84%DB%8C-%D8%B2%D9%86%D8%AF%D9%88%DA%A9%DB%8C%D9%84%DB%8C-%D8%A8%D9%87-%D8%B3%D9%88%DB%8C/" target="_blank" rel="noopener" style="color:#d6b36a;">نیو سانگ</a></p>
+</section>
+
 <!-- QR Code -->
 
 <section class="qr-panel">
@@ -728,6 +741,20 @@ function updateTimer() {
 updateTimer();
 
 setInterval(updateTimer, 1000);
+
+// پخش موسیقی از ثانیهٔ ۱۰۰ (دقیقهٔ ۱:۴۰)
+const memorialAudio = document.getElementById("memorialAudio");
+if (memorialAudio) {
+    const seekToStart = () => {
+        try {
+            memorialAudio.currentTime = 100;
+        } catch (e) {
+            // در صورت آماده نبودن فایل، با رویداد loadedmetadata دوباره تلاش می‌شود.
+        }
+    };
+    memorialAudio.addEventListener("loadedmetadata", seekToStart, { once: true });
+    if (memorialAudio.readyState >= 1) seekToStart();
+}
 
 </script>
 
