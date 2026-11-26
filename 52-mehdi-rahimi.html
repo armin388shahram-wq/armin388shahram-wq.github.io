@@ -503,10 +503,112 @@ footer strong {
 }
 
 
+
+/* ورودی موسیقی یادبود */
+.memorial-welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background:
+      radial-gradient(ellipse at center, rgba(48,34,22,.88), rgba(0,0,0,.97)),
+      #080808;
+    transition: opacity .35s ease, visibility .35s ease;
+}
+.memorial-welcome.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.memorial-welcome-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 34px 24px;
+    text-align: center;
+    background: linear-gradient(145deg, #171310, #090909);
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    box-shadow: 0 15px 55px rgba(0,0,0,.7);
+}
+.memorial-welcome-mark {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 18px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 30px;
+}
+.memorial-welcome h2 {
+    color: var(--gold);
+    font-size: 25px;
+    margin: 0 0 12px;
+}
+.memorial-welcome p {
+    color: #ddd;
+    margin: 0 0 22px;
+    font-size: 14px;
+}
+.memorial-start-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 10px 26px;
+    border: 1px solid #e6c77e;
+    border-radius: 30px;
+    background: linear-gradient(110deg, #9b252b, #5e171b);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 22px rgba(181,43,50,.25);
+}
+.memorial-start-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+.memorial-welcome-note {
+    display: block;
+    margin-top: 16px;
+    color: #aaa;
+    font-size: 11px;
+}
+@media(max-width:480px) {
+    .memorial-welcome-card { padding: 28px 18px; }
+    .memorial-welcome h2 { font-size: 21px; }
+    .memorial-start-button { width: 100%; font-size: 15px; }
+}
+
 </style>
 </head>
 
+
 <body>
+
+<!-- ورودی یکپارچهٔ صفحه و پخش موسیقی -->
+<div class="memorial-welcome" id="memorialWelcome">
+  <div class="memorial-welcome-card">
+    <div class="memorial-welcome-mark" aria-hidden="true">🕊</div>
+    <h2>یادبود شهید مهدی رحیمی</h2>
+    <p>برای ورود به صفحه یادبود و شنیدن موسیقی بی‌کلام، دکمه زیر را انتخاب کنید.</p>
+    <button class="memorial-start-button" id="memorialStartButton" type="button">
+      <span aria-hidden="true">▶</span>
+      ورود و پخش موسیقی
+    </button>
+    <span class="memorial-welcome-note">به یاد مهدی؛ برای آنکه نام‌ها در هیاهوی زمان گم نشوند.</span>
+    <p id="memorialAudioMessage" role="status" aria-live="polite" style="display:none;color:#e5c47e;margin:14px 0 0;"></p>
+  </div>
+</div>
+
 
 
 <div class="container">
@@ -742,18 +844,32 @@ updateTimer();
 
 setInterval(updateTimer, 1000);
 
-// پخش موسیقی از ثانیهٔ ۱۰۰ (دقیقهٔ ۱:۴۰)
+// پخش موسیقی از ثانیهٔ ۱۰۰ (دقیقهٔ ۱:۴۰) با کلیک روی ورودی یادبود
 const memorialAudio = document.getElementById("memorialAudio");
-if (memorialAudio) {
-    const seekToStart = () => {
+const memorialWelcome = document.getElementById("memorialWelcome");
+const memorialStartButton = document.getElementById("memorialStartButton");
+const memorialAudioMessage = document.getElementById("memorialAudioMessage");
+
+if (memorialAudio && memorialWelcome && memorialStartButton) {
+    memorialStartButton.addEventListener("click", async () => {
+        memorialStartButton.disabled = true;
+        memorialStartButton.textContent = "در حال آماده‌سازی موسیقی…";
+        memorialStartButton.style.opacity = ".75";
         try {
+            // درخواست پرش به دقیقهٔ ۱:۴۰ و آغاز پخش در همان تعامل کاربر
             memorialAudio.currentTime = 100;
-        } catch (e) {
-            // در صورت آماده نبودن فایل، با رویداد loadedmetadata دوباره تلاش می‌شود.
+            await memorialAudio.play();
+            memorialWelcome.classList.add("is-hidden");
+        } catch (error) {
+            memorialStartButton.disabled = false;
+            memorialStartButton.innerHTML = '<span aria-hidden="true">▶</span> تلاش دوباره برای پخش';
+            memorialStartButton.style.opacity = "1";
+            if (memorialAudioMessage) {
+                memorialAudioMessage.style.display = "block";
+                memorialAudioMessage.textContent = "موسیقی از منبع بیرونی بارگیری نشد. می‌توانید صفحه را ببینید و از پخش‌کننده پایین صفحه دوباره تلاش کنید.";
+            }
         }
-    };
-    memorialAudio.addEventListener("loadedmetadata", seekToStart, { once: true });
-    if (memorialAudio.readyState >= 1) seekToStart();
+    });
 }
 
 </script>
