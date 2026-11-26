@@ -801,6 +801,7 @@ audioEnter.addEventListener("click", async () => {
     } catch (error) {
         audioError.hidden = false;
         audio.controls = true;
+        audioWelcome.hidden = true;
     }
 });
 
